@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sahil Kokode | Web Developer</title>
+  <meta name="description" content="Sahil Kokode is a Web Developer creating fast, modern and responsive websites for businesses and individuals.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #080b12;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(8, 11, 18, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #1c2330;
+    }
+
+    .nav-inner {
+      height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    .logo span {
+      color: #00e5ff;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #b9c1cc;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: #00e5ff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      text-align: center;
+    }
+
+    .hero-content {
+      width: 100%;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 8px 16px;
+      border: 1px solid #263342;
+      border-radius: 50px;
+      color: #00e5ff;
+      margin-bottom: 20px;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 8vw, 78px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero h1 span {
+      color: #00e5ff;
+    }
+
+    .hero p {
+      max-width: 650px;
+      margin: auto;
+      color: #aeb7c4;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 10px;
+      font-weight: 700;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: #00e5ff;
+      color: #001014;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .btn-secondary {
+      border: 1px solid #334052;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      border-color: #00e5ff;
+      color: #00e5ff;
+    }
+
+    /* SECTIONS */
+    section {
+      padding: 90px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 10px;
+    }
+
+    .section-title p {
+      color: #8993a2;
+    }
+
+    /* ABOUT */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about-card,
+    .service-card,
+    .project-card,
+    .contact-card {
+      background: #0e131c;
+      border: 1px solid #202a38;
+      border-radius: 18px;
+      padding: 30px;
+    }
+
+    .about h3 {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .about p {
+      color: #aeb7c4;
+    }
+
+    /* SKILLS */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .skill {
+      text-align: center;
+      padding: 25px 15px;
+      background: #0e131c;
+      border: 1px solid #202a38;
+      border-radius: 15px;
+      transition: 0.3s;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+      border-color: #00e5ff;
+    }
+
+    .skill h3 {
+      margin-top: 10px;
+    }
+
+    .skill p {
+      color: #8993a2;
+      font-size: 14px;
+    }
+
+    /* PROJECT */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .project-card {
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: #00e5ff;
+    }
+
+    .project-image {
+      height: 180px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #101d2c, #071016);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 34px;
+      font-weight: 800;
+      color: #00e5ff;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-size: 24px;
+      margin-bottom: 8px;
+    }
+
+    .project-card p {
+      color: #9ca6b4;
+      margin-bottom: 20px;
+    }
+
+    /* SERVICES */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .service-card {
+      transition: 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: #00e5ff;
+    }
+
+    .service-icon {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .service-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .service-card p {
+      color: #919baa;
+    }
+
+    /* PRICING */
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .price-card {
+      background: #0e131c;
+      border: 1px solid #202a38;
+      border-radius: 18px;
+      padding: 30px;
+      text-align: center;
+    }
+
+    .price-card.featured {
+      border-color: #00e5ff;
+    }
+
+    .price-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: 800;
+      margin: 15px 0;
+    }
+
+    .price-card p {
+      color: #919baa;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
+    .contact-card {
+      text-align: center;
+      max-width: 750px;
+      margin: auto;
+    }
+
+    .contact-card h2 {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+
+    .contact-card p {
+      color: #9ca6b4;
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid #202a38;
+      padding: 25px 0;
+      text-align: center;
+      color: #778291;
+    }
+
+    /* WHATSAPP */
+    .whatsapp {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 27px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      z-index: 999;
+    }
+
+    /* MOBILE */
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .about,
+      .projects {
+        grid-template-columns: 1fr;
+      }
+
+      .skills {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .services,
+      .pricing {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .hero {
+        min-height: 80vh;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <div class="container nav-inner">
+
+      <a href="#" class="logo">
+        Sahil<span>.</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+    </div>
+  </nav>
+
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero-content">
+
+      <div class="tag">
+        Available for freelance work
+      </div>
+
+      <h1>
+        Hi, I'm <span>Sahil Kokode</span>
+      </h1>
+
+      <p>
+        Web Developer creating fast, modern and responsive websites
+        for businesses, creators and individuals.
+      </p>
+
+      <div class="buttons">
+
+        <a
+          href="https://wa.me/919405479665"
+          class="btn btn-primary"
+          target="_blank">
+          Hire Me
+        </a>
+
+        <a href="#projects" class="btn btn-secondary">
+          View My Work
+        </a>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ABOUT -->
+  <section id="about">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>About Me</h2>
+        <p>A young developer building real-world projects.</p>
+      </div>
+
+      <div class="about">
+
+        <div class="about-card">
+          <h3>I'm Sahil 👋</h3>
+
+          <p>
+            I'm a Web Developer focused on creating clean,
+            responsive and user-friendly websites.
+            I enjoy turning ideas into real websites
+            that work smoothly on mobile and desktop.
+          </p>
+
+          <br>
+
+          <p>
+            I'm currently building projects and helping
+            small businesses establish their presence online.
+          </p>
+        </div>
+
+        <div class="about-card">
+
+          <h3>What I Focus On</h3>
+
+          <p>⚡ Fast websites</p>
+          <p>📱 Mobile responsive design</p>
+          <p>🎨 Clean modern UI</p>
+          <p>🔧 Simple & reliable code</p>
+          <p>🚀 Website deployment</p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SKILLS -->
+  <section id="skills">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Skills</h2>
+        <p>Technologies I use to build websites.</p>
+      </div>
+
+      <div class="skills">
+
+        <div class="skill">
+          <div>🌐</div>
+          <h3>HTML</h3>
+          <p>Clean structure</p>
+        </div>
+
+        <div class="skill">
+          <div>🎨</div>
+          <h3>CSS</h3>
+          <p>Modern UI</p>
+        </div>
+
+        <div class="skill">
+          <div>⚡</div>
+          <h3>JavaScript</h3>
+          <p>Interactive websites</p>
+        </div>
+
+        <div class="skill">
+          <div>📱</div>
+          <h3>Responsive</h3>
+          <p>Mobile-first design</p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+  <section id="projects">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>My Projects</h2>
+        <p>Some of my work and experiments.</p>
+      </div>
+
+      <div class="projects">
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+
+          <div class="project-image">
+            TactiFF
+          </div>
+
+          <h3>TactiFF</h3>
+
+          <p>
+            A gaming-focused website featuring sensitivity
+            tools and useful resources for players.
+          </p>
+
+          <a
+            href="https://tactiff-dot.github.io/TactiFF-Sensitivity-V1/"
+            target="_blank"
+            class="btn btn-secondary">
+            Visit Project →
+          </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+
+          <div class="project-image">
+            DEMO
+          </div>
+
+          <h3>Business Website</h3>
+
+          <p>
+            A modern responsive website concept designed
+            for a local business.
+          </p>
+
+          <a
+            href="#contact"
+            class="btn btn-secondary">
+            Request Similar →
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+  <section id="services">
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>What I Can Build</h2>
+        <p>Simple websites that help you get online.</p>
+      </div>
+
+      <div class="services">
+
+        <div class="service-card">
+          <div class="service-icon">💻</div>
+          <h3>Business Website</h3>
+          <p>
+            Professional website for shops,
+            services and small businesses.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Landing Page</h3>
+          <p>
+            High-quality landing pages for
+            products, services and campaigns.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">👤</div>
+          <h3>Portfolio Website</h3>
+          <p>
+            Personal portfolio websites for
+            students, creators and professionals.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+        <h2>Simple Pricing</h2>
+        <p>Affordable websites for everyone.</p>
+      </div>
+
+      <div class="pricing">
+
+        <div class="price-card">
+
+          <h3>Starter</h3>
+
+          <div class="price">₹299</div>
+
+          <p>
+            Simple one-page website
+          </p>
+
+          <a
+            href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%27m%20interested%20in%20the%20Starter%20website."
+            class="btn btn-secondary"
+            target="_blank">
+            Get Started
+          </a>
+
+        </div>
+
+
+        <div class="price-card featured">
+
+          <h3>Business</h3>
+
+          <div class="price">₹499</div>
+
+          <p>
+            Modern business landing page
+          </p>
+
+          <a
+            href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%27m%20interested%20in%20the%20Business%20website."
+            class="btn btn-primary"
+            target="_blank">
+            Get Started
+          </a>
+
+        </div>
+
+
+        <div class="price-card">
+
+          <h3>Premium</h3>
+
+          <div class="price">₹999</div>
+
+          <p>
+            Complete custom website
+          </p>
+
+          <a
+            href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%27m%20interested%20in%20the%20Premium%20website."
+            class="btn btn-secondary"
+            target="_blank">
+            Get Started
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+  <section id="contact">
+
+    <div class="container">
+
+      <div class="contact-card">
+
+        <h2>Let's Build Something 🚀</h2>
+
+        <p>
+          Need a website for your business, portfolio
+          or project? Let's talk.
+        </p>
+
+        <a
+          href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20need%20a%20website."
+          class="btn btn-primary"
+          target="_blank">
+          Contact Me on WhatsApp
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+  <footer>
+
+    <div class="container">
+
+      <p>
+        © 2026 Sahil Kokode. Built with ❤️ and code.
+      </p>
+
+    </div>
+
+  </footer>
+
+
+  <!-- FLOATING WHATSAPP -->
+  <a
+    href="https://wa.me/919405479665"
+    target="_blank"
+    class="whatsapp"
+    aria-label="Chat on WhatsApp">
+    ☎
+  </a>
+
+
+</body>
+    </html>
