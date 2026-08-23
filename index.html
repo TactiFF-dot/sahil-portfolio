@@ -1,1402 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Sahil Kokode | Web Developer</title>
-
-<meta name="description"
-content="Sahil Kokode - Web Developer creating modern, responsive and professional websites for businesses.">
-
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
-}
-
-:root{
-    --bg:#070b14;
-    --card:#101827;
-    --card2:#0c1320;
-    --text:#f5f7fb;
-    --muted:#9ca9bb;
-    --accent:#4da3ff;
-    --accent2:#7c5cff;
-    --border:#202d42;
-}
-
-body{
-    font-family:Arial,Helvetica,sans-serif;
-    background:var(--bg);
-    color:var(--text);
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-    color:inherit;
-}
-
-.container{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-}
-
-/* NAVBAR */
-
-nav{
-    position:sticky;
-    top:0;
-    z-index:1000;
-    background:rgba(7,11,20,.94);
-    border-bottom:1px solid var(--border);
-    backdrop-filter:blur(12px);
-}
-
-.nav{
-    height:70px;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-}
-
-.logo{
-    font-size:24px;
-    font-weight:900;
-}
-
-.logo span{
-    color:var(--accent);
-}
-
-.nav-links{
-    display:flex;
-    gap:25px;
-    list-style:none;
-}
-
-.nav-links a{
-    color:var(--muted);
-    transition:.3s;
-}
-
-.nav-links a:hover{
-    color:var(--accent);
-}
-
-/* HERO */
-
-.hero{
-    min-height:90vh;
-    display:flex;
-    align-items:center;
-    text-align:center;
-    background:
-    radial-gradient(circle at 50% 20%,#153b65 0%,transparent 38%),
-    radial-gradient(circle at 80% 80%,#25164f 0%,transparent 32%);
-}
-
-.hero-content{
-    width:100%;
-}
-
-.badge{
-    display:inline-block;
-    padding:8px 17px;
-    border:1px solid var(--border);
-    border-radius:50px;
-    color:var(--accent);
-    margin-bottom:22px;
-}
-
-.hero h1{
-    font-size:clamp(48px,8vw,82px);
-    line-height:1;
-    margin-bottom:22px;
-}
-
-.hero h1 span{
-    color:var(--accent);
-}
-
-.hero h2{
-    font-size:clamp(20px,4vw,30px);
-    color:var(--muted);
-    margin-bottom:18px;
-}
-
-.hero p{
-    max-width:680px;
-    margin:0 auto 30px;
-    color:var(--muted);
-    font-size:18px;
-}
-
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
-
-.btn{
-    display:inline-block;
-    padding:13px 24px;
-    border-radius:9px;
-    font-weight:bold;
-    transition:.3s;
-}
-
-.btn-primary{
-    background:var(--accent);
-    color:#07101c;
-}
-
-.btn-secondary{
-    border:1px solid var(--border);
-}
-
-.btn:hover{
-    transform:translateY(-3px);
-}
-
-/* SECTIONS */
-
-section{
-    padding:85px 0;
-}
-
-.title{
-    text-align:center;
-    margin-bottom:45px;
-}
-
-.title h2{
-    font-size:40px;
-    margin-bottom:8px;
-}
-
-.title p{
-    color:var(--muted);
-}
-
-/* ABOUT */
-
-.about{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.about-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:32px;
-}
-
-.about-card h3{
-    font-size:25px;
-    margin-bottom:12px;
-}
-
-.about-card p{
-    color:var(--muted);
-}
-
-/* SKILLS */
-
-.skills{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:18px;
-}
-
-.skill{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:16px;
-    padding:25px;
-    text-align:center;
-    transition:.3s;
-}
-
-.skill:hover{
-    transform:translateY(-5px);
-    border-color:var(--accent);
-}
-
-.skill-icon{
-    font-size:40px;
-    margin-bottom:10px;
-}
-
-.skill p{
-    color:var(--muted);
-    font-size:14px;
-}
-
-/* PROJECTS */
-
-.projects{
-    display:grid;
-    grid-template-columns:repeat(2,1fr);
-    gap:22px;
-}
-
-.project{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:20px;
-    padding:30px;
-    transition:.3s;
-}
-
-.project:hover{
-    transform:translateY(-6px);
-    border-color:var(--accent);
-}
-
-.project-icon{
-    font-size:50px;
-    margin-bottom:15px;
-}
-
-.project h3{
-    font-size:26px;
-    margin-bottom:8px;
-}
-
-.project p{
-    color:var(--muted);
-    margin-bottom:20px;
-}
-
-.project-tag{
-    display:inline-block;
-    padding:6px 10px;
-    border-radius:20px;
-    background:var(--card2);
-    border:1px solid var(--border);
-    color:var(--accent);
-    font-size:13px;
-    margin:3px;
-}
-
-/* SERVICES */
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.service{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:30px;
-    text-align:center;
-}
-
-.service-icon{
-    font-size:42px;
-    margin-bottom:15px;
-}
-
-.service p{
-    color:var(--muted);
-    margin-top:10px;
-}
-
-/* PROCESS */
-
-.process{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.step{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:30px;
-}
-
-.number{
-    width:45px;
-    height:45px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    border-radius:50%;
-    background:var(--accent);
-    color:#07101c;
-    font-weight:900;
-    margin-bottom:15px;
-}
-
-.step p{
-    color:var(--muted);
-    margin-top:8px;
-}
-
-/* WHY ME */
-
-.why{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:20px;
-}
-
-.why-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:30px;
-    text-align:center;
-}
-
-.why-card p{
-    color:var(--muted);
-    margin-top:10px;
-}
-
-/* CTA */
-
-.cta{
-    text-align:center;
-    padding:70px 25px;
-    background:
-    linear-gradient(135deg,#122d4e,#171338);
-    border:1px solid var(--border);
-    border-radius:24px;
-}
-
-.cta h2{
-    font-size:42px;
-    margin-bottom:12px;
-}
-
-.cta p{
-    color:var(--muted);
-    margin-bottom:25px;
-}
-
-/* CONTACT */
-
-.contact{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.contact-card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:18px;
-    padding:30px;
-}
-
-.contact-item{
-    padding:16px 0;
-    border-bottom:1px solid var(--border);
-}
-
-.contact-item:last-child{
-    border-bottom:none;
-}
-
-.contact-item span{
-    color:var(--muted);
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-    position:fixed;
-    right:20px;
-    bottom:20px;
-    width:58px;
-    height:58px;
-    border-radius:50%;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    background:#25D366;
-    color:white;
-    font-size:28px;
-    box-shadow:0 8px 25px rgba(0,0,0,.4);
-    z-index:9999;
-    transition:.3s;
-}
-
-.whatsapp:hover{
-    transform:scale(1.1);
-}
-
-/* FOOTER */
-
-footer{
-    border-top:1px solid var(--border);
-    padding:28px;
-    text-align:center;
-    color:var(--muted);
-}
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    .nav-links{
-        display:none;
-    }
-
-    .about,
-    .projects,
-    .services,
-    .process,
-    .why,
-    .contact{
-        grid-template-columns:1fr;
-    }
-
-    .skills{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    section{
-        padding:65px 0;
-    }
-
-    .hero{
-        min-height:80vh;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .title h2{
-        font-size:34px;
-    }
-
-    .cta h2{
-        font-size:34px;
-    }
-
-}
-
-</style>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sahil Kokode | Web Developer</title>
+    <meta name="description" content="Professional Web Developer Portfolio - Building Digital Experiences">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* -----------------------------------------------------------
+           1. CORE VARIABLES & RESET
+           ----------------------------------------------------------- */
+        :root {
+            --bg-color: #070b14;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.05);
+            --text-primary: #ffffff;
+            --text-secondary: #9ca9bb;
+            --accent-cyan: #00fff9;
+            --accent-purple: #ff00c1;
+            --font-main: 'Inter', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-main);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--bg-color);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #333;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-cyan);
+        }
+
+        /* -----------------------------------------------------------
+           2. LAYOUT & UTILITIES
+           ----------------------------------------------------------- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        section {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        h1, h2, h3 {
+            line-height: 1.2;
+            font-weight: 800;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            background: linear-gradient(90deg, #fff, #9ca9bb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: transparent;
+            border: 1px solid var(--accent-cyan);
+            color: var(--accent-cyan);
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn:hover {
+            background: var(--accent-cyan);
+            color: var(--bg-color);
+            box-shadow: 0 0 20px rgba(0, 255, 249, 0.4);
+        }
+
+        /* -----------------------------------------------------------
+           3. ANIMATIONS & SPECIAL EFFECTS
+           ----------------------------------------------------------- */
+
+        /* A. Glitch Effect for Hero */
+        .glitch-text {
+            position: relative;
+            color: var(--text-primary);
+            font-size: 3.5rem; /* Adjust based on design */
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .glitch-text::before,
+        .glitch-text::after {
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--bg-color);
+        }
+
+        .glitch-text::before {
+            left: 2px;
+            text-shadow: -1px 0 var(--accent-purple);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim 5s infinite linear alternate-reverse;
+        }
+
+        .glitch-text::after {
+            left: -2px;
+            text-shadow: -1px 0 var(--accent-cyan);
+            clip: rect(44px, 450px, 56px, 0);
+            animation: glitch-anim2 5s infinite linear alternate-reverse;
+        }
+
+        @keyframes glitch-anim {
+            0% { clip: rect(31px, 9999px, 94px, 0); }
+            20% { clip: rect(6px, 9999px, 19px, 0); }
+            40% { clip: rect(68px, 9999px, 100px, 0); }
+            60% { clip: rect(22px, 9999px, 54px, 0); }
+            80% { clip: rect(96px, 9999px, 40px, 0); }
+            100% { clip: rect(55px, 9999px, 89px, 0); }
+        }
+
+        @keyframes glitch-anim2 {
+            0% { clip: rect(65px, 9999px, 100px, 0); }
+            20% { clip: rect(10px, 9999px, 56px, 0); }
+            40% { clip: rect(88px, 9999px, 16px, 0); }
+            60% { clip: rect(12px, 9999px, 67px, 0); }
+            80% { clip: rect(34px, 9999px, 23px, 0); }
+            100% { clip: rect(78px, 9999px, 11px, 0); }
+        }
+
+        /* Typing Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 1s step-end infinite;
+            color: var(--accent-cyan);
+            margin-left: 5px;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+
+        /* B. 3D Tilt & Glow Cards */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            perspective: 1000px; /* Essential for 3D */
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 15px;
+            padding: 30px;
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        /* Neon Glow Border */
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border-radius: 15px;
+            padding: 1px;
+            background: linear-gradient(45deg, var(--accent-purple), var(--accent-cyan));
+            -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .project-card:hover::before {
+            opacity: 1;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 20px 40px rgba(0, 255, 249, 0.15);
+        }
+
+        /* C. Scroll Reveal Animations */
+        .reveal-section {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* -----------------------------------------------------------
+           4. SECTIONS STYLING
+           ----------------------------------------------------------- */
+        
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            background: rgba(7, 11, 20, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
+        .logo span { color: var(--accent-cyan); }
+
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            margin-left: 30px;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover { color: var(--accent-cyan); }
+
+        /* Hero */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content h2 {
+            font-size: 1.5rem;
+            color: var(--accent-cyan);
+            font-family: var(--font-mono);
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 20px auto;
+            font-size: 1.1rem;
+        }
+
+        /* Skills */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+        .skill-tag {
+            padding: 10px 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Contact */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 15px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            border-radius: 8px;
+            font-family: var(--font-main);
+        }
+        input:focus, textarea:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .glitch-text { font-size: 2.5rem; }
+            .nav-links { display: none; } /* Simplified for demo */
+        }
+    </style>
 </head>
-
 <body>
 
-
-<!-- WHATSAPP -->
-
-<a
-href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20a%20website%20for%20my%20business."
-target="_blank"
-class="whatsapp">
-
-💬
-
-</a>
-
-
-<!-- NAVBAR -->
-
-<nav>
-
-<div class="container nav">
-
-<a href="#" class="logo">
-Sahil<span>.</span>
-</a>
-
-<ul class="nav-links">
-
-<li><a href="#about">About</a></li>
-<li><a href="#skills">Skills</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#services">Services</a></li>
-<li><a href="#contact">Contact</a></li>
-
-</ul>
-
-</div>
-
-</nav>
-
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container hero-content">
-
-<div class="badge">
-🚀 Available for Website Projects
-</div>
-
-<h1>
-Hi, I'm <span>Sahil Kokode</span>
-</h1>
-
-<h2>
-Web Developer
-</h2>
-
-<p>
-I create modern, responsive and professional websites
-for restaurants, gyms, barbers, coaching institutes
-and small businesses.
-</p>
-
-<div class="buttons">
-
-<a
-href="#projects"
-class="btn btn-primary">
-View My Work
-</a>
-
-<a
-href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20a%20website%20for%20my%20business."
-target="_blank"
-class="btn btn-secondary">
-Hire Me
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ABOUT -->
-
-<section id="about">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-About Me
-</h2>
-
-<p>
-Building websites that help businesses look professional online.
-</p>
-
-</div>
-
-
-<div class="about">
-
-<div class="about-card">
-
-<h3>
-👨‍💻 Who I Am
-</h3>
-
-<p>
-I'm Sahil Kokode, a web developer focused on creating
-clean, modern and mobile-friendly websites for businesses
-and individuals.
-</p>
-
-</div>
-
-
-<div class="about-card">
-
-<h3>
-🎯 My Goal
-</h3>
-
-<p>
-My goal is simple: create websites that look professional,
-work smoothly on mobile and make it easy for customers
-to contact a business.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SKILLS -->
-
-<section id="skills">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-My Skills
-</h2>
-
-<p>
-Tools and technologies I use to build websites.
-</p>
-
-</div>
-
-
-<div class="skills">
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🌐
-</div>
-
-<h3>
-HTML
-</h3>
-
-<p>
-Clean website structure
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-🎨
-</div>
-
-<h3>
-CSS
-</h3>
-
-<p>
-Modern responsive designs
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-⚡
-</div>
-
-<h3>
-JavaScript
-</h3>
-
-<p>
-Interactive website features
-</p>
-
-</div>
-
-
-<div class="skill">
-
-<div class="skill-icon">
-📱
-</div>
-
-<h3>
-Responsive Design
-</h3>
-
-<p>
-Mobile-friendly websites
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROJECTS -->
-
-<section id="projects">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-My Demo Projects
-</h2>
-
-<p>
-Explore websites I've created for different businesses.
-</p>
-
-</div>
-
-
-<div class="projects">
-
-
-<!-- RESTAURANT -->
-
-<div class="project">
-
-<div class="project-icon">
-🍕
-</div>
-
-<h3>
-Restaurant Website
-</h3>
-
-<p>
-Modern restaurant website with menu, reviews,
-contact information and WhatsApp booking.
-</p>
-
-<span class="project-tag">
-Restaurant
-</span>
-
-<span class="project-tag">
-Responsive
-</span>
-
-<span class="project-tag">
-WhatsApp
-</span>
-
-<br><br>
-
-<a
-href="https://tactiff-dot.github.io/restaurant-demo/"
-target="_blank"
-class="btn btn-primary">
-
-View Demo →
-
-</a>
-
-</div>
-
-
-<!-- GYM -->
-
-<div class="project">
-
-<div class="project-icon">
-🏋️
-</div>
-
-<h3>
-Gym Website
-</h3>
-
-<p>
-Professional fitness website with programs,
-pricing, trainers, reviews and contact section.
-</p>
-
-<span class="project-tag">
-Fitness
-</span>
-
-<span class="project-tag">
-Responsive
-</span>
-
-<span class="project-tag">
-WhatsApp
-</span>
-
-<br><br>
-
-<a
-href="https://tactiff-dot.github.io/gym-demo/"
-target="_blank"
-class="btn btn-primary">
-
-View Demo →
-
-</a>
-
-</div>
-
-
-<!-- BARBER -->
-
-<div class="project">
-
-<div class="project-icon">
-💈
-</div>
-
-<h3>
-Barber Website
-</h3>
-
-<p>
-Premium barber website with services, pricing,
-reviews and appointment booking.
-</p>
-
-<span class="project-tag">
-Barber
-</span>
-
-<span class="project-tag">
-Booking
-</span>
-
-<span class="project-tag">
-Mobile Friendly
-</span>
-
-<br><br>
-
-<a
-href="https://tactiff-dot.github.io/barber-demo/"
-target="_blank"
-class="btn btn-primary">
-
-View Demo →
-
-</a>
-
-</div>
-
-
-<!-- COACHING -->
-
-<div class="project">
-
-<div class="project-icon">
-📚
-</div>
-
-<h3>
-Coaching Website
-</h3>
-
-<p>
-Educational website with courses, features,
-fee plans, testimonials and enquiry section.
-</p>
-
-<span class="project-tag">
-Education
-</span>
-
-<span class="project-tag">
-Courses
-</span>
-
-<span class="project-tag">
-WhatsApp
-</span>
-
-<br><br>
-
-<a
-href="https://tactiff-dot.github.io/coaching-demo/"
-target="_blank"
-class="btn btn-primary">
-
-View Demo →
-
-</a>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- SERVICES -->
-
-<section id="services">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-What I Can Build
-</h2>
-
-<p>
-Simple websites designed for real businesses.
-</p>
-
-</div>
-
-
-<div class="services">
-
-
-<div class="service">
-
-<div class="service-icon">
-🌐
-</div>
-
-<h3>
-Business Websites
-</h3>
-
-<p>
-Professional websites for local businesses,
-shops and services.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-📱
-</div>
-
-<h3>
-Mobile Friendly
-</h3>
-
-<p>
-Websites that look great on phones,
-tablets and computers.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-💬
-</div>
-
-<h3>
-WhatsApp Integration
-</h3>
-
-<p>
-Make it easy for customers to contact
-your business directly.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-⚡
-</div>
-
-<h3>
-Fast Landing Pages
-</h3>
-
-<p>
-Simple landing pages designed to present
-your business clearly.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-🎨
-</div>
-
-<h3>
-Modern Design
-</h3>
-
-<p>
-Clean layouts with a professional
-visual appearance.
-</p>
-
-</div>
-
-
-<div class="service">
-
-<div class="service-icon">
-🔧
-</div>
-
-<h3>
-Website Updates
-</h3>
-
-<p>
-I can update text, sections, prices,
-contact details and more.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- PROCESS -->
-
-<section>
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-How I Work
-</h2>
-
-<p>
-Simple process from idea to website.
-</p>
-
-</div>
-
-
-<div class="process">
-
-
-<div class="step">
-
-<div class="number">
-1
-</div>
-
-<h3>
-Tell Me Your Requirements
-</h3>
-
-<p>
-Share your business details, services,
-photos and contact information.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">
-2
-</div>
-
-<h3>
-I Build The Website
-</h3>
-
-<p>
-I customize the design and content
-according to your business.
-</p>
-
-</div>
-
-
-<div class="step">
-
-<div class="number">
-3
-</div>
-
-<h3>
-Launch & Deliver
-</h3>
-
-<p>
-After final changes, your website
-is ready to share with customers.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- WHY HIRE -->
-
-<section>
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-Why Work With Me?
-</h2>
-
-<p>
-Focused on simple, useful and professional websites.
-</p>
-
-</div>
-
-
-<div class="why">
-
-
-<div class="why-card">
-
-<div class="service-icon">
-📱
-</div>
-
-<h3>
-Mobile First
-</h3>
-
-<p>
-Your customers can easily use
-the website from their phones.
-</p>
-
-</div>
-
-
-<div class="why-card">
-
-<div class="service-icon">
-💬
-</div>
-
-<h3>
-Easy Contact
-</h3>
-
-<p>
-WhatsApp and contact options make
-it easy for customers to reach you.
-</p>
-
-</div>
-
-
-<div class="why-card">
-
-<div class="service-icon">
-🚀
-</div>
-
-<h3>
-Quick Delivery
-</h3>
-
-<p>
-Using ready-made templates allows
-faster website development.
-</p>
-
-</div>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CTA -->
-
-<section>
-
-<div class="container">
-
-<div class="cta">
-
-<h2>
-Need A Website For Your Business?
-</h2>
-
-<p>
-Let's create a professional online presence for your business.
-</p>
-
-<a
-href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20to%20discuss%20a%20website%20for%20my%20business."
-target="_blank"
-class="btn btn-primary">
-
-Start A Project →
-
-</a>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="container">
-
-<div class="title">
-
-<h2>
-Contact Me
-</h2>
-
-<p>
-Have a project in mind? Let's talk.
-</p>
-
-</div>
-
-
-<div class="contact">
-
-
-<div class="contact-card">
-
-<h3>
-📞 Get In Touch
-</h3>
-
-<div class="contact-item">
-
-<strong>
-Phone / WhatsApp
-</strong>
-
-<br>
-
-<span>
-+91 94054 79665
-</span>
-
-</div>
-
-
-<div class="contact-item">
-
-<strong>
-Role
-</strong>
-
-<br>
-
-<span>
-Web Developer
-</span>
-
-</div>
-
-
-<div class="contact-item">
-
-<strong>
-Services
-</strong>
-
-<br>
-
-<span>
-Business Websites · Landing Pages · Website Updates
-</span>
-
-</div>
-
-</div>
-
-
-<div class="contact-card">
-
-<h3>
-🚀 Start Your Project
-</h3>
-
-<p style="color:#9ca9bb;margin:15px 0 25px;">
-
-Tell me what kind of website you need
-and I'll get back to you.
-
-</p>
-
-<a
-
-href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20to%20build%20a%20website."
-
-target="_blank"
-
-class="btn btn-primary">
-
-Message Me On WhatsApp
-
-</a>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- FOOTER -->
-
-<footer>
-
-<p>
-© 2026 Sahil Kokode · Web Developer
-</p>
-
-<p style="margin-top:5px;font-size:13px;">
-
-Built with HTML & CSS
-
-</p>
-
-</footer>
-
-
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">Sahil<span>.Dev</span></a>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#projects">Projects</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="container hero-content">
+            <!-- Glitch Text Animation -->
+            <h2 class="typing-text">Hi, I'm Sahil</h2>
+            <h1 class="glitch-text" data-text="Building Digital Experiences">Building Digital Experiences</h1>
+            <p>I craft high-performance, accessible, and visually stunning web solutions. Specializing in modern frontend architecture and seamless user interactions.</p>
+            <div style="margin-top: 30px;">
+                <a href="#projects" class="btn">View My Work</a>
+                <a href="#contact" class="btn" style="margin-left: 15px; border-color: var(--accent-purple); color: var(--accent-purple);">Contact Me</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="reveal-section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div style="max-width: 800px; margin: 0 auto; color: var(--text-secondary); text-align: center;">
+                <p>I am a passionate Web Developer with a keen eye for design and a love for clean code. I don't just build websites; I build digital products that solve real-world problems. With expertise in React, Node.js, and modern CSS, I ensure every pixel counts.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="reveal-section">
+        <div class="container">
+            <h2 class="section-title">Tech Stack</h2>
+            <div class="skills-grid">
+                <div class="skill-tag">HTML5</div>
+                <div class="skill-tag">CSS3 / SASS</div>
+                <div class="skill-tag">JavaScript (ES6+)</div>
+                <div class="skill-tag">React.js</div>
+                <div class="skill-tag">Node.js</div>
+                <div class="skill-tag">TypeScript</div>
+                <div class="skill-tag">Tailwind CSS</div>
+                <div class="skill-tag">Git / GitHub</div>
+                <div class="skill-tag">Figma</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="reveal-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <!-- Card 1 -->
+                <div class="project-card">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 10px;">E-Commerce Dashboard</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">A real-time analytics dashboard with dark mode and data visualization.</p>
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">React | Chart.js | Firebase</div>
+                    <a href="#" style="color: #fff; text-decoration: underline;">View Code</a>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="project-card">
+                    <h3 style="color: var(--accent-purple); margin-bottom: 10px;">Portfolio v1</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">My previous portfolio showcasing clean code and minimal design.</p>
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">HTML | CSS | JS</div>
+                    <a href="#" style="color: #fff; text-decoration: underline;">View Code</a>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="project-card">
+                    <h3 style="color: var(--accent-cyan); margin-bottom: 10px;">Task Manager App</h3>
+                    <p style="color: var(--text-secondary); margin-bottom: 20px;">Productivity tool with drag-and-drop features and local storage.</p>
+                    <div style="font-size: 0.8rem; color: #666; margin-bottom: 15px;">Vue.js | LocalStorage</div>
+                    <a href="#" style="color: #fff; text-decoration: underline;">View Code</a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="reveal-section">
+        <div class="container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Sahil Kokode. Built with Passion.</p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT ANIMATIONS -->
+    <script>
+        // 1. Typing Effect for Hero Subtitle
+        const typingTextElement = document.querySelector('.typing-text');
+        const textToType = "Web Developer | UI/UX Enthusiast";
+        let charIndex = 0;
+
+        function typeWriter() {
+            if (charIndex < textToType.length) {
+                typingTextElement.textContent = textToType.substring(0, charIndex + 1) + '|';
+                charIndex++;
+                setTimeout(typeWriter, 100);
+            } else {
+                // Remove cursor after typing is done (optional)
+                setTimeout(() => {
+                    typingTextElement.classList.add('typing-cursor');
+                }, 500);
+            }
+        }
+        
+        // Start typing on load
+        window.addEventListener('load', () => {
+            typingTextElement.textContent = '';
+            typeWriter();
+        });
+
+
+        // 2. 3D Tilt Effect for Project Cards
+        const cards = document.querySelectorAll('.project-card');
+
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                
+                // Calculate rotation (max 15 degrees)
+                const rotateX = ((y - centerY) / centerY) * -15;
+                const rotateY = ((x - centerX) / centerX) * 15;
+                
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+            });
+
+            // Reset on mouse leave
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)`;
+            });
+        });
+
+
+        // 3. Scroll Reveal Animation (Intersection Observer)
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    // Optional: Stop observing once visible
+                    // observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            observer.observe(section);
+        });
+
+    </script>
 </body>
 </html>
