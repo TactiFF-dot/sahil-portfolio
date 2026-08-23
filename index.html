@@ -3,509 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sahil Kokode | Next-Gen Portfolio</title>
-    <meta name="description" content="High Performance Web Developer Portfolio with Modern UI">
-    
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Sahil.dev | Portfolio</title>
     <style>
-        /* -----------------------------------------------------------
-           1. CORE VARIABLES & SETUP
-           ----------------------------------------------------------- */
-        :root {
-            --bg-dark: #050505;
-            --bg-panel: #121212;
-            --accent-primary: #00f2ff; /* Cyan Neon */
-            --accent-secondary: #bd00ff; /* Purple Neon */
-            --text-main: #ffffff;
-            --text-muted: #8892b0;
-            --glass-bg: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.08);
-            --glass-blur: blur(12px);
-            --font-head: 'Outfit', sans-serif;
-            --font-code: 'Space Mono', monospace;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            background-color: var(--bg-dark);
-            color: var(--text-main);
-            font-family: var(--font-head);
-            overflow-x: hidden;
-            line-height: 1.6;
-        }
-
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #000; }
-        ::-webkit-scrollbar-thumb { background: var(--accent-primary); border-radius: 3px; }
-
-        /* -----------------------------------------------------------
-           2. ANIMATED BACKGROUND
-           ----------------------------------------------------------- */
-        .bg-grid {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background-image: 
-                linear-gradient(rgba(0, 242, 255, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(0, 242, 255, 0.05) 1px, transparent 1px);
-            background-size: 50px 50px;
-            z-index: -1;
-            animation: moveGrid 20s linear infinite;
-        }
-
-        @keyframes moveGrid {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100px; }
-        }
-
-        .glow-orb {
-            position: fixed;
-            width: 400px;
-            height: 400px;
-            background: radial-gradient(circle, rgba(189, 0, 255, 0.2) 0%, rgba(0, 0, 0, 0) 70%);
-            border-radius: 50%;
-            pointer-events: none;
-            z-index: -1;
-            filter: blur(40px);
-        }
-        .orb-1 { top: -100px; left: -100px; animation: floatOrb 10s ease-in-out infinite alternate; }
-        .orb-2 { bottom: -100px; right: -100px; animation: floatOrb 12s ease-in-out infinite alternate-reverse; }
-
-        @keyframes floatOrb {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
-        }
-
-        /* -----------------------------------------------------------
-           3. UI COMPONENTS
-           ----------------------------------------------------------- */
+        /* Basic Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background: #000; color: #fff; }
         
-        /* Navbar */
-        header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 20px 0;
-            z-index: 1000;
-            background: rgba(5, 5, 5, 0.7);
-            backdrop-filter: var(--glass-blur);
-            border-bottom: 1px solid var(--glass-border);
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 24px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.8rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            color: #fff;
-            text-decoration: none;
-            position: relative;
-            display: inline-block;
-        }
-        .logo span { color: var(--accent-primary); }
+        /* Header */
+        nav { padding: 20px; display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.8); position: fixed; width: 100%; top: 0; backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid #333; }
+        .logo { font-size: 1.5rem; font-weight: bold; background: linear-gradient(to right, #a855f7, #38bdf8); -webkit-background-clip: text; color: transparent; }
         
-        /* Glitch Logo Effect */
-        .logo::before {
-            content: "Sahil.Dev";
-            position: absolute;
-            left: -2px;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--bg-dark);
-            color: var(--accent-secondary);
-            z-index: -1;
-            clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
-            transform: translate(-2px, -2px);
-            opacity: 0;
-            animation: glitch-anim 3s infinite linear alternate-reverse;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 30px;
-        }
-
-        .nav-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            font-family: var(--font-code);
-            transition: 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--accent-primary);
-            text-shadow: 0 0 10px var(--accent-primary);
-        }
-
-        /* Buttons */
-        .btn {
-            padding: 12px 35px;
-            border: 1px solid var(--accent-primary);
-            background: transparent;
-            color: var(--accent-primary);
-            font-family: var(--font-code);
-            font-weight: 700;
-            text-transform: uppercase;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0; left: -100%;
-            width: 100%; height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 242, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-
-        .btn:hover::before {
-            left: 100%;
-        }
-
-        .btn:hover {
-            box-shadow: 0 0 20px var(--accent-primary);
-            background: rgba(0, 242, 255, 0.1);
-        }
-
-        /* -----------------------------------------------------------
-           4. SECTIONS & ANIMATIONS
-           ----------------------------------------------------------- */
-        
-        section {
-            padding: 120px 0;
-            position: relative;
-        }
-
         /* Hero Section */
-        #hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .hero-title {
-            font-size: 4.5rem;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            background: linear-gradient(135deg, #fff 30%, var(--accent-primary) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            display: inline-block;
-        }
-
-        .hero-subtitle {
-            font-size: 1.5rem;
-            color: var(--text-muted);
-            font-family: var(--font-code);
-            margin-bottom: 40px;
-            display: block;
-        }
-
-        .cursor {
-            display: inline-block;
-            width: 10px;
-            height: 1.5rem;
-            background-color: var(--accent-primary);
-            margin-left: 5px;
-            animation: blink 1s infinite;
-        }
-
-        @keyframes blink { 50% { opacity: 0; } }
-
-        /* Cards (Glassmorphism) */
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 30px;
-            border-radius: 16px;
-            backdrop-filter: var(--glass-blur);
-            -webkit-backdrop-filter: var(--glass-blur);
-            transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card::after {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
-            transform: translateX(-100%);
-            transition: 0.5s;
-        }
-
-        .card:hover::after {
-            transform: translateX(100%);
-        }
-
-        .card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
-            border-color: var(--accent-primary);
-        }
-
-        .card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: #fff;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-        }
-
-        .tech-tags {
-            margin-top: 20px;
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-
-        .tag {
-            font-size: 0.75rem;
-            font-family: var(--font-code);
-            color: var(--accent-primary);
-            background: rgba(0, 242, 255, 0.1);
-            padding: 5px 10px;
-            border-radius: 4px;
-        }
-
-        /* Scroll Reveal */
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.8s ease-out;
-        }
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Animations */
-        @keyframes glitch-anim {
-            0% { clip-path: inset(20% 0 80% 0); transform: translate(-2px, 1px); }
-            20% { clip-path: inset(60% 0 10% 0); transform: translate(2px, -1px); }
-            40% { clip-path: inset(10% 0 50% 0); transform: translate(-1px, 2px); }
-            60% { clip-path: inset(40% 0 40% 0); transform: translate(1px, -2px); }
-            80% { clip-path: inset(30% 0 20% 0); transform: translate(-2px, 1px); }
-            100% { clip-path: inset(50% 0 30% 0); transform: translate(2px, -1px); }
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            .hero-title { font-size: 3rem; }
-            .nav-links { display: none; }
-            .glow-orb { width: 200px; height: 200px; }
+        .hero { height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 20px; background: radial-gradient(circle at center, #1a1a2e 0%, #000 100%); }
+        h1 { font-size: 2.5rem; margin-bottom: 20px; line-height: 1.2; }
+        .highlight { background: linear-gradient(to right, #a855f7, #38bdf8); -webkit-background-clip: text; color: transparent; }
+        p { color: #aaa; max-width: 600px; margin-bottom: 30px; font-size: 1rem; }
+        
+        /* Buttons */
+        .btn { padding: 12px 24px; border-radius: 30px; text-decoration: none; font-weight: bold; transition: 0.3s; display: inline-block; margin: 5px; }
+        .btn-primary { background: linear-gradient(to right, #a855f7, #38bdf8); color: white; border: none; }
+        .btn-secondary { background: rgba(255,255,255,0.1); color: white; border: 1px solid #333; }
+        
+        /* Projects Grid */
+        .projects { padding: 50px 20px; max-width: 1200px; margin: 0 auto; }
+        .section-title { font-size: 2rem; margin-bottom: 30px; text-align: center; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        
+        /* Card Style */
+        .card { background: #111; border: 1px solid #333; border-radius: 15px; overflow: hidden; transition: transform 0.3s; }
+        .card img { width: 100%; height: 150px; object-fit: cover; }
+        .card-content { padding: 20px; }
+        .card h3 { margin-bottom: 10px; color: #fff; }
+        .card p { font-size: 0.9rem; color: #888; margin-bottom: 15px; }
+        .tags span { background: #222; color: #a855f7; padding: 5px 10px; border-radius: 5px; font-size: 0.8rem; margin-right: 5px; }
+        
+        /* Contact */
+        .contact { padding: 50px 20px; text-align: center; background: #0a0a0a; }
+        input, textarea { width: 100%; padding: 15px; margin-bottom: 15px; background: #111; border: 1px solid #333; color: white; border-radius: 10px; }
+        
+        /* Mobile Adjustments */
+        @media (min-width: 768px) {
+            .grid { grid-template-columns: repeat(3, 1fr); }
+            h1 { font-size: 4rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Background Effects -->
-    <div class="bg-grid"></div>
-    <div class="glow-orb orb-1"></div>
-    <div class="glow-orb orb-2"></div>
+    <nav>
+        <div class="logo">Sahil.dev</div>
+        <div style="color: #fff; font-size: 0.9rem;">Menu</div>
+    </nav>
 
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <a href="#" class="logo">Sahil<span>.Dev</span></a>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#contact" class="btn" style="padding: 8px 20px; font-size: 0.8rem;">Let's Talk</a>
-                </div>
-            </nav>
+    <section class="hero">
+        <h1>Building Digital <br><span class="highlight">Experiences</span></h1>
+        <p>I craft high-performance web applications with modern technologies.</p>
+        <div>
+            <a href="#projects" class="btn btn-primary">View Projects</a>
+            <a href="#" class="btn btn-secondary">Download CV</a>
         </div>
-    </header>
+    </section>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <div class="container">
-            <div class="reveal">
-                <h2 style="color: var(--accent-primary); font-family: var(--font-code); margin-bottom: 10px;">Hello, World!</h2>
-                <h1 class="hero-title">I Build The Future.<br>Pixel Perfect.</h1>
-                <span class="hero-subtitle">
-                    Full Stack Developer <span class="cursor"></span>
-                </span>
-                <div style="margin-top: 40px;">
-                    <a href="#projects" class="btn">View Projects</a>
-                    <a href="#contact" class="btn" style="border-color: var(--accent-secondary); color: var(--accent-secondary); margin-left: 20px;">Contact Me</a>
+    <section id="projects" class="projects">
+        <h2 class="section-title">Featured Projects</h2>
+        <div class="grid">
+            <!-- Project 1 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1557821552-1710bf571156?w=500" alt="E-commerce">
+                <div class="card-content">
+                    <h3>Nova E-Commerce</h3>
+                    <p>A full-stack shopping experience with real-time inventory.</p>
+                    <div class="tags"><span>React</span><span>Node.js</span></div>
+                </div>
+            </div>
+            <!-- Project 2 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" alt="Dashboard">
+                <div class="card-content">
+                    <h3>Zenith SaaS</h3>
+                    <p>Data-driven analytics dashboard with real-time charts.</p>
+                    <div class="tags"><span>Next.js</span><span>Tailwind</span></div>
+                </div>
+            </div>
+            <!-- Project 3 -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?w=500" alt="Creative">
+                <div class="card-content">
+                    <h3>Aura Studio</h3>
+                    <p>Award-winning landing page with 3D elements.</p>
+                    <div class="tags"><span>Three.js</span><span>GSAP</span></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="reveal" style="font-size: 2.5rem; margin-bottom: 40px; text-align: center;">
-                Featured <span style="color: var(--accent-primary);">Projects</span>
-            </h2>
-            
-            <div class="grid-container">
-                <!-- Project 1 -->
-                <div class="card reveal">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">🚀</div>
-                    <h3>Crypto Dashboard</h3>
-                    <p>Real-time data visualization with WebSocket integration and dark mode UI.</p>
-                    <div class="tech-tags">
-                        <span class="tag">React</span>
-                        <span class="tag">Node.js</span>
-                        <span class="tag">Socket.io</span>
-                    </div>
-                </div>
-
-                <!-- Project 2 -->
-                <div class="card reveal">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">⚡</div>
-                    <h3>E-Commerce Engine</h3>
-                    <p>High performance shopping cart with Stripe integration and inventory management.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Next.js</span>
-                        <span class="tag">TypeScript</span>
-                        <span class="tag">Stripe</span>
-                    </div>
-                </div>
-
-                <!-- Project 3 -->
-                <div class="card reveal">
-                    <div style="font-size: 2rem; margin-bottom: 10px;">🎨</div>
-                    <h3>AI Art Generator</h3>
-                    <p>Frontend interface for Stable Diffusion with prompt engineering tools.</p>
-                    <div class="tech-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">FastAPI</span>
-                        <span class="tag">React</span>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <section class="contact">
+        <h2 class="section-title">Let's Work Together</h2>
+        <form>
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="4" placeholder="Your Message"></textarea>
+            <button class="btn btn-primary" style="width: 100%; border: none; cursor: pointer;">Send Message</button>
+        </form>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" style="background: rgba(0,0,0,0.3);">
-        <div class="container">
-            <h2 class="reveal" style="font-size: 2.5rem; margin-bottom: 40px; text-align: center;">
-                Tech <span style="color: var(--accent-secondary);">Stack</span>
-            </h2>
-            <div class="grid-container reveal" style="text-align: center;">
-                <div class="card">
-                    <h4 style="color: var(--accent-primary); margin-bottom: 15px;">Frontend</h4>
-                    <p>React, Vue, Tailwind, GSAP, WebGL</p>
-                </div>
-                <div class="card">
-                    <h4 style="color: var(--accent-primary); margin-bottom: 15px;">Backend</h4>
-                    <p>Node.js, Python, Go, PostgreSQL, MongoDB</p>
-                </div>
-                <div class="card">
-                    <h4 style="color: var(--accent-primary); margin-bottom: 15px;">Tools</h4>
-                    <p>Git, Docker, AWS, Figma, CI/CD</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="container" style="max-width: 600px;">
-            <h2 class="reveal" style="text-align: center; margin-bottom: 30px;">Get In Touch</h2>
-            <form class="card reveal">
-                <input type="text" placeholder="Name" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: #fff;">
-                <input type="email" placeholder="Email" style="width: 100%; padding: 15px; margin-bottom: 15px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: #fff;">
-                <textarea rows="5" placeholder="Message" style="width: 100%; padding: 15px; margin-bottom: 20px; background: rgba(255,255,255,0.05); border: 1px solid #333; color: #fff; font-family: inherit;"></textarea>
-                <button type="submit" class="btn" style="width: 100%;">Send Message</button>
-            </form>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer style="padding: 30px 0; text-align: center; color: #555; border-top: 1px solid #222; margin-top: 50px;">
-        <p>&copy; 2026 Sahil Kokode. All Systems Nominal.</p>
-    </footer>
-
-    <!-- JavaScript for Animations -->
-    <script>
-        // 1. Scroll Reveal Logic
-        const revealElements = document.querySelectorAll('.reveal');
-        
-        const revealOnScroll = () => {
-            const windowHeight = window.innerHeight;
-            const elementVisible = 150;
-            
-            revealElements.forEach((reveal) => {
-                const elementTop = reveal.getBoundingClientRect().top;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveal.classList.add('active');
-                }
-            });
-        };
-
-        window.addEventListener('scroll', revealOnScroll);
-        // Trigger once on load
-        revealOnScroll();
-
-        // 2. Glitch Effect for Logo (Random intervals)
-        const logo = document.querySelector('.logo');
-        setInterval(() => {
-            logo.style.animation = 'none';
-            void logo.offsetWidth; // trigger reflow
-            logo.style.animation = null;
-        }, 3000); // Every 3 seconds
-
-        // 3. Mouse Move Parallax for Orbs
-        document.addEventListener('mousemove', (e) => {
-            const orbs = document.querySelectorAll('.glow-orb');
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
-
-            orbs.forEach(orb => {
-                const speed = 20;
-                orb.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
-            });
-        });
-    </script>
 </body>
 </html>
