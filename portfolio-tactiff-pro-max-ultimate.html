@@ -1,0 +1,3120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sahil Kokode | Web Developer</title>
+
+<meta name="description"
+content="Sahil Kokode - Web Developer creating modern, responsive and professional websites for businesses.">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#070b14;
+    --card:#101827;
+    --card2:#0c1320;
+    --text:#f5f7fb;
+    --muted:#9ca9bb;
+    --accent:#4da3ff;
+    --accent2:#7c5cff;
+    --border:#202d42;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1100px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+nav{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(7,11,20,.94);
+    border-bottom:1px solid var(--border);
+    backdrop-filter:blur(12px);
+}
+
+.nav{
+    height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:900;
+}
+
+.logo span{
+    color:var(--accent);
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:var(--muted);
+    transition:.3s;
+}
+
+.nav-links a:hover{
+    color:var(--accent);
+}
+
+/* HERO */
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    align-items:center;
+    text-align:center;
+    background:
+    radial-gradient(circle at 50% 20%,#153b65 0%,transparent 38%),
+    radial-gradient(circle at 80% 80%,#25164f 0%,transparent 32%);
+}
+
+.hero-content{
+    width:100%;
+}
+
+.badge{
+    display:inline-block;
+    padding:8px 17px;
+    border:1px solid var(--border);
+    border-radius:50px;
+    color:var(--accent);
+    margin-bottom:22px;
+}
+
+.hero h1{
+    font-size:clamp(48px,8vw,82px);
+    line-height:1;
+    margin-bottom:22px;
+}
+
+.hero h1 span{
+    color:var(--accent);
+}
+
+.hero h2{
+    font-size:clamp(20px,4vw,30px);
+    color:var(--muted);
+    margin-bottom:18px;
+}
+
+.hero p{
+    max-width:680px;
+    margin:0 auto 30px;
+    color:var(--muted);
+    font-size:18px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    display:inline-block;
+    padding:13px 24px;
+    border-radius:9px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn-primary{
+    background:var(--accent);
+    color:#07101c;
+}
+
+.btn-secondary{
+    border:1px solid var(--border);
+}
+
+.btn:hover{
+    transform:translateY(-3px);
+}
+
+/* SECTIONS */
+
+section{
+    padding:85px 0;
+}
+
+.title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.title h2{
+    font-size:40px;
+    margin-bottom:8px;
+}
+
+.title p{
+    color:var(--muted);
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.about-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:32px;
+}
+
+.about-card h3{
+    font-size:25px;
+    margin-bottom:12px;
+}
+
+.about-card p{
+    color:var(--muted);
+}
+
+/* SKILLS */
+
+.skills{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:18px;
+}
+
+.skill{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:16px;
+    padding:25px;
+    text-align:center;
+    transition:.3s;
+}
+
+.skill:hover{
+    transform:translateY(-5px);
+    border-color:var(--accent);
+}
+
+.skill-icon{
+    font-size:40px;
+    margin-bottom:10px;
+}
+
+.skill p{
+    color:var(--muted);
+    font-size:14px;
+}
+
+/* PROJECTS */
+
+.projects{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:22px;
+}
+
+.project{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:30px;
+    transition:.3s;
+}
+
+.project:hover{
+    transform:translateY(-6px);
+    border-color:var(--accent);
+}
+
+.project-icon{
+    font-size:50px;
+    margin-bottom:15px;
+}
+
+.project h3{
+    font-size:26px;
+    margin-bottom:8px;
+}
+
+.project p{
+    color:var(--muted);
+    margin-bottom:20px;
+}
+
+.project-tag{
+    display:inline-block;
+    padding:6px 10px;
+    border-radius:20px;
+    background:var(--card2);
+    border:1px solid var(--border);
+    color:var(--accent);
+    font-size:13px;
+    margin:3px;
+}
+
+/* SERVICES */
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+}
+
+.service-icon{
+    font-size:42px;
+    margin-bottom:15px;
+}
+
+.service p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* PROCESS */
+
+.process{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.step{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:30px;
+}
+
+.number{
+    width:45px;
+    height:45px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    background:var(--accent);
+    color:#07101c;
+    font-weight:900;
+    margin-bottom:15px;
+}
+
+.step p{
+    color:var(--muted);
+    margin-top:8px;
+}
+
+/* WHY ME */
+
+.why{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.why-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:30px;
+    text-align:center;
+}
+
+.why-card p{
+    color:var(--muted);
+    margin-top:10px;
+}
+
+/* CTA */
+
+.cta{
+    text-align:center;
+    padding:70px 25px;
+    background:
+    linear-gradient(135deg,#122d4e,#171338);
+    border:1px solid var(--border);
+    border-radius:24px;
+}
+
+.cta h2{
+    font-size:42px;
+    margin-bottom:12px;
+}
+
+.cta p{
+    color:var(--muted);
+    margin-bottom:25px;
+}
+
+/* CONTACT */
+
+.contact{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+}
+
+.contact-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:18px;
+    padding:30px;
+}
+
+.contact-item{
+    padding:16px 0;
+    border-bottom:1px solid var(--border);
+}
+
+.contact-item:last-child{
+    border-bottom:none;
+}
+
+.contact-item span{
+    color:var(--muted);
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#25D366;
+    color:white;
+    font-size:28px;
+    box-shadow:0 8px 25px rgba(0,0,0,.4);
+    z-index:9999;
+    transition:.3s;
+}
+
+.whatsapp:hover{
+    transform:scale(1.1);
+}
+
+/* FOOTER */
+
+footer{
+    border-top:1px solid var(--border);
+    padding:28px;
+    text-align:center;
+    color:var(--muted);
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .about,
+    .projects,
+    .services,
+    .process,
+    .why,
+    .contact{
+        grid-template-columns:1fr;
+    }
+
+    .skills{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    section{
+        padding:65px 0;
+    }
+
+    .hero{
+        min-height:80vh;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .title h2{
+        font-size:34px;
+    }
+
+    .cta h2{
+        font-size:34px;
+    }
+
+}
+
+</style>
+
+
+<style id="nine-phase-upgrade">
+:root{scroll-behavior:smooth}
+.upgradeBar{position:fixed;top:0;left:0;right:0;height:3px;z-index:9999;background:linear-gradient(90deg,currentColor 0%,transparent 0%);pointer-events:none}
+.upgradeToast{position:fixed;right:18px;bottom:18px;z-index:9998;max-width:330px;padding:13px 15px;border-radius:14px;background:#111;color:#fff;box-shadow:0 16px 45px #0005;font:600 12px/1.45 system-ui;opacity:0;transform:translateY(16px);pointer-events:none;transition:.28s}
+.upgradeToast.show{opacity:1;transform:none}
+.upgradeReveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
+.upgradeReveal.visible{opacity:1;transform:none}
+.upgradeModal{position:fixed;inset:0;background:#0009;z-index:9997;display:none;place-items:center;padding:18px}
+.upgradeModal.open{display:grid}
+.upgradePanel{width:min(560px,100%);max-height:90vh;overflow:auto;background:#fff;color:#111;border-radius:22px;padding:22px;box-shadow:0 30px 90px #0007}
+.upgradePanel h3{margin:0 0 8px;font-size:24px}
+.upgradePanel p{color:#666;font-size:13px}
+.upgradePanel .row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.upgradePanel input,.upgradePanel select,.upgradePanel textarea{width:100%;box-sizing:border-box;border:1px solid #ddd;border-radius:11px;padding:12px;margin:5px 0 10px;font:inherit}
+.upgradePanel button{border:0;border-radius:11px;padding:12px 16px;cursor:pointer;font-weight:800}
+.upgradeClose{float:right;background:#eee}
+.upgradePrimary{background:#111;color:#fff}
+.upgradeSticky{position:fixed;left:14px;right:14px;bottom:14px;z-index:9990;display:flex;justify-content:center;pointer-events:none}
+.upgradeSticky button{pointer-events:auto;border:0;border-radius:999px;padding:13px 20px;font-weight:900;box-shadow:0 12px 35px #0003}
+@media(min-width:760px){.upgradeSticky{display:none}}
+@media(max-width:520px){.upgradePanel .row{grid-template-columns:1fr}}
+</style>
+
+
+
+<style id="wow-100x">
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600;1,700&display=swap');
+body{font-family:"DM Sans",Arial,sans-serif}
+.wow-hero{position:relative;min-height:94vh!important;display:grid!important;place-items:center;overflow:hidden!important;text-align:left!important}
+.wow-hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 20% 30%,var(--wow-glow1),transparent 35%),radial-gradient(circle at 85% 70%,var(--wow-glow2),transparent 34%);pointer-events:none}
+.wow-hero:after{content:"";position:absolute;inset:0;opacity:.11;background-image:linear-gradient(rgba(255,255,255,.12) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.12) 1px,transparent 1px);background-size:70px 70px;mask-image:linear-gradient(to bottom,#000,transparent 90%);pointer-events:none}
+.wow-grid{position:relative;z-index:2;width:min(1180px,92%);margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.wow-copy{max-width:720px}
+.wow-eyebrow{font-size:10px;letter-spacing:.2em;font-weight:700;color:var(--wow-accent);margin-bottom:22px}
+.wow-title{font-size:clamp(48px,7vw,92px)!important;line-height:.95!important;letter-spacing:-.055em!important;margin:0 0 24px!important}
+.wow-title em{font-family:"Playfair Display",Georgia,serif;color:var(--wow-accent);font-weight:600}
+.wow-desc{max-width:610px!important;font-size:17px!important;color:var(--wow-muted)!important;margin:0 0 30px!important}
+.wow-actions{display:flex;gap:12px;flex-wrap:wrap}.wow-actions .btn{padding:14px 20px;border-radius:999px}
+.wow-meta{display:flex;gap:25px;margin-top:30px;padding-top:18px;border-top:1px solid var(--wow-line);font-size:9px;color:var(--wow-muted)}
+.wow-meta b{display:block;color:var(--wow-text);font-size:17px;margin-bottom:2px}
+.wow-visual{min-height:520px;position:relative;display:grid;place-items:center}
+.float-card{position:absolute;z-index:4;min-width:185px;padding:14px 16px;border:1px solid var(--wow-line);border-radius:16px;background:rgba(10,10,12,.66);backdrop-filter:blur(18px);box-shadow:0 24px 70px rgba(0,0,0,.28);animation:floaty 5s ease-in-out infinite}
+.float-card small{display:block;font-size:8px;letter-spacing:.15em;color:var(--wow-accent);margin-bottom:6px}
+.float-card b{display:block;font-size:12px}.float-card span{display:block;font-size:9px;color:var(--wow-muted);margin-top:4px}
+.fc1{left:0;top:24%}.fc2{right:0;bottom:18%;animation-delay:-2.2s}
+@keyframes floaty{50%{transform:translateY(-9px)}}
+.plate{width:min(370px,70vw);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,#fff 0 43%,#ded6ca 44% 47%,#8b5d39 48% 50%,#21140e 51%);box-shadow:0 35px 90px rgba(0,0,0,.5);transform:rotate(-8deg);animation:slowspin 18s linear infinite;display:grid;place-items:center}
+.plate-inner{width:70%;height:70%;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 40% 35%,#d77a32,#8c2f1c 55%,#35120d);box-shadow:inset 0 0 50px #0006;font-size:60px;color:#ffd27d}
+@keyframes slowspin{to{transform:rotate(352deg)}}
+.portrait{width:min(350px,72vw);height:440px;border-radius:48% 48% 35% 35%;position:relative;background:linear-gradient(145deg,#171717,#050505);box-shadow:0 35px 100px #0008;overflow:hidden}
+.portrait:before{content:"";position:absolute;width:220px;height:280px;border-radius:48% 48% 44% 44%;background:linear-gradient(135deg,#7e6048,#291b16);left:50%;top:70px;transform:translateX(-50%);box-shadow:inset -18px -5px 0 #17100c}
+.portrait-head{position:absolute;width:220px;height:75px;left:50%;top:48px;transform:translateX(-50%);border-radius:55% 55% 30% 30%;background:#0b0b0b;z-index:2}
+.portrait-neck{position:absolute;width:100px;height:110px;background:#5c4031;left:50%;bottom:-20px;transform:translateX(-50%);border-radius:20px}
+.orbital{width:min(390px,72vw);aspect-ratio:1;border-radius:50%;position:relative;display:grid;place-items:center;background:radial-gradient(circle,#fff,#dbeafe 30%,#163a6b 31% 58%,transparent 59%);box-shadow:0 0 100px #4da3ff33}
+.core{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;background:#fff;color:#1756b8;font-size:34px;font-weight:900;box-shadow:0 15px 45px #0003}
+.orbit{position:absolute;border:1px solid #6eb4ff77;border-radius:50%;inset:10%;transform:rotate(25deg)}.o2{inset:20%;transform:rotate(-35deg) scaleX(.55)}
+.browser{width:min(470px,78vw);height:330px;border:1px solid var(--wow-line);border-radius:18px;background:#101218;box-shadow:0 35px 100px #0009;overflow:hidden;transform:rotate(-4deg);transition:.5s}.browser:hover{transform:rotate(0) translateY(-8px)}
+.browser-top{height:34px;border-bottom:1px solid var(--wow-line);display:flex;align-items:center;gap:6px;padding:0 12px;color:#777;font-size:8px}.browser-top i{width:6px;height:6px;border-radius:50%;background:#444}.browser-top span{margin-left:8px}
+.browser-body{height:calc(100% - 34px);padding:35px;display:flex;justify-content:space-between;align-items:flex-end;background:radial-gradient(circle at 75% 30%,#7c5cff55,transparent 35%),#0c0d11}.browser-body b{font-size:30px;line-height:.9}.browser-body em{color:#7c5cff;font-style:normal}.mini-ui{width:110px;height:150px;border:1px solid #ffffff22;border-radius:12px;background:linear-gradient(180deg,#ffffff12 0 12%,transparent 12% 18%,#20d6c733 18% 22%,transparent 22%)}
+.wow-strip{position:relative;z-index:3;border-top:1px solid var(--wow-line);border-bottom:1px solid var(--wow-line);overflow:hidden;white-space:nowrap;padding:12px 0;color:var(--wow-muted);font-size:9px;letter-spacing:.18em}.wow-strip span{display:inline-block;margin-right:42px}
+@media(max-width:820px){.wow-grid{grid-template-columns:1fr;gap:5px}.wow-copy{text-align:center;margin:auto}.wow-desc{margin-left:auto!important;margin-right:auto!important}.wow-actions{justify-content:center}.wow-meta{justify-content:center}.wow-visual{min-height:430px}.float-card{transform:scale(.9)}}
+@media(max-width:520px){.wow-title{font-size:48px!important}.wow-visual{min-height:390px}.portrait{height:360px}.float-card{min-width:150px;padding:11px}.float-card b{font-size:10px}.float-card span{font-size:8px}}
+</style>
+
+<style id="theme-100x">
+:root{
+ --bg:#07080b;--surface:#101217;--ink:#f5f7fb;--muted:#9da5b2;
+ --accent:#8a6cff;--accent2:#21d4c5;--line:#282d38;
+}
+html,body{background:var(--bg)!important;color:var(--ink)!important}
+body{background-image:radial-gradient(circle at 15% 15%,#8a6cff20,transparent 30%),radial-gradient(circle at 85% 70%,#21d4c518,transparent 28%)!important}
+header,nav{background:rgba(7,8,11,.76)!important;backdrop-filter:blur(20px);border-bottom:1px solid var(--line)!important}
+h1,h2,h3,h4{color:var(--ink)!important}
+a{color:var(--ink)}
+.btn-primary,button.primary{background:linear-gradient(135deg,#8a6cff,#6546df)!important;color:#fff!important;border-color:transparent!important}
+.btn-secondary{background:transparent!important;color:var(--ink)!important;border-color:var(--line)!important}
+.theme-brand{font-family:"DM Sans",Arial,sans-serif;font-weight:800;letter-spacing:-.06em;color:var(--ink)!important}
+.theme-brand span{color:var(--accent)!important}
+.theme-eyebrow{color:var(--accent)!important}
+.wow-title em{color:var(--accent)!important}
+</style>
+
+<style id="premium-1000x">
+/* ===== 1000X PREMIUM DESIGN SYSTEM ===== */
+:root{
+  --p-radius:22px;
+  --p-radius-sm:14px;
+  --p-shadow:0 24px 80px rgba(0,0,0,.24);
+  --p-shadow-hover:0 32px 100px rgba(0,0,0,.34);
+  --p-ease:cubic-bezier(.22,1,.36,1);
+}
+html{scroll-padding-top:84px}
+body{
+  overflow-x:hidden;
+  text-rendering:optimizeLegibility;
+  -webkit-font-smoothing:antialiased;
+}
+body::selection{background:var(--accent);color:var(--bg)}
+::selection{background:var(--accent);color:var(--bg)}
+nav{
+  transition:background .35s var(--p-ease),box-shadow .35s var(--p-ease),transform .35s var(--p-ease);
+}
+nav.p-nav-scrolled{
+  background:color-mix(in srgb,var(--bg) 82%,transparent)!important;
+  box-shadow:0 12px 45px rgba(0,0,0,.16);
+}
+.container{max-width:1220px}
+section{position:relative}
+section:not(.hero)::before{
+  content:"";
+  position:absolute;left:50%;top:0;width:min(1220px,92%);height:1px;
+  background:linear-gradient(90deg,transparent,var(--border),transparent);
+  opacity:.55;
+}
+.hero{isolation:isolate}
+.hero::after{
+  content:"";position:absolute;inset:0;pointer-events:none;z-index:0;
+  background:radial-gradient(circle at 50% 110%,color-mix(in srgb,var(--accent) 10%,transparent),transparent 42%);
+}
+.hero>*{position:relative;z-index:2}
+.wow-grid{width:min(1220px,92%)}
+.wow-title{max-width:900px}
+.wow-title em{background:linear-gradient(120deg,var(--accent),var(--accent2,var(--accent)));-webkit-background-clip:text;background-clip:text;color:transparent!important}
+.btn{
+  position:relative;isolation:isolate;overflow:hidden;
+  border:1px solid transparent;
+  box-shadow:0 8px 24px rgba(0,0,0,.12);
+  transition:transform .35s var(--p-ease),box-shadow .35s var(--p-ease),border-color .35s;
+}
+.btn::before{
+  content:"";position:absolute;inset:0;transform:translateX(-110%);
+  background:linear-gradient(100deg,transparent,rgba(255,255,255,.22),transparent);
+  transition:transform .65s var(--p-ease);z-index:-1;
+}
+.btn:hover::before{transform:translateX(110%)}
+.btn:hover{transform:translateY(-4px);box-shadow:0 16px 36px rgba(0,0,0,.22)}
+.card,.project,.service,.course,.feature,.price-card,.review,.info-card,.skill,.step,.why-card,.about-card,.contact-card,.food{
+  position:relative;
+  overflow:hidden;
+  border-radius:var(--p-radius)!important;
+  transition:transform .45s var(--p-ease),box-shadow .45s var(--p-ease),border-color .35s,background .35s;
+}
+.card::before,.project::before,.service::before,.course::before,.feature::before,.price-card::before,.review::before,.info-card::before,.skill::before,.step::before,.why-card::before,.about-card::before,.contact-card::before,.food::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(135deg,rgba(255,255,255,.08),transparent 28%);
+  opacity:.55;
+}
+.card:hover,.project:hover,.service:hover,.course:hover,.feature:hover,.price-card:hover,.review:hover,.info-card:hover,.skill:hover,.step:hover,.why-card:hover,.about-card:hover,.contact-card:hover,.food:hover{
+  transform:translateY(-8px);
+  box-shadow:var(--p-shadow-hover);
+}
+.title h2{letter-spacing:-.035em}
+.title p{max-width:650px;margin-left:auto;margin-right:auto}
+.wow-meta b{font-variant-numeric:tabular-nums}
+.float-card{transition:transform .4s var(--p-ease),border-color .3s}
+.float-card:hover{transform:translateY(-12px) scale(1.02);border-color:var(--accent)!important}
+.wow-strip{opacity:.9}
+.upgradeBar{
+  height:3px!important;
+  background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)))!important;
+  transform-origin:left center;
+  box-shadow:0 0 18px color-mix(in srgb,var(--accent) 45%,transparent);
+}
+.premium-glow{
+  position:fixed;left:0;top:0;width:260px;height:260px;border-radius:50%;
+  pointer-events:none;z-index:0;opacity:.09;filter:blur(55px);
+  background:var(--accent);transform:translate(-50%,-50%);
+  transition:transform .12s linear;
+}
+.premium-progress-dot{
+  position:fixed;right:22px;top:50%;width:5px;height:56px;border-radius:99px;
+  background:var(--border);z-index:9996;overflow:hidden;opacity:.7;
+}
+.premium-progress-dot i{
+  display:block;width:100%;height:0;background:linear-gradient(var(--accent),var(--accent2,var(--accent)));
+  border-radius:inherit;
+}
+.premium-mobile-toggle{
+  display:none;border:1px solid var(--border);background:rgba(255,255,255,.04);
+  color:var(--text);width:44px;height:44px;border-radius:12px;font-size:20px;
+}
+.premium-mobile-menu{
+  display:none;position:absolute;left:4%;right:4%;top:calc(100% + 10px);
+  padding:12px;border:1px solid var(--border);border-radius:18px;
+  background:color-mix(in srgb,var(--bg) 92%,transparent);
+  backdrop-filter:blur(22px);box-shadow:var(--p-shadow);
+}
+.premium-mobile-menu.open{display:grid}
+.premium-mobile-menu a{padding:13px 14px;border-radius:12px;color:var(--muted)}
+.premium-mobile-menu a:hover{background:rgba(255,255,255,.06);color:var(--text)}
+.premium-toast{
+  position:fixed;left:50%;bottom:24px;transform:translate(-50%,18px);
+  opacity:0;pointer-events:none;z-index:10000;
+  padding:12px 16px;border:1px solid var(--border);border-radius:999px;
+  background:rgba(12,14,18,.9);backdrop-filter:blur(18px);color:var(--text);
+  box-shadow:var(--p-shadow);font:600 12px/1.3 "DM Sans",system-ui;
+  transition:opacity .35s var(--p-ease),transform .35s var(--p-ease);
+}
+.premium-toast.show{opacity:1;transform:translate(-50%,0)}
+@media(max-width:800px){
+  nav .nav{height:64px}
+  .premium-mobile-toggle{display:grid;place-items:center}
+  nav .nav-links{display:none!important}
+  .premium-progress-dot{display:none}
+  section{padding:74px 0}
+  .wow-grid{width:min(94%,680px)}
+  .wow-title{font-size:clamp(44px,12vw,70px)!important}
+  .wow-visual{min-height:420px}
+  .float-card{min-width:155px}
+}
+@media(max-width:520px){
+  .container{width:92%}
+  section{padding:62px 0}
+  .wow-title{font-size:clamp(40px,13vw,58px)!important}
+  .wow-desc{font-size:16px!important}
+  .wow-actions .btn{width:100%;text-align:center}
+  .float-card{min-width:140px;padding:10px 12px}
+  .premium-glow{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}
+}
+</style>
+
+<style id="completion-pass">.premium-booking-fab{position:fixed;right:22px;bottom:22px;z-index:10001;padding:13px 17px;border-radius:999px;border:1px solid var(--accent);background:rgba(10,12,16,.82);backdrop-filter:blur(18px);color:#fff;font:800 12px system-ui;cursor:pointer;box-shadow:0 18px 55px #0005}.premium-booking-fab:hover{transform:translateY(-4px)}.premium-form-status{display:none;margin-top:10px;padding:10px 12px;border-radius:10px;font-size:12px}.premium-form-status.show{display:block}.premium-form-status.ok{color:#65e39d;background:#173b29}.premium-form-status.err{color:#ff9999;background:#401f23}.upgradePanel input:focus,.upgradePanel textarea:focus{outline:none;border-color:var(--accent)!important;box-shadow:0 0 0 4px rgba(138,108,255,.12)}@media(max-width:520px){.premium-booking-fab{right:14px;bottom:14px;padding:12px 14px}} </style>
+<style id="box-10x-upgrade">
+/* ===== 10X BOX SYSTEM — THEME-MATCHED ===== */
+:root{--box-pad:26px;--box-gap:18px;--box-line:var(--accent);--box-soft:rgba(255,255,255,.055);--box-soft2:rgba(255,255,255,.025)}
+/* shared structure */
+.about-card,.why-card,.price-card,.info-card,.card,.service,.skill,.feature,.course,.project,.food,.step,.review,.contact-card{
+  min-height:0!important;height:auto!important;display:flex;flex-direction:column;justify-content:flex-start;
+  padding:var(--box-pad)!important;isolation:isolate;
+  background:linear-gradient(145deg,var(--box-soft),var(--box-soft2))!important;
+  border:1px solid color-mix(in srgb,var(--box-line) 28%,var(--border))!important;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.045),0 18px 55px rgba(0,0,0,.13)!important;
+}
+.about-card::after,.why-card::after,.price-card::after,.info-card::after,.card::after,.service::after,.skill::after,.feature::after,.course::after,.project::after,.food::after,.step::after,.review::after,.contact-card::after{
+  content:"";position:absolute;left:var(--box-pad);right:var(--box-pad);bottom:0;height:2px;border-radius:99px;
+  background:linear-gradient(90deg,transparent,var(--box-line),transparent);opacity:.72;transform:scaleX(.55);transform-origin:center;transition:transform .45s cubic-bezier(.22,1,.36,1),opacity .35s;
+}
+.about-card:hover::after,.why-card:hover::after,.price-card:hover::after,.info-card:hover::after,.card:hover::after,.service:hover::after,.skill:hover::after,.feature:hover::after,.course:hover::after,.project:hover::after,.food:hover::after,.step:hover::after,.review:hover::after,.contact-card:hover::after{transform:scaleX(1);opacity:1}
+.about-card h3,.why-card h3,.price-card h3,.info-card h3,.card h3,.service h3,.skill h3,.feature h3,.course h3,.project h3,.food h3,.step h3,.review h3,.contact-card h3{margin:0 0 10px;line-height:1.12;letter-spacing:-.025em}
+.about-card p,.why-card p,.price-card p,.info-card p,.card p,.service p,.skill p,.feature p,.course p,.project p,.food p,.step p,.review p,.contact-card p{margin:0;line-height:1.72;color:var(--muted)}
+.about-card h3:first-letter,.why-card h3:first-letter,.card h3:first-letter{filter:saturate(1.15)}
+.service .icon,.info-card .icon,.skill-icon,.service-icon,.food-img,.feature .icon{width:54px!important;height:54px!important;min-width:54px;display:grid!important;place-items:center;border-radius:17px!important;margin-bottom:18px!important;background:linear-gradient(145deg,color-mix(in srgb,var(--box-line) 22%,transparent),rgba(255,255,255,.035))!important;border:1px solid color-mix(in srgb,var(--box-line) 35%,transparent)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 28px rgba(0,0,0,.18);font-size:26px!important}
+.about-card h3::before,.why-card h3::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--box-line);box-shadow:0 0 0 5px color-mix(in srgb,var(--box-line) 10%,transparent);margin:0 12px 3px 0}
+.price-card{position:relative}
+.price-card.featured{transform:translateY(-5px);border-color:color-mix(in srgb,var(--box-line) 65%,var(--border))!important;box-shadow:0 24px 70px color-mix(in srgb,var(--box-line) 12%,transparent),inset 0 1px 0 rgba(255,255,255,.08)!important}
+.price-card.featured::before{content:"RECOMMENDED";position:absolute;top:14px;right:14px;padding:6px 9px;border-radius:999px;background:color-mix(in srgb,var(--box-line) 15%,transparent);border:1px solid color-mix(in srgb,var(--box-line) 35%,transparent);color:var(--text);font:800 9px/1 system-ui;letter-spacing:.12em}
+.price-card .price{margin:4px 0 14px;font-weight:900;letter-spacing:-.04em}
+.price-card .btn{margin-top:20px;align-self:flex-start}
+.info-card .icon{margin-bottom:15px!important}
+.info-card p{font-size:14px}
+.food{padding:0!important;overflow:hidden!important}
+.food .food-img{width:100%!important;height:150px!important;border:0!important;border-radius:0!important;margin:0!important;font-size:46px!important;background:linear-gradient(145deg,color-mix(in srgb,var(--box-line) 16%,transparent),rgba(255,255,255,.035))!important}
+.food .food-body{padding:22px 24px 26px}
+.food .price{margin-top:14px;font-weight:900;color:var(--box-line)}
+/* theme-specific personality */
+body[data-final-theme="Studio Noir"]{--box-line:#5d8dff;--box-soft:rgba(35,78,155,.12)}
+body[data-final-theme="Scholar Blue"]{--box-line:#a855f7;--box-soft:rgba(91,43,151,.14)}
+body[data-final-theme="Obsidian Grooming"]{--box-line:#d6a24b;--box-soft:rgba(145,94,25,.12)}
+body[data-final-theme="Saffron Atelier"]{--box-line:#f28a32;--box-soft:rgba(145,62,18,.13)}
+/* Portfolio: elegant studio cards */
+body[data-final-theme="Studio Noir"] .about-card,body[data-final-theme="Studio Noir"] .why-card{background:linear-gradient(145deg,rgba(24,48,91,.58),rgba(10,17,32,.86))!important}
+body[data-final-theme="Studio Noir"] .about-card h3,body[data-final-theme="Studio Noir"] .why-card h3{font-size:clamp(21px,2.2vw,27px)}
+/* Coaching: academic, brighter information hierarchy */
+body[data-final-theme="Scholar Blue"] .info-card,body[data-final-theme="Scholar Blue"] .price-card{background:linear-gradient(145deg,rgba(33,24,66,.72),rgba(13,18,36,.9))!important}
+body[data-final-theme="Scholar Blue"] .price-card h3{font-size:21px}
+body[data-final-theme="Scholar Blue"] .price-card p{font-size:14px}
+/* Barber: luxury service cards */
+body[data-final-theme="Obsidian Grooming"] .about-card,body[data-final-theme="Obsidian Grooming"] .price-card,body[data-final-theme="Obsidian Grooming"] .info-card{background:linear-gradient(145deg,rgba(47,37,24,.68),rgba(14,14,14,.94))!important}
+body[data-final-theme="Obsidian Grooming"] .price-card.featured{box-shadow:0 28px 80px rgba(214,162,75,.13),inset 0 1px 0 rgba(255,255,255,.08)!important}
+/* Restaurant: warm editorial cards */
+body[data-final-theme="Saffron Atelier"] .card,body[data-final-theme="Saffron Atelier"] .info-card,body[data-final-theme="Saffron Atelier"] .feature{background:linear-gradient(145deg,rgba(63,29,13,.64),rgba(19,13,10,.94))!important}
+body[data-final-theme="Saffron Atelier"] .card h3,body[data-final-theme="Saffron Atelier"] .feature h3{font-size:22px}
+/* grids: more premium density */
+.about-cards,.why,.services,.skills,.features,.courses,.menu,.pricing,.info-cards{align-items:stretch}
+@media(min-width:801px){
+ .about-cards,.why,.services,.skills,.features,.courses,.pricing,.info-cards{grid-auto-rows:1fr}
+ .about-card,.why-card,.service,.skill,.feature,.course,.price-card,.info-card{height:100%!important}
+}
+@media(max-width:800px){
+ :root{--box-pad:21px}
+ .about-card,.why-card,.price-card,.info-card,.card,.service,.skill,.feature,.course,.project,.step,.review,.contact-card{border-radius:20px!important}
+ .price-card.featured{transform:none}
+ .food .food-img{height:125px!important}
+}
+@media(max-width:520px){
+ :root{--box-pad:18px}
+ .service .icon,.info-card .icon,.skill-icon,.service-icon,.food-img,.feature .icon{width:48px!important;height:48px!important;min-width:48px;font-size:23px!important}
+ .about-card h3,.why-card h3,.price-card h3,.info-card h3,.card h3,.service h3,.skill h3,.feature h3{font-size:20px}
+ .about-card p,.why-card p,.price-card p,.info-card p,.card p,.service p,.skill p,.feature p{font-size:14px;line-height:1.65}
+ .price-card .btn{width:100%;text-align:center}
+}
+</style>
+
+
+<style id="design-2000x">
+/* =========================
+   2000X FULL VISUAL SYSTEM
+   ========================= */
+:root{
+  --x-radius:26px;
+  --x-radius-sm:16px;
+  --x-ease:cubic-bezier(.22,1,.36,1);
+  --x-shadow:0 24px 70px rgba(0,0,0,.20);
+  --x-shadow-hover:0 34px 90px rgba(0,0,0,.30);
+}
+html{scroll-behavior:smooth;scroll-padding-top:86px}
+body{overflow-x:hidden}
+body:before{
+  content:"";position:fixed;inset:0;pointer-events:none;z-index:-2;
+  background:
+    radial-gradient(circle at 8% 12%,color-mix(in srgb,var(--accent) 7%,transparent),transparent 28%),
+    radial-gradient(circle at 92% 78%,color-mix(in srgb,var(--accent) 6%,transparent),transparent 30%);
+}
+nav{
+  border-bottom:1px solid transparent;
+  transition:background .45s var(--x-ease),border-color .45s,box-shadow .45s;
+}
+nav.x-nav-active{
+  background:color-mix(in srgb,var(--bg) 84%,transparent)!important;
+  border-color:color-mix(in srgb,var(--accent) 18%,var(--border));
+  box-shadow:0 14px 45px rgba(0,0,0,.16);
+  backdrop-filter:blur(20px);
+}
+.nav-links a{
+  position:relative;
+  transition:color .25s,transform .25s;
+}
+.nav-links a:after{
+  content:"";position:absolute;left:0;right:0;bottom:-8px;height:2px;
+  border-radius:2px;background:var(--accent);transform:scaleX(0);
+  transform-origin:center;transition:transform .3s var(--x-ease);
+}
+.nav-links a:hover:after,.nav-links a.is-active:after{transform:scaleX(1)}
+
+.hero{
+  min-height:min(820px,88vh)!important;
+  isolation:isolate;
+  overflow:hidden;
+}
+.hero:before{
+  content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+  background:
+    linear-gradient(90deg,transparent 49.8%,color-mix(in srgb,var(--accent) 7%,transparent) 50%,transparent 50.2%),
+    linear-gradient(0deg,transparent 49.8%,color-mix(in srgb,var(--accent) 5%,transparent) 50%,transparent 50.2%);
+  background-size:64px 64px;mask-image:linear-gradient(to bottom,#000,transparent 72%);
+  opacity:.45;
+}
+.hero:after{
+  content:"";position:absolute;z-index:-1;pointer-events:none;
+  width:480px;height:480px;right:-150px;top:8%;
+  border-radius:50%;
+  background:color-mix(in srgb,var(--accent) 15%,transparent);
+  filter:blur(100px);
+}
+.hero .wow-title{
+  text-wrap:balance;
+  letter-spacing:-.055em!important;
+}
+.hero .wow-desc{
+  max-width:680px!important;
+  line-height:1.8!important;
+}
+.hero .btn{min-height:50px}
+
+.title{
+  position:relative;
+  margin-bottom:46px!important;
+}
+.title:before{
+  content:"";display:block;width:42px;height:4px;border-radius:99px;
+  margin:0 auto 18px;background:linear-gradient(90deg,var(--accent),var(--accent2,var(--accent)));
+  box-shadow:0 0 24px color-mix(in srgb,var(--accent) 30%,transparent);
+}
+.title h2{
+  letter-spacing:-.045em!important;
+  text-wrap:balance;
+}
+.title p{
+  line-height:1.75!important;
+  text-wrap:pretty;
+}
+
+/* Universal card finishing */
+.about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+.feature,.course,.price-card,.review,.info-card,.food,.card{
+  border-radius:var(--x-radius)!important;
+  border:1px solid color-mix(in srgb,var(--box-line,var(--accent)) 42%,var(--border))!important;
+  box-shadow:var(--x-shadow);
+  background-image:
+    linear-gradient(145deg,rgba(255,255,255,.075),transparent 34%),
+    radial-gradient(circle at 90% 0%,color-mix(in srgb,var(--accent) 9%,transparent),transparent 32%);
+  transition:transform .5s var(--x-ease),box-shadow .5s var(--x-ease),border-color .35s,background .35s;
+}
+.about-card:hover,.skill:hover,.project:hover,.service:hover,.step:hover,.why-card:hover,
+.contact-card:hover,.feature:hover,.course:hover,.price-card:hover,.review:hover,.info-card:hover,
+.food:hover,.card:hover{
+  transform:translateY(-9px);
+  box-shadow:var(--x-shadow-hover);
+  border-color:color-mix(in srgb,var(--box-line,var(--accent)) 75%,white 0%)!important;
+}
+.about-card h3,.skill h3,.project h3,.service h3,.step h3,.why-card h3,
+.feature h3,.course h3,.price-card h3,.review h3,.info-card h3,.food h3{
+  letter-spacing:-.025em;
+}
+.about-card p,.skill p,.project p,.service p,.step p,.why-card p,
+.feature p,.course p,.price-card p,.review p,.info-card p,.food p{
+  line-height:1.7;
+}
+
+/* Icons */
+.skill-icon,.service-icon,.icon,.food-img{
+  border-radius:18px!important;
+  background:
+    radial-gradient(circle at 50% 25%,color-mix(in srgb,var(--accent) 18%,transparent),transparent 60%),
+    color-mix(in srgb,var(--bg) 70%,var(--accent) 6%)!important;
+  border:1px solid color-mix(in srgb,var(--accent) 25%,var(--border));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 12px 28px rgba(0,0,0,.12);
+}
+
+/* Section rhythm */
+section:not(.hero){
+  padding-top:clamp(82px,9vw,125px)!important;
+  padding-bottom:clamp(82px,9vw,125px)!important;
+}
+section:not(.hero)+section:not(.hero){margin-top:-1px}
+
+/* CTA */
+.cta{
+  position:relative;overflow:hidden;
+  border-radius:32px!important;
+  border:1px solid color-mix(in srgb,var(--accent) 35%,var(--border))!important;
+  background:
+    radial-gradient(circle at 10% 10%,color-mix(in srgb,var(--accent) 20%,transparent),transparent 36%),
+    linear-gradient(135deg,color-mix(in srgb,var(--accent) 10%,var(--bg)),var(--bg))!important;
+  box-shadow:0 28px 90px rgba(0,0,0,.22);
+}
+.cta:after{
+  content:"";position:absolute;width:260px;height:260px;right:-100px;bottom:-130px;
+  border-radius:50%;background:color-mix(in srgb,var(--accent) 16%,transparent);filter:blur(45px);
+  pointer-events:none;
+}
+
+/* Theme-specific identities */
+body[data-final-theme="Studio Noir"]{
+  --x-highlight:#77a7ff;
+}
+body[data-final-theme="Studio Noir"] .hero{
+  background:radial-gradient(circle at 75% 35%,rgba(67,111,220,.12),transparent 35%);
+}
+body[data-final-theme="Scholar Blue"]{
+  --x-highlight:#c084fc;
+}
+body[data-final-theme="Scholar Blue"] .hero{
+  background:radial-gradient(circle at 70% 30%,rgba(168,85,247,.14),transparent 38%);
+}
+body[data-final-theme="Obsidian Grooming"]{
+  --x-highlight:#e5b85f;
+}
+body[data-final-theme="Obsidian Grooming"] .hero{
+  background:radial-gradient(circle at 72% 28%,rgba(214,162,75,.13),transparent 36%);
+}
+body[data-final-theme="Saffron Atelier"]{
+  --x-highlight:#ff9a48;
+}
+body[data-final-theme="Saffron Atelier"] .hero{
+  background:radial-gradient(circle at 72% 30%,rgba(242,138,50,.14),transparent 38%);
+}
+
+/* Mobile */
+@media(max-width:800px){
+  .hero{min-height:760px!important}
+  .hero:before{background-size:42px 42px;opacity:.24}
+  .title{margin-bottom:34px!important}
+  section:not(.hero){padding-top:68px!important;padding-bottom:68px!important}
+  .about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+  .feature,.course,.price-card,.review,.info-card,.food,.card{
+    border-radius:22px!important;
+  }
+  .hero .wow-title{letter-spacing:-.045em!important}
+}
+@media(max-width:520px){
+  html{scroll-padding-top:70px}
+  .hero{min-height:680px!important}
+  .title:before{width:34px;height:3px;margin-bottom:14px}
+  .title h2{letter-spacing:-.035em!important}
+  .title p{font-size:15px!important}
+  .cta{border-radius:24px!important}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+  .feature,.course,.price-card,.review,.info-card,.food,.card{transition:none!important}
+}
+</style>
+
+
+<style id="final-micro-polish">
+/* ===== FINAL MOBILE / MICRO POLISH ===== */
+*{box-sizing:border-box}
+body{min-width:0}
+img,svg{max-width:100%}
+button,a{touch-action:manipulation}
+
+/* Prevent floating CTA from covering important content */
+.premium-booking-fab{bottom:max(18px,env(safe-area-inset-bottom));right:max(16px,env(safe-area-inset-right));z-index:10001}
+.upgradeModal{padding:18px!important}
+.upgradePanel{max-height:min(88vh,720px);overflow:auto}
+
+/* Cards: richer composition without making them oversized */
+.about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+.feature,.course,.price-card,.review,.info-card,.food,.card{
+  min-height:0!important;
+}
+.about-card h3,.skill h3,.project h3,.service h3,.step h3,.why-card h3,
+.feature h3,.course h3,.price-card h3,.review h3,.info-card h3,.food h3{
+  text-wrap:balance;
+}
+.about-card p,.skill p,.project p,.service p,.step p,.why-card p,
+.feature p,.course p,.price-card p,.review p,.info-card p,.food p{
+  max-width:58ch;
+}
+
+/* Buttons look intentional on small screens */
+.btn{
+  min-height:48px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+}
+.btn:focus-visible,.premium-booking-fab:focus-visible,
+.premium-mobile-toggle:focus-visible{
+  outline:3px solid color-mix(in srgb,var(--accent) 45%,transparent);
+  outline-offset:3px;
+}
+
+/* Mobile header */
+@media(max-width:800px){
+  nav{position:sticky!important;top:0!important;z-index:9999}
+  nav .nav{width:92%!important;margin:auto!important}
+  .premium-mobile-toggle{flex:0 0 auto}
+  .premium-mobile-menu{
+    max-height:calc(100vh - 90px);
+    overflow:auto;
+  }
+
+  .hero{
+    min-height:auto!important;
+    padding-top:64px!important;
+    padding-bottom:70px!important;
+  }
+  .hero .wow-grid{
+    align-items:center!important;
+  }
+  .hero .wow-title{
+    max-width:100%!important;
+  }
+
+  /* Turn long cards into compact premium blocks */
+  .about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+  .feature,.course,.price-card,.review,.info-card,.food,.card{
+    padding:22px!important;
+  }
+
+  .about-card .icon,.skill .icon,.service .icon,.feature .icon,
+  .food-img,.skill-icon,.service-icon{
+    margin-bottom:14px!important;
+  }
+
+  /* Avoid giant blank visual areas on phone */
+  .project,.food{
+    min-height:0!important;
+  }
+
+  .title h2{font-size:clamp(30px,8.5vw,46px)!important}
+  .title p{max-width:42rem!important}
+}
+
+@media(max-width:520px){
+  body{font-size:15px}
+  .container,.wow-grid{width:calc(100% - 28px)!important}
+  section:not(.hero){
+    padding-top:58px!important;
+    padding-bottom:58px!important;
+  }
+  .hero{
+    padding-top:46px!important;
+    padding-bottom:56px!important;
+  }
+  .wow-title{
+    font-size:clamp(38px,12vw,56px)!important;
+    line-height:.98!important;
+  }
+  .wow-desc{font-size:15px!important;line-height:1.65!important}
+  .wow-actions{gap:10px!important}
+  .wow-actions .btn{width:100%!important}
+  .title{margin-bottom:28px!important}
+  .title h2{font-size:clamp(28px,8.8vw,40px)!important}
+  .title p{font-size:14px!important;line-height:1.65!important}
+
+  .about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+  .feature,.course,.price-card,.review,.info-card,.food,.card{
+    padding:19px!important;
+    border-radius:20px!important;
+  }
+
+  .about-card h3,.skill h3,.project h3,.service h3,.step h3,.why-card h3,
+  .feature h3,.course h3,.price-card h3,.review h3,.info-card h3,.food h3{
+    font-size:20px!important;
+    line-height:1.15!important;
+  }
+  .about-card p,.skill p,.project p,.service p,.step p,.why-card p,
+  .feature p,.course p,.price-card p,.review p,.info-card p,.food p{
+    font-size:14px!important;
+    line-height:1.62!important;
+  }
+
+  .premium-booking-fab{
+    padding:11px 14px!important;
+    min-height:46px;
+  }
+
+  .upgradePanel{
+    width:min(100%,520px)!important;
+    padding:22px!important;
+    border-radius:22px!important;
+  }
+}
+
+/* Extra-small phones */
+@media(max-width:380px){
+  .container,.wow-grid{width:calc(100% - 22px)!important}
+  .hero .wow-title{font-size:37px!important}
+  .about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+  .feature,.course,.price-card,.review,.info-card,.food,.card{padding:16px!important}
+}
+</style>
+
+
+<style id="x3000-system">
+/* =========================================================
+   X3000 PREMIUM EXPERIENCE SYSTEM
+   Shared engine; niche-specific variables are injected below.
+   ========================================================= */
+:root{
+  --x3-accent:var(--accent);
+  --x3-accent2:var(--accent2,var(--accent));
+  --x3-radius:28px;
+  --x3-ease:cubic-bezier(.22,1,.36,1);
+  --x3-shadow:0 30px 90px rgba(0,0,0,.22);
+  --x3-shadow-hover:0 40px 110px rgba(0,0,0,.34);
+}
+html{scroll-padding-top:84px}
+body{overflow-x:hidden}
+::selection{background:var(--x3-accent);color:#081018}
+a,button,input,textarea,select{outline-color:var(--x3-accent)}
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{
+  outline:2px solid var(--x3-accent);outline-offset:4px
+}
+.x3-progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--x3-accent),var(--x3-accent2));z-index:10001}
+.x3-noise{position:fixed;inset:0;pointer-events:none;z-index:9990;opacity:.028;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E")}
+.x3-cursor{position:fixed;left:0;top:0;width:22px;height:22px;border:1px solid var(--x3-accent);border-radius:50%;pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;mix-blend-mode:difference}
+.x3-cursor.is-hover{width:44px;height:44px;background:var(--x3-accent)}
+.x3-mobile-toggle{display:none;border:1px solid var(--border);background:rgba(255,255,255,.04);color:var(--text);width:44px;height:44px;border-radius:14px;font-size:20px}
+.x3-mobile-panel{display:none}
+.x3-badge{display:inline-flex;align-items:center;gap:8px;padding:8px 12px;border:1px solid var(--border);border-radius:999px;background:rgba(255,255,255,.035);font-size:10px;letter-spacing:.12em;font-weight:800;color:var(--x3-accent)}
+.x3-dot{width:7px;height:7px;border-radius:50%;background:var(--x3-accent);box-shadow:0 0 18px var(--x3-accent)}
+.x3-marquee{overflow:hidden;border-block:1px solid var(--border);background:rgba(255,255,255,.018)}
+.x3-marquee-track{display:flex;width:max-content;gap:42px;padding:13px 0;animation:x3marquee 28s linear infinite;font-size:10px;letter-spacing:.18em;color:var(--muted);font-weight:800}
+@keyframes x3marquee{to{transform:translateX(-50%)}}
+.x3-glow{position:relative}
+.x3-glow:before{content:"";position:absolute;inset:-25%;background:radial-gradient(circle at 50% 50%,color-mix(in srgb,var(--x3-accent) 13%,transparent),transparent 55%);filter:blur(35px);pointer-events:none}
+.x3-section-kicker{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--x3-accent);font-weight:900;margin-bottom:12px}
+.x3-reveal{opacity:0;transform:translateY(26px);transition:opacity .8s var(--x3-ease),transform .8s var(--x3-ease)}
+.x3-reveal.x3-in{opacity:1;transform:none}
+.x3-card-premium{
+  position:relative;overflow:hidden;transition:transform .5s var(--x3-ease),box-shadow .5s var(--x3-ease),border-color .5s var(--x3-ease)
+}
+.x3-card-premium:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.08),transparent 28%,transparent 70%,rgba(255,255,255,.035));opacity:.45;pointer-events:none}
+.x3-card-premium:hover{box-shadow:var(--x3-shadow-hover);border-color:color-mix(in srgb,var(--x3-accent) 55%,var(--border))}
+.x3-number{font-variant-numeric:tabular-nums}
+.x3-top{position:fixed;right:20px;bottom:92px;width:44px;height:44px;border:1px solid var(--border);border-radius:14px;background:rgba(10,10,14,.72);backdrop-filter:blur(14px);color:var(--text);z-index:9988;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s}
+.x3-top.show{opacity:1;pointer-events:auto;transform:none}
+.x3-mobile-panel.open{display:block;position:fixed;inset:70px 14px auto 14px;z-index:9995;background:rgba(10,12,18,.96);border:1px solid var(--border);border-radius:22px;padding:14px;box-shadow:0 30px 80px rgba(0,0,0,.5);backdrop-filter:blur(20px)}
+.x3-mobile-panel a{display:block;padding:15px;border-radius:14px;color:var(--muted)}
+.x3-mobile-panel a:hover{background:rgba(255,255,255,.05);color:var(--text)}
+@media(max-width:800px){
+  .x3-cursor{display:none}
+  .x3-mobile-toggle{display:block}
+  .x3-top{right:14px;bottom:88px}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*:before,*:after{scroll-behavior:auto!important;animation:none!important;transition-duration:.01ms!important}
+  .x3-reveal{opacity:1;transform:none}
+}
+</style>
+
+
+<style id="x3000-wow-pass">
+/* ===== X3000 WOW PASS ===== */
+body{
+  --x3-bg-glow:color-mix(in srgb,var(--accent) 13%,transparent);
+}
+.wow-hero{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+}
+.wow-hero:before{
+  content:"";
+  position:absolute;
+  width:min(62vw,760px);
+  height:min(62vw,760px);
+  right:-18vw;
+  top:-20vw;
+  border-radius:50%;
+  background:radial-gradient(circle,var(--x3-bg-glow),transparent 68%);
+  filter:blur(10px);
+  pointer-events:none;
+  z-index:-1;
+}
+.wow-hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(90deg,transparent 0 49.5%,rgba(255,255,255,.025) 50%,transparent 50.5%),
+    radial-gradient(circle at 15% 85%,color-mix(in srgb,var(--accent2,var(--accent)) 8%,transparent),transparent 30%);
+  opacity:.55;
+  pointer-events:none;
+  z-index:-1;
+}
+.wow-visual{
+  position:relative;
+  min-height:460px;
+  transform-style:preserve-3d;
+  perspective:1200px;
+}
+.wow-visual:before{
+  content:"";
+  position:absolute;
+  inset:7% 3% 8% 7%;
+  border-radius:42px;
+  background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.11);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.12),0 40px 100px rgba(0,0,0,.25);
+  backdrop-filter:blur(16px);
+  transform:rotate(-2deg) translateZ(-20px);
+}
+.wow-visual:after{
+  content:"";
+  position:absolute;
+  width:55%;
+  height:35%;
+  right:4%;
+  bottom:4%;
+  border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--accent) 25%,transparent),transparent 68%);
+  filter:blur(35px);
+  z-index:-1;
+}
+.wow-visual > *{
+  transform:translateZ(25px);
+}
+.plate,.portrait,.browser,.orbital{
+  box-shadow:0 35px 90px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.12);
+}
+.float-card{
+  backdrop-filter:blur(18px)!important;
+  border:1px solid rgba(255,255,255,.16)!important;
+  box-shadow:0 22px 60px rgba(0,0,0,.30)!important;
+  transform:translateZ(80px)!important;
+}
+.float-card.fc1{animation:x3float1 5s ease-in-out infinite}
+.float-card.fc2{animation:x3float2 6s ease-in-out infinite}
+@keyframes x3float1{50%{transform:translate3d(0,-12px,80px)!important}}
+@keyframes x3float2{50%{transform:translate3d(0,10px,80px)!important}}
+.wow-actions .btn{
+  position:relative;
+  overflow:hidden;
+  box-shadow:0 12px 34px color-mix(in srgb,var(--accent) 18%,transparent);
+}
+.wow-actions .btn:after{
+  content:"";
+  position:absolute;
+  top:-120%;left:-30%;
+  width:25%;height:340%;
+  transform:rotate(22deg);
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.32),transparent);
+  transition:left .7s ease;
+}
+.wow-actions .btn:hover:after{left:125%}
+.wow-meta div{
+  border:1px solid rgba(255,255,255,.08);
+  background:rgba(255,255,255,.025);
+  padding:10px 12px;
+  border-radius:14px;
+}
+.wow-strip{
+  position:relative;
+  overflow:hidden;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.05),inset 0 -1px 0 rgba(255,255,255,.03);
+}
+section .title h2{
+  text-wrap:balance;
+}
+.card,.about-card,.service,.skill,.feature,.course,.price-card,.review,.project,.step,.info-card,.food{
+  box-shadow:0 18px 55px rgba(0,0,0,.10),inset 0 1px 0 rgba(255,255,255,.055);
+  transition:transform .45s cubic-bezier(.22,1,.36,1),box-shadow .45s,border-color .45s;
+}
+.card:hover,.about-card:hover,.service:hover,.skill:hover,.feature:hover,.course:hover,.price-card:hover,.review:hover,.project:hover,.step:hover,.info-card:hover,.food:hover{
+  transform:translateY(-7px);
+  box-shadow:0 30px 75px rgba(0,0,0,.18),inset 0 1px 0 rgba(255,255,255,.09);
+}
+.icon,.skill-icon,.project-icon,.food-img{
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.18),0 14px 35px rgba(0,0,0,.12);
+}
+
+/* Coaching: make the existing Science/course experience feel like the generated 3D reference */
+body[data-final-theme="Scholar Blue"] .course:nth-child(2){
+  grid-column:span 2;
+  min-height:250px;
+  position:relative;
+  overflow:hidden;
+  background:
+    radial-gradient(circle at 18% 58%,rgba(77,163,255,.26),transparent 30%),
+    radial-gradient(circle at 82% 18%,rgba(124,92,255,.22),transparent 32%),
+    linear-gradient(145deg,rgba(31,46,92,.72),rgba(12,18,38,.94))!important;
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(2):before{
+  content:"🔬";
+  position:absolute;
+  left:24px;
+  bottom:8px;
+  font-size:132px;
+  line-height:1;
+  filter:drop-shadow(0 20px 24px rgba(0,0,0,.35));
+  transform:rotate(-8deg);
+  opacity:.92;
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(2):after{
+  content:"EXPLORE  •  DISCOVER  •  LEARN";
+  position:absolute;
+  right:22px;
+  top:20px;
+  padding:8px 12px;
+  border-radius:999px;
+  background:rgba(77,163,255,.13);
+  border:1px solid rgba(77,163,255,.35);
+  color:#8ec6ff;
+  font-size:10px;
+  letter-spacing:.13em;
+  font-weight:900;
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(2) .icon{
+  display:none;
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(2) h3,
+body[data-final-theme="Scholar Blue"] .course:nth-child(2) p{
+  position:relative;
+  z-index:2;
+  margin-left:180px;
+  max-width:58%;
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(2) h3{
+  padding-top:28px;
+  font-size:clamp(28px,3vw,42px);
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(2) p{
+  font-size:16px;
+}
+body[data-final-theme="Scholar Blue"] .course:nth-child(1),
+body[data-final-theme="Scholar Blue"] .course:nth-child(3){
+  min-height:190px;
+}
+body[data-final-theme="Scholar Blue"] .price-card.featured{
+  box-shadow:0 30px 90px rgba(77,163,255,.18),inset 0 1px 0 rgba(255,255,255,.12)!important;
+}
+
+/* Niche-specific visual treatment */
+body[data-final-theme="Saffron Atelier"] .plate{
+  transform:rotateX(8deg) rotateZ(-7deg) translateZ(35px);
+  filter:drop-shadow(0 35px 35px rgba(0,0,0,.28));
+}
+body[data-final-theme="Obsidian Grooming"] .portrait{
+  transform:rotateY(-7deg) translateZ(35px);
+}
+body[data-final-theme="Studio Noir"] .browser{
+  transform:rotateY(-7deg) rotateX(3deg) translateZ(35px);
+}
+
+@media(max-width:800px){
+  .wow-visual{min-height:360px;margin-top:16px}
+  .wow-visual:before{inset:5% 0 5% 0;border-radius:30px}
+  body[data-final-theme="Scholar Blue"] .course:nth-child(2){
+    grid-column:span 1;
+    min-height:340px;
+  }
+  body[data-final-theme="Scholar Blue"] .course:nth-child(2):before{
+    left:12px;bottom:8px;font-size:108px;
+  }
+  body[data-final-theme="Scholar Blue"] .course:nth-child(2) h3,
+  body[data-final-theme="Scholar Blue"] .course:nth-child(2) p{
+    margin-left:0;
+    max-width:100%;
+    padding-left:125px;
+  }
+  body[data-final-theme="Scholar Blue"] .course:nth-child(2) h3{padding-top:82px}
+  body[data-final-theme="Scholar Blue"] .course:nth-child(2) p{padding-top:4px}
+}
+@media(prefers-reduced-motion:reduce){
+  .float-card.fc1,.float-card.fc2{animation:none!important}
+}
+</style>
+
+
+<style id="x3000-final-balance">
+/* ===== X3000 FINAL BALANCE PASS =====
+   Target: neither washed-out nor overly dark.
+   Preserve each site's identity while normalizing contrast, glow and density.
+*/
+:root{
+  --x3-balance-bg:rgba(255,255,255,.045);
+  --x3-balance-border:rgba(255,255,255,.12);
+  --x3-balance-shadow:0 22px 65px rgba(0,0,0,.16);
+}
+body{
+  color-scheme:dark;
+}
+body[data-final-theme="Scholar Blue"]{
+  background:
+    radial-gradient(circle at 10% 5%,rgba(77,163,255,.075),transparent 30%),
+    radial-gradient(circle at 90% 35%,rgba(124,92,255,.065),transparent 28%),
+    #111827!important;
+}
+body[data-final-theme="Saffron Atelier"]{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(242,138,50,.07),transparent 28%),
+    #151210!important;
+}
+body[data-final-theme="Obsidian Grooming"]{
+  background:
+    radial-gradient(circle at 85% 10%,rgba(214,162,75,.065),transparent 28%),
+    #141414!important;
+}
+body[data-final-theme="Studio Noir"]{
+  background:
+    radial-gradient(circle at 15% 10%,rgba(77,163,255,.065),transparent 28%),
+    #111827!important;
+}
+
+/* Tone down overly bright surfaces */
+.card,.about-card,.why-card,.service,.skill,.feature,.course,.price-card,
+.review,.project,.step,.info-card,.food,.contact-card{
+  background-color:var(--x3-balance-bg);
+  border-color:var(--x3-balance-border);
+  box-shadow:var(--x3-balance-shadow),inset 0 1px 0 rgba(255,255,255,.055);
+}
+header,nav{
+  background-color:rgba(17,20,27,.76)!important;
+  backdrop-filter:blur(18px);
+}
+
+/* Controlled glow: visible, not neon */
+.x3-card-premium:hover{
+  box-shadow:0 30px 78px rgba(0,0,0,.22),0 0 38px color-mix(in srgb,var(--x3-accent) 7%,transparent);
+}
+.x3-progress{
+  opacity:.88;
+  height:2px;
+}
+.x3-cursor{
+  opacity:.8;
+}
+.btn,.button{
+  box-shadow:0 10px 30px color-mix(in srgb,var(--x3-accent) 10%,transparent);
+}
+
+/* Keep typography bright enough without white overload */
+h1,h2,h3,h4{
+  text-shadow:0 1px 18px rgba(0,0,0,.10);
+}
+p,.muted,.subtitle{
+  color:color-mix(in srgb,var(--muted) 90%,#fff 10%);
+}
+
+/* Make the visual system feel more intentional */
+section{
+  position:relative;
+}
+section:not(:first-child):after{
+  content:"";
+  position:absolute;
+  left:8%;
+  right:8%;
+  bottom:-1px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.07),transparent);
+  pointer-events:none;
+}
+.x3-marquee{
+  background:rgba(255,255,255,.012);
+}
+
+/* Coaching featured science: balanced blue glow */
+body[data-final-theme="Scholar Blue"] .course:nth-child(2){
+  background:
+    radial-gradient(circle at 22% 60%,rgba(77,163,255,.18),transparent 30%),
+    radial-gradient(circle at 82% 18%,rgba(124,92,255,.13),transparent 32%),
+    linear-gradient(145deg,rgba(31,46,92,.72),rgba(18,25,42,.92))!important;
+  box-shadow:0 28px 78px rgba(0,0,0,.22),0 0 44px rgba(77,163,255,.07)!important;
+}
+
+/* Better mobile density */
+@media(max-width:800px){
+  section{scroll-margin-top:78px}
+  .card,.about-card,.why-card,.service,.skill,.feature,.course,.price-card,
+  .review,.project,.step,.info-card,.food,.contact-card{
+    box-shadow:0 16px 44px rgba(0,0,0,.14),inset 0 1px 0 rgba(255,255,255,.05);
+  }
+}
+</style>
+
+
+<style id="tactiff-pro-max">
+:root{--pro-accent:#4da3ff;--pro-accent2:#7c5cff;--pro-glow:rgba(77,163,255,.20);--pro-glow-soft:rgba(77,163,255,.08);--pro-ease:cubic-bezier(.22,1,.36,1)}
+html{scroll-padding-top:92px} body{overflow-x:hidden}
+body.pro-ready::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:-1;background:radial-gradient(circle at 8% 8%,var(--pro-glow-soft),transparent 28%),radial-gradient(circle at 92% 82%,var(--pro-glow-soft),transparent 30%)}
+.pro-progress{position:fixed;left:0;top:0;width:0;height:3px;z-index:10020;background:linear-gradient(90deg,var(--pro-accent),var(--pro-accent2));box-shadow:0 0 18px var(--pro-accent)}
+.pro-loader{position:fixed;inset:0;z-index:10030;display:grid;place-items:center;background:var(--bg,#080b12);transition:opacity .55s var(--pro-ease),visibility .55s}
+.pro-loader.hide{opacity:0;visibility:hidden;pointer-events:none}
+.pro-loader-box{text-align:center} .pro-loader-mark{width:58px;height:58px;border-radius:18px;margin:0 auto 16px;border:2px solid color-mix(in srgb,var(--pro-accent) 25%,transparent);border-top-color:var(--pro-accent);animation:proSpin .8s linear infinite}
+.pro-loader small{color:var(--muted,#aaa);letter-spacing:.18em;text-transform:uppercase;font-size:10px}
+@keyframes proSpin{to{transform:rotate(360deg)}}
+.pro-topbar{position:fixed;top:14px;left:50%;transform:translate(-50%,-130%);z-index:10010;padding:8px 13px;border-radius:999px;background:color-mix(in srgb,var(--bg,#101010) 82%,transparent);border:1px solid color-mix(in srgb,var(--pro-accent) 24%,var(--border,#333));backdrop-filter:blur(16px);box-shadow:0 15px 45px #0004;font-size:11px;color:var(--muted,#aaa);transition:.5s var(--pro-ease);white-space:nowrap}
+.pro-topbar.show{transform:translate(-50%,0)} .pro-topbar b{color:var(--pro-accent)}
+.pro-backtop{position:fixed;right:20px;bottom:92px;width:44px;height:44px;z-index:9998;border:1px solid color-mix(in srgb,var(--pro-accent) 30%,var(--border,#333));border-radius:14px;background:color-mix(in srgb,var(--bg,#111) 80%,transparent);color:var(--text,#fff);backdrop-filter:blur(14px);cursor:pointer;opacity:0;visibility:hidden;transform:translateY(12px);transition:.3s var(--pro-ease);font-size:18px}
+.pro-backtop.show{opacity:1;visibility:visible;transform:none} .pro-backtop:hover{transform:translateY(-3px);border-color:var(--pro-accent)}
+.pro-fab{position:fixed;right:20px;bottom:20px;z-index:9997;display:flex;align-items:center;gap:8px;padding:11px 15px;border-radius:999px;color:#07101c;background:linear-gradient(135deg,var(--pro-accent),var(--pro-accent2));font-weight:900;font-size:12px;box-shadow:0 14px 38px rgba(77,163,255,.28);transition:.3s var(--pro-ease)}
+.pro-fab:hover{transform:translateY(-4px) scale(1.02)}
+.pro-card-glow{transition:transform .45s var(--pro-ease),box-shadow .45s var(--pro-ease),border-color .35s}
+.pro-card-glow:hover{transform:translateY(-8px);box-shadow:0 24px 70px rgba(0,0,0,.24),0 0 0 1px color-mix(in srgb,var(--pro-accent) 16%,transparent)}
+.pro-section-line{width:70px;height:3px;margin:12px auto 0;border-radius:999px;background:linear-gradient(90deg,var(--pro-accent),var(--pro-accent2))}
+.pro-reveal{opacity:0;transform:translateY(24px);transition:opacity .7s var(--pro-ease),transform .7s var(--pro-ease)}
+.pro-reveal.in{opacity:1;transform:none}
+@media(max-width:700px){.pro-fab{right:14px;bottom:14px}.pro-backtop{right:14px;bottom:72px}.pro-topbar{top:8px;font-size:10px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}.pro-reveal{opacity:1;transform:none}}
+</style>
+
+
+<style id="tactiff-final-bugfix">
+/* FINAL BUG-FIX PASS: one mobile menu, one primary floating CTA */
+.x3-mobile-toggle,.x3-mobile-panel,.x3-progress,.x3-top,.x3-cursor,
+.upgradeSticky,.pro-fab{display:none!important}
+.pro-backtop{bottom:82px!important}
+.premium-booking-fab{bottom:max(16px,env(safe-area-inset-bottom))!important}
+@media(max-width:800px){
+  nav{isolation:isolate}
+  nav .nav{position:relative!important;display:flex!important;align-items:center!important;justify-content:space-between!important}
+  nav .logo{
+    color:#f4f7ff!important;
+    font-weight:900!important;
+    letter-spacing:-.03em;
+    white-space:nowrap;
+  }
+  nav .logo span{color:var(--accent)!important}
+  .premium-mobile-toggle{
+    display:grid!important;
+    place-items:center!important;
+    width:46px!important;
+    height:46px!important;
+    flex:0 0 46px!important;
+    margin-left:auto!important;
+    border-radius:14px!important;
+    background:rgba(255,255,255,.055)!important;
+    border:1px solid color-mix(in srgb,var(--accent) 28%,var(--border))!important;
+    box-shadow:0 8px 24px rgba(0,0,0,.18)!important;
+    font-size:22px!important;
+    line-height:1!important;
+  }
+  .premium-mobile-menu{
+    left:3%!important;
+    right:3%!important;
+    top:calc(100% + 8px)!important;
+    padding:10px!important;
+    border-radius:20px!important;
+    background:color-mix(in srgb,var(--bg) 96%,#000 4%)!important;
+    border:1px solid color-mix(in srgb,var(--accent) 18%,var(--border))!important;
+    box-shadow:0 25px 70px rgba(0,0,0,.42)!important;
+    max-height:calc(100svh - 90px)!important;
+    overflow:auto!important;
+    z-index:10020!important;
+  }
+  .premium-mobile-menu.open{display:grid!important}
+  .premium-mobile-menu a{
+    display:flex!important;
+    align-items:center!important;
+    min-height:48px!important;
+    padding:12px 14px!important;
+    border-radius:14px!important;
+    font-size:15px!important;
+    font-weight:750!important;
+    color:var(--text)!important;
+  }
+  .premium-mobile-menu a+a{margin-top:3px}
+  .premium-mobile-menu a:hover,
+  .premium-mobile-menu a:focus-visible{
+    background:color-mix(in srgb,var(--accent) 10%,transparent)!important;
+    color:var(--accent)!important;
+  }
+  .premium-booking-fab{
+    right:14px!important;
+    bottom:max(14px,env(safe-area-inset-bottom))!important;
+    min-height:46px!important;
+    padding:11px 15px!important;
+    border-radius:999px!important;
+    z-index:10030!important;
+  }
+}
+</style>
+
+
+<style id="redesign-2026-final">
+:root{
+ --bg:#f4f5f7;--card:#ffffff;--card2:#eef0f3;--text:#101319;--muted:#69707c;--accent:#111827;--accent2:#5b5bd6;--border:#dfe3e8;
+}
+body{font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;background:var(--bg);color:var(--text)}
+nav{background:rgba(244,245,247,.88)!important;border-bottom:1px solid var(--border)!important;backdrop-filter:blur(18px)}
+.hero{background:radial-gradient(circle at 75% 20%,#dfe1ff 0,transparent 34%),radial-gradient(circle at 15% 80%,#e4e9ef 0,transparent 34%)!important}
+.wow-title,.hero h1{font-family:Georgia,serif;letter-spacing:-.05em}
+.wow-title em,.hero h1 span,.logo span{color:var(--accent2)!important}
+.about-card,.skill,.project,.service,.step,.why-card,.contact-card{box-shadow:0 14px 42px rgba(16,24,40,.07)}
+.btn-primary{background:var(--accent)!important;color:#fff!important}
+
+*{scroll-behavior:smooth}
+::selection{background:var(--accent);color:#fff}
+a,.btn,button{transition:transform .25s ease,box-shadow .25s ease,background .25s ease,color .25s ease,border-color .25s ease}
+.btn:hover,button:hover{box-shadow:0 12px 30px rgba(0,0,0,.12)}
+section{scroll-margin-top:82px}
+</style>
+
+
+<style id="final-v2-fix">
+:root{--bg:#f4f5f7!important;--card:#fff!important;--text:#11151b!important;--muted:#69727d!important;--accent:#171b22!important;--accent2:#5b5bd6!important;--border:#dfe3e8!important}
+body{background:var(--bg)!important;color:var(--text)!important}
+.project,.service,.step,.why-card,.contact-card,.skill{background:var(--card)!important;border-color:var(--border)!important}
+.project h3,.service h3,.step h3,.why-card h3,.contact-card h3,.skill h3{color:#11151b!important;opacity:1!important;visibility:visible!important}
+.project p,.service p,.step p,.why-card p,.contact-card p,.skill p{color:#69727d!important;opacity:1!important;visibility:visible!important}
+</style>
+
+<style id="signature-redesign-v3">
+:root{--nx-bg:#F6F7F9;--nx-surface:#FFFFFF;--nx-ink:#111827;--nx-muted:#687386;--nx-accent:#3157C8;--nx-accent2:#101828;--nx-line:#DDE2EA;--nx-soft:#EDF1F7;}
+
+/* Remove legacy art-direction layers; structure/content/JS stay intact. */
+#premium-visual-theme,#theme-overrides,#design-2000x,#design-3000x,#design-4000x,#final-theme-system,#redesign-2026-final{display:none!important}
+
+/* ===== 2026 SIGNATURE REDESIGN — final visual system ===== */
+html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{
+  background:var(--nx-bg)!important;
+  color:var(--nx-ink)!important;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important;
+  line-height:1.65!important;
+}
+body::before,body::after{display:none!important}
+nav{
+  background:rgba(255,255,255,.88)!important;
+  border-bottom:1px solid var(--nx-line)!important;
+  box-shadow:0 8px 30px rgba(15,23,42,.04)!important;
+  backdrop-filter:blur(18px)!important;
+}
+nav .logo{color:var(--nx-ink)!important;font-weight:900!important;letter-spacing:-.04em}
+nav .logo span{color:var(--nx-accent)!important}
+.nav-links a{color:var(--nx-muted)!important;font-weight:650!important}
+.nav-links a:hover,.nav-links a.is-active{color:var(--nx-ink)!important}
+
+.hero,.wow-hero{
+  min-height:clamp(620px,88vh,820px)!important;
+  background:
+    radial-gradient(circle at 82% 18%,color-mix(in srgb,var(--nx-accent) 13%,transparent),transparent 30%),
+    radial-gradient(circle at 15% 85%,color-mix(in srgb,var(--nx-accent2) 10%,transparent),transparent 28%),
+    var(--nx-bg)!important;
+}
+.wow-eyebrow,.badge{
+  color:var(--nx-accent)!important;
+  border-color:color-mix(in srgb,var(--nx-accent) 24%,var(--nx-line))!important;
+  background:color-mix(in srgb,var(--nx-accent) 5%,white)!important;
+}
+.wow-title,.hero h1{
+  color:var(--nx-ink)!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:800!important;
+  letter-spacing:-.055em!important;
+}
+.wow-title em,.hero h1 span{color:var(--nx-accent)!important}
+.wow-desc,.hero p,.title p{color:var(--nx-muted)!important}
+.wow-actions .btn-primary,.btn-primary{
+  background:var(--nx-ink)!important;
+  color:#fff!important;
+  border:1px solid var(--nx-ink)!important;
+  box-shadow:0 12px 30px rgba(17,24,39,.14)!important;
+}
+.wow-actions .btn-secondary,.btn-secondary{
+  background:#fff!important;
+  color:var(--nx-ink)!important;
+  border:1px solid var(--nx-line)!important;
+}
+.btn:hover{transform:translateY(-3px)!important;box-shadow:0 16px 34px rgba(17,24,39,.12)!important}
+
+section{background:transparent!important}
+.title{margin-bottom:48px!important}
+.title h2{
+  color:var(--nx-ink)!important;
+  font-family:Georgia,"Times New Roman",serif!important;
+  font-weight:800!important;
+  letter-spacing:-.045em!important;
+}
+.title h2::after{background:var(--nx-accent)!important}
+
+.about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+.feature,.course,.price-card,.review,.info-card,.food,.card{
+  background:var(--nx-surface)!important;
+  color:var(--nx-ink)!important;
+  border:1px solid var(--nx-line)!important;
+  box-shadow:0 18px 50px rgba(17,24,39,.055)!important;
+  border-radius:24px!important;
+}
+.about-card:hover,.skill:hover,.project:hover,.service:hover,.why-card:hover,
+.feature:hover,.course:hover,.price-card:hover,.review:hover,.info-card:hover,.food:hover,.card:hover{
+  border-color:color-mix(in srgb,var(--nx-accent) 32%,var(--nx-line))!important;
+  box-shadow:0 24px 65px rgba(17,24,39,.09)!important;
+  transform:translateY(-5px)!important;
+}
+.about-card h3,.skill h3,.project h3,.service h3,.step h3,.why-card h3,
+.feature h3,.course h3,.price-card h3,.review h3,.info-card h3,.food h3,.card h3{
+  color:var(--nx-ink)!important;
+  font-family:Inter,ui-sans-serif,system-ui,sans-serif!important;
+  font-weight:800!important;
+  letter-spacing:-.025em!important;
+}
+.about-card p,.skill p,.project p,.service p,.step p,.why-card p,
+.feature p,.course p,.price-card p,.review p,.info-card p,.food p,.card p{
+  color:var(--nx-muted)!important;
+}
+.price,.price-card .price{color:var(--nx-accent)!important;font-weight:900!important}
+.icon,.service-icon,.skill-icon{
+  background:var(--nx-soft)!important;
+  color:var(--nx-accent)!important;
+  border:1px solid var(--nx-line)!important;
+}
+.food{overflow:hidden!important;padding:0!important}
+.food .food-img{
+  background:linear-gradient(135deg,var(--nx-soft),#fff)!important;
+  color:var(--nx-ink)!important;
+  border:0!important;
+  display:grid!important;
+  place-items:center!important;
+  font-size:58px!important;
+  min-height:210px!important;
+  height:210px!important;
+}
+.food .food-body{padding:26px 28px 30px!important}
+.food .food-body h3{font-size:24px!important;margin-bottom:8px!important}
+.food .food-body .price{font-size:22px!important;margin-top:18px!important}
+
+.course{position:relative;overflow:hidden}
+.course::before,.service::before,.price-card::before{
+  content:"";display:block;height:4px;width:58px;background:var(--nx-accent);
+  border-radius:99px;margin-bottom:22px;
+}
+.course .icon,.course .service-icon{margin-bottom:18px!important}
+.info-card{padding:28px!important}
+.info-card h3{margin-top:12px!important}
+.cta{
+  background:var(--nx-ink)!important;
+  color:#fff!important;
+  border:1px solid var(--nx-ink)!important;
+  border-radius:30px!important;
+  box-shadow:0 28px 70px rgba(17,24,39,.14)!important;
+}
+.cta h2,.cta p{color:#fff!important}
+footer{background:var(--nx-ink)!important;border-top:0!important;color:#fff!important}
+footer p{color:rgba(255,255,255,.62)!important;border-top:0!important}
+.whatsapp,.premium-booking-fab{
+  background:var(--nx-accent)!important;
+  color:#fff!important;
+  box-shadow:0 16px 36px color-mix(in srgb,var(--nx-accent) 28%,transparent)!important;
+}
+.premium-mobile-toggle{
+  background:#fff!important;color:var(--nx-ink)!important;border:1px solid var(--nx-line)!important;
+}
+.premium-mobile-menu{
+  background:#fff!important;border:1px solid var(--nx-line)!important;
+}
+.premium-mobile-menu a{color:var(--nx-ink)!important}
+::selection{background:var(--nx-accent);color:#fff}
+@media(max-width:800px){
+  .hero,.wow-hero{min-height:auto!important;padding-top:76px!important;padding-bottom:76px!important}
+  .wow-title,.hero h1{font-size:clamp(48px,14vw,72px)!important}
+  .food .food-img{height:180px!important;min-height:180px!important}
+  .food .food-body{padding:22px!important}
+  .about-card,.skill,.project,.service,.step,.why-card,.contact-card,
+  .feature,.course,.price-card,.review,.info-card,.card{border-radius:20px!important}
+}
+
+</style>
+<style id="tactiff-ultimate-2026">
+:root{--ux-max:1220px;--ux-radius:24px;--ux-shadow:0 24px 80px rgba(0,0,0,.22);--ux-ease:cubic-bezier(.2,.75,.2,1)}
+html{scroll-padding-top:92px}body{overflow-x:hidden;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}img{max-width:100%;height:auto}button,a{ -webkit-tap-highlight-color:transparent}a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid color-mix(in srgb,var(--accent,#4da3ff) 55%,white);outline-offset:3px}
+nav{height:74px!important;background:color-mix(in srgb,var(--bg,#080b12) 78%,transparent)!important;box-shadow:0 10px 35px rgba(0,0,0,.14);transition:background .25s,box-shadow .25s,backdrop-filter .25s}nav.scrolled{background:color-mix(in srgb,var(--bg,#080b12) 94%,transparent)!important;box-shadow:0 16px 45px rgba(0,0,0,.28)}.nav{height:74px!important;width:min(var(--ux-max),92%)!important}.logo{letter-spacing:-.04em}.nav-links a{position:relative;padding:8px 0}.nav-links a:after{content:"";position:absolute;left:0;right:100%;bottom:0;height:2px;background:var(--accent);border-radius:99px;transition:right .3s var(--ux-ease)}.nav-links a:hover:after,.nav-links a.is-active:after{right:0}
+.hero,.wow-hero{isolation:isolate}.hero:before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:radial-gradient(rgba(255,255,255,.12) 1px,transparent 1px);background-size:24px 24px;mask-image:linear-gradient(to bottom,black,transparent 70%)}.hero-content{position:relative;z-index:2}.wow-grid{max-width:var(--ux-max)!important}.wow-title{max-width:900px}.wow-visual{filter:drop-shadow(0 25px 65px rgba(0,0,0,.22))}
+section{position:relative}section:nth-of-type(even){background:linear-gradient(180deg,transparent,rgba(255,255,255,.012),transparent)}.title h2{letter-spacing:-.045em}.title p{max-width:650px;margin:10px auto 0}
+.about-card,.skill,.project,.service,.step,.why-card,.course,.feature,.stat,.price-card,.review,.info-card,.card,.food{position:relative;overflow:hidden;transition:transform .45s var(--ux-ease),border-color .35s,box-shadow .45s var(--ux-ease),background .35s}.about-card:before,.skill:before,.project:before,.service:before,.course:before,.feature:before,.price-card:before,.review:before,.food:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at var(--mx,50%) var(--my,0%),rgba(255,255,255,.10),transparent 34%);opacity:0;transition:opacity .35s;pointer-events:none}.about-card:hover:before,.skill:hover:before,.project:hover:before,.service:hover:before,.course:hover:before,.feature:hover:before,.price-card:hover:before,.review:hover:before,.food:hover:before{opacity:1}.about-card:hover,.skill:hover,.project:hover,.service:hover,.step:hover,.why-card:hover,.course:hover,.feature:hover,.stat:hover,.price-card:hover,.review:hover,.info-card:hover,.card:hover,.food:hover{transform:translateY(-8px);box-shadow:var(--ux-shadow)}
+.btn{position:relative;overflow:hidden;isolation:isolate;box-shadow:0 8px 25px rgba(0,0,0,.12);transition:transform .3s var(--ux-ease),box-shadow .3s,filter .3s}.btn:after{content:"";position:absolute;inset:-80% -30%;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.28),transparent 65%);transform:translateX(-70%) rotate(8deg);transition:transform .7s;z-index:-1}.btn:hover{transform:translateY(-4px) scale(1.015);box-shadow:0 14px 35px rgba(0,0,0,.2);filter:saturate(1.08)}.btn:hover:after{transform:translateX(70%) rotate(8deg)}
+.whatsapp{animation:uxPulse 2.8s infinite}.whatsapp:hover{animation:none;transform:scale(1.08) translateY(-2px)}@keyframes uxPulse{0%,70%,100%{box-shadow:0 8px 25px rgba(0,0,0,.35),0 0 0 0 rgba(37,211,102,.22)}85%{box-shadow:0 8px 25px rgba(0,0,0,.35),0 0 0 12px rgba(37,211,102,0)}}
+.premium-mobile-toggle{width:44px!important;height:44px!important;border:1px solid var(--wow-line,var(--border))!important;border-radius:13px!important;background:rgba(255,255,255,.05)!important;color:var(--wow-text,var(--text))!important;display:none!important;align-items:center;justify-content:center;font-size:22px;line-height:1;cursor:pointer}.premium-mobile-menu{backdrop-filter:blur(22px);background:color-mix(in srgb,var(--bg) 92%,transparent)!important;border:1px solid var(--border)!important;box-shadow:0 25px 70px rgba(0,0,0,.32)!important}
+.x3-reveal,.upgradeReveal{will-change:transform,opacity}.x3-reveal.visible,.upgradeReveal.visible{transition-timing-function:var(--ux-ease)}
+@media(max-width:800px){nav{height:66px!important}.nav{height:66px!important}.nav-links{display:none!important}.premium-mobile-toggle{display:flex!important}.hero,.wow-hero{min-height:calc(100svh - 66px)!important}.wow-grid{grid-template-columns:1fr!important;gap:18px!important}.wow-copy{text-align:center;margin:auto}.wow-title{font-size:clamp(44px,13vw,70px)!important}.wow-desc{margin-left:auto;margin-right:auto}.wow-actions,.wow-meta{justify-content:center}.wow-visual{min-height:360px!important;transform:none!important}.float-card{transform:scale(.86)}.fc1{left:3%;top:10%}.fc2{right:3%;bottom:8%}.plate{width:min(310px,72vw)}.portrait{height:370px!important;width:min(290px,70vw)!important}.container{width:min(92%,var(--ux-max))}.buttons{gap:10px}.btn{padding:13px 18px}.skills{gap:12px!important}section{padding:70px 0!important}.title{margin-bottom:32px}.title h2{font-size:34px!important}.cta h2{font-size:34px!important}}
+@media(max-width:520px){.premium-mobile-menu{left:10px!important;right:10px!important}.hero h1{font-size:clamp(42px,14vw,62px)!important}.hero p{font-size:15px!important}.whatsapp{right:15px;bottom:15px;width:54px;height:54px}.float-card{min-width:150px!important;padding:11px!important}.float-card b{font-size:11px!important}.float-card span{font-size:8px!important}.fc1{top:3%}.fc2{bottom:2%}.wow-meta{gap:15px}.wow-meta b{font-size:15px}.upgradePanel{border-radius:18px!important;padding:18px!important}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important;animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important}.x3-reveal,.upgradeReveal{opacity:1!important;transform:none!important}}
+</style>
+</head>
+
+<body class="premium-1000x-body" data-final-theme="Studio Noir">
+
+
+<!-- WHATSAPP -->
+
+<a
+href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20a%20website%20for%20my%20business."
+target="_blank"
+class="whatsapp">
+
+💬
+
+</a>
+
+
+<!-- NAVBAR -->
+
+<nav>
+
+<div class="container nav">
+
+<a href="#" class="logo">
+Sahil<span>.</span>
+</a>
+
+<ul class="nav-links">
+
+<li><a href="#about">About</a></li>
+<li><a href="#skills">Skills</a></li>
+<li><a href="#projects">Projects</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+
+</ul>
+
+</div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero wow-hero" id="home" style="--wow-accent:var(--accent);--wow-line:var(--border);--wow-text:var(--text);--wow-muted:var(--muted);--wow-glow1:color-mix(in srgb,var(--accent) 22%,transparent);--wow-glow2:color-mix(in srgb,var(--accent2,var(--accent)) 16%,transparent)">
+<div class="wow-grid"><div class="wow-copy">
+<div class="wow-eyebrow">SAHIL KOKODE · DIGITAL EXPERIENCE</div>
+<h1 class="wow-title">Websites that<br><em>make businesses stand out.</em></h1>
+<p class="wow-desc">I design modern, mobile-first experiences that turn a business idea into something people remember—and act on.</p>
+<div class="wow-actions"><a href="#projects" class="btn btn-primary">View selected work</a><a href="#contact" class="btn btn-secondary">Start a project</a></div>
+<div class='wow-meta'><div><b>4</b>featured builds</div><div><b>Mobile</b>first design</div><div><b>1:1</b>project focus</div></div></div><div class='wow-visual portfolio-visual'><div class='browser'><div class='browser-top'><i></i><i></i><i></i><span>your-business.com</span></div><div class='browser-body'><b>YOUR<br>BUSINESS<br><em>DESERVES BETTER.</em></b><div class='mini-ui'></div></div></div><div class='float-card fc1'><small>SELECTED WORK</small><b>Restaurant · Barber · Coaching</b><span>Designed to convert</span></div><div class='float-card fc2'><small>BUILD WITH ME</small><b>New project?</b><span>Let's make it memorable.</span></div></div></div></section>
+<div class="wow-strip"><span>✦ SAHIL KOKODE · DIGITAL EXPERIENCE</span><span>DESIGNED FOR MOBILE</span><span>BUILT FOR CONVERSION</span><span>CRAFTED WITH INTENT</span></div>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+About Me
+</h2>
+
+<p>
+Building websites that help businesses look professional online.
+</p>
+
+</div>
+
+
+<div class="about">
+
+<div class="about-card">
+
+<h3>
+👨‍💻 Who I Am
+</h3>
+
+<p>
+I'm Sahil Kokode, a web developer focused on creating
+clean, modern and mobile-friendly websites for businesses
+and individuals.
+</p>
+
+</div>
+
+
+<div class="about-card">
+
+<h3>
+🎯 My Goal
+</h3>
+
+<p>
+My goal is simple: create websites that look professional,
+work smoothly on mobile and make it easy for customers
+to contact a business.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+My Skills
+</h2>
+
+<p>
+Tools and technologies I use to build websites.
+</p>
+
+</div>
+
+
+<div class="skills">
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🌐
+</div>
+
+<h3>
+HTML
+</h3>
+
+<p>
+Clean website structure
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+🎨
+</div>
+
+<h3>
+CSS
+</h3>
+
+<p>
+Modern responsive designs
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+⚡
+</div>
+
+<h3>
+JavaScript
+</h3>
+
+<p>
+Interactive website features
+</p>
+
+</div>
+
+
+<div class="skill">
+
+<div class="skill-icon">
+📱
+</div>
+
+<h3>
+Responsive Design
+</h3>
+
+<p>
+Mobile-friendly websites
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+My Demo Projects
+</h2>
+
+<p>
+Explore websites I've created for different businesses.
+</p>
+
+</div>
+
+
+<div class="projects">
+
+
+<!-- RESTAURANT -->
+
+<div class="project">
+
+<div class="project-icon">
+🍕
+</div>
+
+<h3>
+Restaurant Website
+</h3>
+
+<p>
+Modern restaurant website with menu, reviews,
+contact information and WhatsApp booking.
+</p>
+
+<span class="project-tag">
+Restaurant
+</span>
+
+<span class="project-tag">
+Responsive
+</span>
+
+<span class="project-tag">
+WhatsApp
+</span>
+
+<br><br>
+
+<a
+href="https://tactiff-dot.github.io/restaurant-demo/"
+target="_blank"
+class="btn btn-primary">
+
+View Demo →
+
+</a>
+
+</div>
+
+
+<!-- GYM -->
+
+<div class="project">
+
+<div class="project-icon">
+🏋️
+</div>
+
+<h3>
+Gym Website
+</h3>
+
+<p>
+Professional fitness website with programs,
+pricing, trainers, reviews and contact section.
+</p>
+
+<span class="project-tag">
+Fitness
+</span>
+
+<span class="project-tag">
+Responsive
+</span>
+
+<span class="project-tag">
+WhatsApp
+</span>
+
+<br><br>
+
+<a
+href="https://tactiff-dot.github.io/gym-demo/"
+target="_blank"
+class="btn btn-primary">
+
+View Demo →
+
+</a>
+
+</div>
+
+
+<!-- BARBER -->
+
+<div class="project">
+
+<div class="project-icon">
+💈
+</div>
+
+<h3>
+Barber Website
+</h3>
+
+<p>
+Premium barber website with services, pricing,
+reviews and appointment booking.
+</p>
+
+<span class="project-tag">
+Barber
+</span>
+
+<span class="project-tag">
+Booking
+</span>
+
+<span class="project-tag">
+Mobile Friendly
+</span>
+
+<br><br>
+
+<a
+href="https://tactiff-dot.github.io/barber-demo/"
+target="_blank"
+class="btn btn-primary">
+
+View Demo →
+
+</a>
+
+</div>
+
+
+<!-- COACHING -->
+
+<div class="project">
+
+<div class="project-icon">
+📚
+</div>
+
+<h3>
+Coaching Website
+</h3>
+
+<p>
+Educational website with courses, features,
+fee plans, testimonials and enquiry section.
+</p>
+
+<span class="project-tag">
+Education
+</span>
+
+<span class="project-tag">
+Courses
+</span>
+
+<span class="project-tag">
+WhatsApp
+</span>
+
+<br><br>
+
+<a
+href="https://tactiff-dot.github.io/coaching-demo/"
+target="_blank"
+class="btn btn-primary">
+
+View Demo →
+
+</a>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+What I Can Build
+</h2>
+
+<p>
+Simple websites designed for real businesses.
+</p>
+
+</div>
+
+
+<div class="services">
+
+
+<div class="service">
+
+<div class="service-icon">
+🌐
+</div>
+
+<h3>
+Business Websites
+</h3>
+
+<p>
+Professional websites for local businesses,
+shops and services.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+Mobile Friendly
+</h3>
+
+<p>
+Websites that look great on phones,
+tablets and computers.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+💬
+</div>
+
+<h3>
+WhatsApp Integration
+</h3>
+
+<p>
+Make it easy for customers to contact
+your business directly.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+⚡
+</div>
+
+<h3>
+Fast Landing Pages
+</h3>
+
+<p>
+Simple landing pages designed to present
+your business clearly.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🎨
+</div>
+
+<h3>
+Modern Design
+</h3>
+
+<p>
+Clean layouts with a professional
+visual appearance.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">
+🔧
+</div>
+
+<h3>
+Website Updates
+</h3>
+
+<p>
+I can update text, sections, prices,
+contact details and more.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section>
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+How I Work
+</h2>
+
+<p>
+Simple process from idea to website.
+</p>
+
+</div>
+
+
+<div class="process">
+
+
+<div class="step">
+
+<div class="number">
+1
+</div>
+
+<h3>
+Tell Me Your Requirements
+</h3>
+
+<p>
+Share your business details, services,
+photos and contact information.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+2
+</div>
+
+<h3>
+I Build The Website
+</h3>
+
+<p>
+I customize the design and content
+according to your business.
+</p>
+
+</div>
+
+
+<div class="step">
+
+<div class="number">
+3
+</div>
+
+<h3>
+Launch & Deliver
+</h3>
+
+<p>
+After final changes, your website
+is ready to share with customers.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- WHY HIRE -->
+
+<section>
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Why Work With Me?
+</h2>
+
+<p>
+Focused on simple, useful and professional websites.
+</p>
+
+</div>
+
+
+<div class="why">
+
+
+<div class="why-card">
+
+<div class="service-icon">
+📱
+</div>
+
+<h3>
+Mobile First
+</h3>
+
+<p>
+Your customers can easily use
+the website from their phones.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="service-icon">
+💬
+</div>
+
+<h3>
+Easy Contact
+</h3>
+
+<p>
+WhatsApp and contact options make
+it easy for customers to reach you.
+</p>
+
+</div>
+
+
+<div class="why-card">
+
+<div class="service-icon">
+🚀
+</div>
+
+<h3>
+Quick Delivery
+</h3>
+
+<p>
+Using ready-made templates allows
+faster website development.
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<h2>
+Need A Website For Your Business?
+</h2>
+
+<p>
+Let's create a professional online presence for your business.
+</p>
+
+<a
+href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20to%20discuss%20a%20website%20for%20my%20business."
+target="_blank"
+class="btn btn-primary">
+
+Start A Project →
+
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact">
+
+<div class="container">
+
+<div class="title">
+
+<h2>
+Contact Me
+</h2>
+
+<p>
+Have a project in mind? Let's talk.
+</p>
+
+</div>
+
+
+<div class="contact">
+
+
+<div class="contact-card">
+
+<h3>
+📞 Get In Touch
+</h3>
+
+<div class="contact-item">
+
+<strong>
+Phone / WhatsApp
+</strong>
+
+<br>
+
+<span>
++91 94054 79665
+</span>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>
+Role
+</strong>
+
+<br>
+
+<span>
+Web Developer
+</span>
+
+</div>
+
+
+<div class="contact-item">
+
+<strong>
+Services
+</strong>
+
+<br>
+
+<span>
+Business Websites · Landing Pages · Website Updates
+</span>
+
+</div>
+
+</div>
+
+
+<div class="contact-card">
+
+<h3>
+🚀 Start Your Project
+</h3>
+
+<p style="color:#9ca9bb;margin:15px 0 25px;">
+
+Tell me what kind of website you need
+and I'll get back to you.
+
+</p>
+
+<a
+
+href="https://wa.me/919405479665?text=Hi%20Sahil%2C%20I%20want%20to%20build%20a%20website."
+
+target="_blank"
+
+class="btn btn-primary">
+
+Message Me On WhatsApp
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<p>
+© 2026 Sahil Kokode · Web Developer
+</p>
+
+<p style="margin-top:5px;font-size:13px;">
+
+Built with HTML & CSS
+
+</p>
+
+</footer>
+
+
+
+<script id="nine-phase-js">
+(()=> {
+const d=document, toast=d.createElement('div'); toast.className='upgradeToast'; d.body.appendChild(toast);
+const bar=d.createElement('div'); bar.className='upgradeBar'; d.body.appendChild(bar);
+const showToast=(msg)=>{toast.textContent=msg;toast.classList.add('show');clearTimeout(window.__t);window.__t=setTimeout(()=>toast.classList.remove('show'),2800)};
+const modal=d.createElement('div'); modal.className='upgradeModal'; modal.innerHTML=`<div class="upgradePanel" role="dialog" aria-modal="true"><button class="upgradeClose" aria-label="Close">✕</button><h3 id="upTitle">Let's get started</h3><p id="upSub">This demo captures the enquiry and booking experience. Production submission can be connected to a backend later.</p><form id="upForm"><div class="row"><label>Name<input required name="name" autocomplete="name"></label><label>Phone<input required name="phone" inputmode="tel" autocomplete="tel"></label></div><label>Email<input name="email" type="email" autocomplete="email"></label><label>Message<textarea name="message" rows="4"></textarea></label><button class="upgradePrimary" type="submit">Continue →</button></form></div>`; d.body.appendChild(modal);
+const open=(title,sub)=>{modal.querySelector('#upTitle').textContent=title;modal.querySelector('#upSub').textContent=sub||'';modal.classList.add('open');modal.querySelector('input').focus()};
+modal.addEventListener('click',e=>{if(e.target===modal||e.target.closest('.upgradeClose'))modal.classList.remove('open')});
+modal.querySelector('form').addEventListener('submit',e=>{e.preventDefault();modal.classList.remove('open');showToast('Demo enquiry captured — connect this form to your backend for production.')});
+const map = {
+ restaurant:['Reserve','Reserve a table','Choose your preferred date, guests and seating.'],
+ barber:['Book','Book an appointment','Choose a service, barber and preferred time.'],
+ coaching:['Counselling','Book counselling','Tell us your course and learning goal.'],
+ portfolio:['Project','Start a project','Tell us what you want to build and your timeline.']
+};
+const cfg=map['portfolio'];
+const btn=d.createElement('button'); btn.textContent=cfg[0]; btn.className='upgradeSticky'; btn.style.background='currentColor'; btn.style.color='#fff'; btn.onclick=()=>open(cfg[1],cfg[2]);
+const wrap=d.createElement('div'); wrap.className='upgradeSticky'; wrap.appendChild(btn); d.body.appendChild(wrap);
+d.querySelectorAll('a[href="#contact"],a[href="#reservation"],a[href="#appointment"],a[href="#enquiry"],a[href="#book"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open(cfg[1],cfg[2])}));
+const els=d.querySelectorAll('section,.card,.project,.service,.course,.menu-item'); const io=new IntersectionObserver(es=>es.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),{threshold:.08});
+els.forEach(x=>{x.classList.add('upgradeReveal');io.observe(x)});
+addEventListener('scroll',()=>{const max=d.documentElement.scrollHeight-innerHeight;const p=max?scrollY/max*100:0;bar.style.background=`linear-gradient(90deg,currentColor ${p}%,transparent ${p}%)`},{passive:true});
+})();
+</script>
+<div aria-hidden="true" style="display:none">Final visual theme: Studio Noir</div>
+<script id="premium-1000x-js">
+(()=> {
+  const d=document, root=d.documentElement, body=d.body;
+  const nav=d.querySelector('nav');
+
+  /* Mobile navigation */
+  if(nav){
+    const navWrap=nav.querySelector('.nav');
+    const links=[...nav.querySelectorAll('.nav-links a')];
+    if(navWrap && links.length){
+      const toggle=d.createElement('button');
+      toggle.className='premium-mobile-toggle';
+      toggle.type='button';
+      toggle.setAttribute('aria-label','Open menu');
+      toggle.setAttribute('aria-expanded','false');
+      toggle.innerHTML='☰';
+      navWrap.appendChild(toggle);
+
+      const menu=d.createElement('div');
+      menu.className='premium-mobile-menu';
+      links.forEach(a=>{
+        const x=a.cloneNode(true);
+        x.addEventListener('click',()=>{menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.innerHTML='☰'});
+        menu.appendChild(x);
+      });
+      nav.appendChild(menu);
+      toggle.addEventListener('click',()=>{
+        const open=menu.classList.toggle('open');
+        toggle.setAttribute('aria-expanded',String(open));
+        toggle.innerHTML=open?'×':'☰';
+      });
+    }
+  }
+
+  /* Premium cursor glow on capable devices */
+  if(matchMedia('(pointer:fine)').matches){
+    const glow=d.createElement('div'); glow.className='premium-glow'; d.body.appendChild(glow);
+    let tx=0,ty=0,x=0,y=0;
+    addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY},{passive:true});
+    const tick=()=>{x+=(tx-x)*.14;y+=(ty-y)*.14;glow.style.transform=`translate(${x}px,${y}px) translate(-50%,-50%)`;requestAnimationFrame(tick)};
+    tick();
+  }
+
+  /* Scroll state + progress */
+  const bar=d.querySelector('.upgradeBar');
+  const progress=d.createElement('div'); progress.className='premium-progress-dot'; progress.innerHTML='<i></i>'; d.body.appendChild(progress);
+  const pi=progress.firstElementChild;
+  const update=()=>{
+    const max=Math.max(1,d.documentElement.scrollHeight-innerHeight);
+    const pct=Math.min(100,Math.max(0,scrollY/max*100));
+    if(bar) bar.style.transform=`scaleX(${pct/100})`;
+    pi.style.height=pct+'%';
+    if(nav) nav.classList.toggle('p-nav-scrolled',scrollY>24);
+  };
+  addEventListener('scroll',update,{passive:true}); update();
+
+  /* Active section in desktop nav */
+  const sectionLinks=[...d.querySelectorAll('nav a[href^="#"]')];
+  const sections=sectionLinks.map(a=>d.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if('IntersectionObserver' in window && sections.length){
+    const io=new IntersectionObserver(entries=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          sectionLinks.forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+entry.target.id));
+        }
+      });
+    },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+    sections.forEach(s=>io.observe(s));
+  }
+
+  /* Upgrade reveal: keep existing class, but make staggered entrance smoother */
+  const reveal=[...d.querySelectorAll('.upgradeReveal')];
+  reveal.forEach((el,i)=>{el.style.transitionDelay=(Math.min(i%6,5)*55)+'ms'});
+
+  /* Safe tilt interaction for desktop cards */
+  if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    const cards=d.querySelectorAll('.project,.service,.course,.feature,.price-card,.review,.info-card,.skill,.step,.why-card,.food');
+    cards.forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect(), px=(e.clientX-r.left)/r.width-.5, py=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`perspective(900px) rotateX(${py*-2.2}deg) rotateY(${px*2.2}deg) translateY(-8px)`;
+      });
+      card.addEventListener('pointerleave',()=>{card.style.transform=''});
+    });
+  }
+
+  /* Better keyboard focus */
+  d.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      const menu=d.querySelector('.premium-mobile-menu');
+      if(menu) menu.classList.remove('open');
+    }
+  });
+})();
+</script>
+
+<script id="completion-pass-js">(()=>{const d=document,m=d.querySelector('.upgradeModal'),p=d.querySelector('.upgradePanel');if(!m||!p)return;const f=p.querySelector('#upForm');if(f){const s=d.createElement('div');s.className='premium-form-status';f.appendChild(s);f.addEventListener('submit',e=>{e.preventDefault();const x=new FormData(f),n=String(x.get('name')||'').trim(),ph=String(x.get('phone')||'').trim(),em=String(x.get('email')||'').trim();if(n.length<2||ph.length<7){s.className='premium-form-status show err';s.textContent='Please enter a valid name and phone number.';return}if(em&&!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em)){s.className='premium-form-status show err';s.textContent='Please enter a valid email address.';return}s.className='premium-form-status show ok';s.textContent='Details captured successfully. Connect the form to your backend/CRM for live submissions.';setTimeout(()=>{m.classList.remove('open');f.reset();s.className='premium-form-status'},1400)})}const t=(d.body.dataset.finalTheme||'').toLowerCase();const c=t.includes('groom')?['Book','Book an appointment','Choose a service, barber and preferred time.']:t.includes('scholar')?['Counselling','Book counselling','Tell us your course and learning goal.']:t.includes('studio')?['Project','Start a project','Tell us what you want to build and your timeline.']:['Reserve','Reserve a table','Choose your preferred date, guests and seating.'];const b=d.createElement('button');b.className='premium-booking-fab';b.type='button';b.textContent=c[0];b.onclick=()=>{const h=p.querySelector('#upTitle'),q=p.querySelector('#upSub');if(h)h.textContent=c[1];if(q)q.textContent=c[2];m.classList.add('open');const i=p.querySelector('input');if(i)setTimeout(()=>i.focus(),60)};d.body.appendChild(b);d.querySelectorAll('a[href="#contact"],a[href="#reservation"],a[href="#appointment"],a[href="#enquiry"],a[href="#book"]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();b.click()}))})();</script>
+<script id="design-2000x-js">
+(()=> {
+  const d=document, nav=d.querySelector('nav');
+
+  /* Scroll-aware navigation */
+  const updateNav=()=>nav && nav.classList.toggle('x-nav-active',scrollY>20);
+  addEventListener('scroll',updateNav,{passive:true}); updateNav();
+
+  /* Section-aware navigation */
+  const links=[...d.querySelectorAll('.nav-links a[href^="#"]')];
+  const targets=links.map(a=>d.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if('IntersectionObserver' in window && targets.length){
+    const io=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          links.forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+e.target.id));
+        }
+      });
+    },{rootMargin:'-42% 0px -48% 0px'});
+    targets.forEach(t=>io.observe(t));
+  }
+
+  /* Premium reveal without changing existing content */
+  const els=d.querySelectorAll('.title,.about-card,.skill,.project,.service,.step,.why-card,.contact-card,.feature,.course,.price-card,.review,.info-card,.food');
+  if('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches){
+    els.forEach((el,i)=>{
+      el.style.opacity='0';
+      el.style.transform='translateY(22px)';
+      el.style.transition='opacity .7s cubic-bezier(.22,1,.36,1) '+((i%5)*55)+'ms, transform .7s cubic-bezier(.22,1,.36,1) '+((i%5)*55)+'ms, box-shadow .5s, border-color .35s';
+    });
+    const ro=new IntersectionObserver(es=>{
+      es.forEach(e=>{
+        if(e.isIntersecting){
+          e.target.style.opacity='1';
+          e.target.style.transform='';
+          ro.unobserve(e.target);
+        }
+      });
+    },{threshold:.08});
+    els.forEach(el=>ro.observe(el));
+  }
+
+  /* Avoid accidental horizontal overflow from long content */
+  d.querySelectorAll('img').forEach(img=>{img.loading=img.loading||'lazy';img.decoding=img.decoding||'async'});
+})();
+</script>
+
+
+<script id="final-micro-polish-js">
+(()=> {
+  const d=document;
+
+  /* Smoothly close mobile menu after any internal anchor click */
+  d.querySelectorAll('.premium-mobile-menu a').forEach(a=>{
+    a.addEventListener('click',()=>{
+      const menu=d.querySelector('.premium-mobile-menu');
+      const toggle=d.querySelector('.premium-mobile-toggle');
+      if(menu)menu.classList.remove('open');
+      if(toggle){toggle.setAttribute('aria-expanded','false');toggle.innerHTML='☰'}
+    });
+  });
+
+  /* Keep modal accessible on Escape */
+  d.addEventListener('keydown',e=>{
+    if(e.key==='Escape'){
+      const modal=d.querySelector('.upgradeModal');
+      if(modal)modal.classList.remove('open');
+    }
+  });
+
+  /* Add useful lazy-loading hints without touching hero assets */
+  d.querySelectorAll('img:not(.hero img)').forEach(img=>{
+    if(!img.hasAttribute('loading'))img.setAttribute('loading','lazy');
+    if(!img.hasAttribute('decoding'))img.setAttribute('decoding','async');
+  });
+})();
+</script>
+
+
+<script id="x3000-engine">
+(()=> {
+  const d=document, root=d.documentElement;
+  const profile='{"name": "Sahil Kokode", "accent": "#4da3ff", "accent2": "#7c5cff", "eyebrow": "SAHIL KOKODE · DIGITAL STUDIO", "cta": "Start a project", "label": "Portfolio"}';
+
+  /* Progress + back-to-top */
+  const progress=d.createElement('div'); progress.className='x3-progress'; d.body.appendChild(progress);
+  const top=d.createElement('button'); top.className='x3-top'; top.type='button'; top.setAttribute('aria-label','Back to top'); top.textContent='↑'; d.body.appendChild(top);
+  const update=()=>{
+    const max=d.documentElement.scrollHeight-innerHeight;
+    progress.style.width=(max?scrollY/max*100:0)+'%';
+    top.classList.toggle('show',scrollY>700);
+  };
+  addEventListener('scroll',update,{passive:true}); update();
+  top.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+
+  /* Subtle cursor on precision pointers */
+  if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    const c=d.createElement('div'); c.className='x3-cursor'; d.body.appendChild(c);
+    addEventListener('pointermove',e=>{c.style.left=e.clientX+'px';c.style.top=e.clientY+'px'},{passive:true});
+    d.querySelectorAll('a,button,.btn,.project,.service,.course,.feature,.price-card,.review,.food,.skill,.step,.why-card').forEach(el=>{
+      el.addEventListener('mouseenter',()=>c.classList.add('is-hover'));
+      el.addEventListener('mouseleave',()=>c.classList.remove('is-hover'));
+    });
+  }
+
+  /* Mobile navigation without replacing the existing nav */
+  const nav=d.querySelector('nav');
+  if(nav){
+    const links=[...nav.querySelectorAll('.nav-links a')];
+    if(links.length){
+      const toggle=d.createElement('button');
+      toggle.className='x3-mobile-toggle'; toggle.type='button'; toggle.setAttribute('aria-label','Open navigation'); toggle.textContent='☰';
+      const navInner=nav.querySelector('.nav')||nav.firstElementChild;
+      if(navInner){ navInner.appendChild(toggle); }
+      const panel=d.createElement('div'); panel.className='x3-mobile-panel';
+      links.forEach(a=>{const x=a.cloneNode(true);x.onclick=()=>panel.classList.remove('open');panel.appendChild(x)});
+      d.body.appendChild(panel);
+      toggle.onclick=()=>{panel.classList.toggle('open');toggle.textContent=panel.classList.contains('open')?'×':'☰'};
+    }
+  }
+
+  /* Add premium reveal to meaningful blocks, while respecting existing reveal system */
+  const candidates=d.querySelectorAll('section,.project,.service,.course,.feature,.price-card,.review,.info-card,.skill,.step,.why-card,.food,.about-card,.contact-card');
+  const io='IntersectionObserver' in window ? new IntersectionObserver(entries=>{
+    entries.forEach((e,i)=>{if(e.isIntersecting){e.target.classList.add('x3-in'); e.target.style.transitionDelay=((i%6)*55)+'ms';io.unobserve(e.target)}})
+  },{threshold:.08}) : null;
+  candidates.forEach(el=>{el.classList.add('x3-reveal');if(io)io.observe(el);else el.classList.add('x3-in')});
+
+  /* Active navigation */
+  const sectionLinks=[...d.querySelectorAll('nav a[href^="#"]')];
+  const sectionEls=sectionLinks.map(a=>d.querySelector(a.getAttribute('href'))).filter(Boolean);
+  if('IntersectionObserver' in window){
+    const sio=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting) sectionLinks.forEach(a=>a.classList.toggle('is-active',a.getAttribute('href')==='#'+e.target.id));
+      })
+    },{rootMargin:'-35% 0px -55% 0px',threshold:0});
+    sectionEls.forEach(s=>sio.observe(s));
+  }
+
+  /* Premium semantic micro-copy */
+  d.querySelectorAll('a[href="#contact"],a[href="#reservation"],a[href="#appointment"],a[href="#enquiry"],a[href="#book"]').forEach(a=>{
+    a.setAttribute('aria-label', profile.cta);
+  });
+
+  /* Avoid cursor/animation work on reduced-motion devices */
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    d.querySelectorAll('.x3-reveal').forEach(x=>x.classList.add('x3-in'));
+  }
+})();
+</script>
+
+
+<script id="x3000-wow-js">
+(()=> {
+  const d=document;
+  const theme=d.body.dataset.finalTheme||'';
+  /* Add an accessible premium site marker */
+  d.documentElement.dataset.x3theme=theme;
+
+  /* Add a subtle moving spotlight to hero visuals on pointer devices */
+  if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    d.querySelectorAll('.wow-visual').forEach(v=>{
+      v.addEventListener('pointermove',e=>{
+        const r=v.getBoundingClientRect();
+        const x=(e.clientX-r.left)/r.width-.5;
+        const y=(e.clientY-r.top)/r.height-.5;
+        v.style.transform=`perspective(1200px) rotateX(${y*-2}deg) rotateY(${x*3}deg)`;
+      });
+      v.addEventListener('pointerleave',()=>v.style.transform='');
+    });
+  }
+
+  /* Coaching: give the featured Science card a clear action without changing content */
+  if(theme==='Scholar Blue'){
+    const science=[...d.querySelectorAll('#courses .course')].find(x=>/science/i.test(x.textContent));
+    if(science && !science.querySelector('.x3-science-cta')){
+      const a=d.createElement('a');
+      a.className='btn btn-primary x3-science-cta';
+      a.href='#contact';
+      a.textContent='Learn More →';
+      a.style.cssText='position:absolute;right:22px;bottom:20px;z-index:4';
+      science.appendChild(a);
+    }
+  }
+})();
+</script>
+
+
+<script id="x3000-final-balance-js">
+(()=> {
+  const d=document;
+  /* Keep final visual treatment consistent with reduced-motion preferences. */
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches){
+    d.querySelectorAll('.x3-reveal').forEach(el=>{
+      el.classList.add('x3-in');
+      el.style.transitionDelay='0ms';
+    });
+  }
+
+  /* Softer hover tilt: premium, not distracting. */
+  if(matchMedia('(pointer:fine)').matches && !matchMedia('(prefers-reduced-motion:reduce)').matches){
+    d.querySelectorAll('.x3-card-premium').forEach(card=>{
+      card.addEventListener('pointermove',e=>{
+        const r=card.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width-.5;
+        const py=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`perspective(1100px) rotateX(${py*-1.1}deg) rotateY(${px*1.1}deg) translateY(-5px)`;
+      });
+      card.addEventListener('pointerleave',()=>{card.style.transform=''});
+    });
+  }
+})();
+</script>
+
+
+<script id="tactiff-pro-max-js">
+(()=>{
+const d=document,body=d.body;body.classList.add('pro-ready');
+const loader=d.createElement('div');loader.className='pro-loader';loader.innerHTML='<div class="pro-loader-box"><div class="pro-loader-mark"></div><small>Digital Studio</small></div>';d.body.prepend(loader);
+const progress=d.createElement('div');progress.className='pro-progress';d.body.appendChild(progress);
+const topbar=d.createElement('div');topbar.className='pro-topbar';topbar.innerHTML='<b>Portfolio</b>&nbsp; • &nbsp;Premium Demo';d.body.appendChild(topbar);
+const back=d.createElement('button');back.className='pro-backtop';back.type='button';back.setAttribute('aria-label','Back to top');back.innerHTML='↑';d.body.appendChild(back);back.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+const fab=d.createElement('a');fab.className='pro-fab';fab.href='#contact';fab.innerHTML='✦ <span>Let’s Talk</span>';d.body.appendChild(fab);
+const cards=d.querySelectorAll('.about-card,.why-card,.service,.skill,.project,.step,.feature,.course,.price-card,.review,.info-card,.food,.contact-card,.card');
+cards.forEach((el,i)=>{el.classList.add('pro-card-glow','pro-reveal');el.style.transitionDelay=((i%6)*45)+'ms'});
+d.querySelectorAll('.title').forEach(el=>{const line=d.createElement('div');line.className='pro-section-line';el.appendChild(line)});
+const reveal=()=>{const h=innerHeight;d.querySelectorAll('.pro-reveal').forEach(el=>{if(el.getBoundingClientRect().top<h*.92)el.classList.add('in')})};
+const scrollFx=()=>{const max=d.documentElement.scrollHeight-innerHeight;progress.style.width=(max>0?(scrollY/max)*100:0)+'%';topbar.classList.toggle('show',scrollY>70);back.classList.toggle('show',scrollY>500);reveal()};
+addEventListener('scroll',scrollFx,{passive:true});addEventListener('load',()=>setTimeout(()=>loader.classList.add('hide'),420));setTimeout(()=>loader.classList.add('hide'),1600);reveal();scrollFx();
+d.querySelectorAll('button,.btn,a').forEach(el=>{el.addEventListener('pointerdown',()=>el.style.transform='scale(.98)');el.addEventListener('pointerup',()=>el.style.transform='');el.addEventListener('pointercancel',()=>el.style.transform='')});
+})();
+</script>
+
+
+<script id="tactiff-final-bugfix-js">
+(()=> {
+  const d=document;
+  // Remove duplicate navigation systems left by earlier upgrade layers.
+  d.querySelectorAll('.x3-mobile-toggle,.x3-mobile-panel,.x3-progress,.x3-top,.x3-cursor,.upgradeSticky,.pro-fab').forEach(el=>el.remove());
+
+  // Keep exactly one premium mobile toggle and one premium menu.
+  const toggles=[...d.querySelectorAll('.premium-mobile-toggle')];
+  toggles.slice(1).forEach(el=>el.remove());
+  const menus=[...d.querySelectorAll('.premium-mobile-menu')];
+  menus.slice(1).forEach(el=>el.remove());
+
+  const toggle=d.querySelector('.premium-mobile-toggle');
+  const menu=d.querySelector('.premium-mobile-menu');
+
+  if(toggle && menu){
+    const sync=()=>{
+      const open=menu.classList.contains('open');
+      toggle.innerHTML=open?'×':'☰';
+      toggle.setAttribute('aria-expanded',String(open));
+      toggle.setAttribute('aria-label',open?'Close menu':'Open menu');
+      document.body.classList.toggle('mobile-menu-open',open);
+    };
+    toggle.onclick=()=>{
+      menu.classList.toggle('open');
+      sync();
+    };
+    menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');sync()}));
+    document.addEventListener('keydown',e=>{
+      if(e.key==='Escape' && menu.classList.contains('open')){menu.classList.remove('open');sync()}
+    });
+    sync();
+  }
+
+  // Coaching branding: make the full academy name visible in the header.
+  if(document.title.includes('BrightPath Academy')){
+    const logo=d.querySelector('nav .logo');
+    if(logo) logo.innerHTML='BrightPath <span>Academy</span>';
+  }
+
+  // Stop the old Pro Max CTA from competing with the real booking/enquiry button.
+  d.querySelectorAll('.pro-fab').forEach(el=>el.remove());
+})();
+</script>
+
+<script id="tactiff-ultimate-2026-js">
+(()=>{
+ const d=document, w=window, reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+ // Fix dead placeholder links and normalize common CTA aliases.
+ d.querySelectorAll('a[href="#"]').forEach(a=>{a.setAttribute('href','#home');});
+ const home=d.querySelector('#home'); if(home) home.id='home';
+ // Ensure every visible mobile navigation is usable and closes reliably.
+ const toggle=d.querySelector('.premium-mobile-toggle'), menu=d.querySelector('.premium-mobile-menu');
+ if(toggle&&menu){const sync=()=>{const open=menu.classList.contains('open');toggle.textContent=open?'×':'☰';toggle.setAttribute('aria-expanded',String(open));d.body.classList.toggle('mobile-menu-open',open)};toggle.onclick=()=>{menu.classList.toggle('open');sync()};menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');sync()}));d.addEventListener('keydown',e=>{if(e.key==='Escape'){menu.classList.remove('open');sync()}});sync()}
+ // Sticky header state.
+ const nav=d.querySelector('nav'); if(nav){const on=()=>nav.classList.toggle('scrolled',w.scrollY>18);w.addEventListener('scroll',on,{passive:true});on()}
+ // Mouse-follow card glow, disabled for touch/reduced motion.
+ if(!reduced&&matchMedia('(pointer:fine)').matches){d.querySelectorAll('.about-card,.skill,.project,.service,.course,.feature,.price-card,.review,.food').forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();el.style.setProperty('--mx',((e.clientX-r.left)/r.width*100)+'%');el.style.setProperty('--my',((e.clientY-r.top)/r.height*100)+'%')}))}
+ // Animate numeric stats once when visible.
+ if(!reduced){const stats=d.querySelectorAll('.stat strong');const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting||e.target.dataset.done)return;e.target.dataset.done='1';const raw=e.target.textContent.trim(),m=raw.match(/([0-9]+(?:\.[0-9]+)?)/);if(!m)return;const n=parseFloat(m[1]),prefix=raw.slice(0,m.index),suffix=raw.slice(m.index+m[0].length);let t0=null;const tick=t=>{if(!t0)t0=t;const p=Math.min(1,(t-t0)/900),v=n*(1-Math.pow(1-p,3));e.target.textContent=prefix+(Number.isInteger(n)?Math.round(v):v.toFixed(1))+suffix;if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}),{threshold:.55});stats.forEach(x=>io.observe(x))}
+ // Prevent modal scroll behind open forms and improve Escape behavior.
+ const modal=d.querySelector('.upgradeModal');if(modal){const obs=new MutationObserver(()=>d.body.classList.toggle('modal-open',modal.classList.contains('open')));obs.observe(modal,{attributes:true,attributeFilter:['class']});d.addEventListener('keydown',e=>{if(e.key==='Escape')modal.classList.remove('open')});modal.addEventListener('click',e=>{if(e.target===modal)modal.classList.remove('open')})}
+ // Make forms stay client-side and give a clear success state instead of navigating away.
+ const form=d.querySelector('#upForm');if(form){form.addEventListener('submit',e=>{e.preventDefault();const btn=form.querySelector('button[type=submit]');if(btn){btn.disabled=true;btn.textContent='Sent ✓'};setTimeout(()=>{const m=d.querySelector('.upgradeModal');if(m)m.classList.remove('open');if(btn){btn.disabled=false;btn.textContent='Continue →'}},1100)})}
+ // Lazy-load any existing images and harden external links.
+ d.querySelectorAll('img').forEach(img=>{if(!img.loading)img.loading='lazy';if(!img.decoding)img.decoding='async'});
+ d.querySelectorAll('a[target="_blank"]').forEach(a=>{const rel=(a.getAttribute('rel')||'').split(/\s+/);if(!rel.includes('noopener'))rel.push('noopener');a.setAttribute('rel',rel.join(' ').trim())});
+})();
+</script>
+</body>
+</html>
