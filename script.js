@@ -1,365 +1,607 @@
+/* =========================================================
+   SAHIL KOKODE — PORTFOLIO V2
+   Complete JavaScript
+   ========================================================= */
 
-/* =========================================
-   LOADER
-========================================= */
+document.addEventListener("DOMContentLoaded", () => {
 
-window.addEventListener("load", () => {
+  /* =========================================================
+     1. MOBILE MENU
+     ========================================================= */
 
-  const loader = document.getElementById("loader");
+  const menuBtn = document.querySelector(".menu-btn");
+  const nav = document.querySelector(".nav-links");
 
-  setTimeout(() => {
-    loader.classList.add("hidden");
-  }, 1500);
+  if (menuBtn && nav) {
+    menuBtn.addEventListener("click", () => {
+      nav.classList.toggle("active");
+      menuBtn.classList.toggle("active");
 
-});
+      const isOpen = nav.classList.contains("active");
+      menuBtn.setAttribute("aria-expanded", isOpen);
+    });
 
-
-/* =========================================
-   HEADER
-========================================= */
-
-const header = document.querySelector(".header");
-
-function updateHeader() {
-
-  header.classList.toggle(
-    "scrolled",
-    window.scrollY > 30
-  );
-
-}
-
-window.addEventListener(
-  "scroll",
-  updateHeader,
-  { passive: true }
-);
-
-updateHeader();
-
-
-/* =========================================
-   MOBILE MENU
-========================================= */
-
-const menuBtn =
-  document.getElementById("menuBtn");
-
-const nav =
-  document.getElementById("nav");
-
-function closeMenu() {
-
-  menuBtn.classList.remove("active");
-  nav.classList.remove("active");
-  document.body.classList.remove("menu-open");
-
-}
-
-menuBtn.addEventListener("click", () => {
-
-  menuBtn.classList.toggle("active");
-  nav.classList.toggle("active");
-  document.body.classList.toggle("menu-open");
-
-});
-
-
-document
-  .querySelectorAll(".nav a")
-  .forEach(link => {
-
-    link.addEventListener(
-      "click",
-      closeMenu
-    );
-
-  });
-
-
-document.addEventListener(
-  "keydown",
-  event => {
-
-    if (event.key === "Escape") {
-      closeMenu();
-    }
-
-  }
-);
-
-
-/* =========================================
-   HERO PARALLAX
-========================================= */
-
-const visual =
-  document.querySelector(".hero-visual");
-
-window.addEventListener(
-  "mousemove",
-  event => {
-
-    if (window.innerWidth <= 700) {
-      return;
-    }
-
-    const x =
-      (event.clientX / window.innerWidth - .5) * 2;
-
-    const y =
-      (event.clientY / window.innerHeight - .5) * 2;
-
-    visual.style.transform =
-      `translate(${x * 18}px, ${y * 18}px) translateY(-50%)`;
-
-  }
-);
-
-
-/* =========================================
-   ACTIVE NAV
-========================================= */
-
-const sections =
-  document.querySelectorAll("section[id]");
-
-const navLinks =
-  document.querySelectorAll(".nav a");
-
-const sectionObserver =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        navLinks.forEach(link => {
-          link.classList.remove("active");
-        });
-
-        const active =
-          document.querySelector(
-            `.nav a[href="#${entry.target.id}"]`
-          );
-
-        if (active) {
-          active.classList.add("active");
-        }
-
+    // Close menu after clicking a link
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("active");
+        menuBtn.classList.remove("active");
+        menuBtn.setAttribute("aria-expanded", "false");
       });
-
-    },
-    {
-      threshold: .25
-    }
-  );
-
-
-sections.forEach(section => {
-  sectionObserver.observe(section);
-});
-
-
-/* =========================================
-   PROJECT TILT
-========================================= */
-
-const projectCards =
-  document.querySelectorAll(".project-card");
-
-projectCards.forEach(card => {
-
-  const preview =
-    card.querySelector(".project-preview");
-
-  card.addEventListener(
-    "mousemove",
-    event => {
-
-      if (window.innerWidth <= 700) {
-        return;
-      }
-
-      const rect =
-        card.getBoundingClientRect();
-
-      const x =
-        event.clientX - rect.left;
-
-      const y =
-        event.clientY - rect.top;
-
-      const rotateY =
-        ((x / rect.width) - .5) * 3;
-
-      const rotateX =
-        ((y / rect.height) - .5) * -3;
-
-      preview.style.transform =
-        `perspective(1000px)
-         rotateX(${rotateX}deg)
-         rotateY(${rotateY}deg)
-         translateY(-7px)`;
-
-    }
-  );
-
-
-  card.addEventListener(
-    "mouseleave",
-    () => {
-
-      preview.style.transform = "";
-
-    }
-  );
-
-});
-
-
-/* =========================================
-   SCROLL REVEAL
-========================================= */
-
-const revealItems =
-  document.querySelectorAll(
-    ".service-card, .why-card, .process-item, .about-statement"
-  );
-
-
-const revealObserver =
-  new IntersectionObserver(
-    entries => {
-
-      entries.forEach(entry => {
-
-        if (!entry.isIntersecting) {
-          return;
-        }
-
-        entry.target.classList.add(
-          "is-visible"
-        );
-
-        revealObserver.unobserve(
-          entry.target
-        );
-
-      });
-
-    },
-    {
-      threshold: .12
-    }
-  );
-
-
-revealItems.forEach(item => {
-
-  item.style.opacity = "0";
-  item.style.transform = "translateY(30px)";
-  item.style.transition =
-    "opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1)";
-
-  revealObserver.observe(item);
-
-});
-
-
-/* =========================================
-   REVEAL ACTIVE STATE
-========================================= */
-
-const revealStyle =
-  document.createElement("style");
-
-revealStyle.textContent = `
-  .is-visible {
-    opacity: 1 !important;
-    transform: translateY(0) !important;
+    });
   }
-`;
-
-document.head.appendChild(
-  revealStyle
-);
 
 
-/* =========================================
-   SMOOTH ANCHOR OFFSET
-========================================= */
+  /* =========================================================
+     2. HEADER SCROLL EFFECT
+     ========================================================= */
 
-document
-  .querySelectorAll('a[href^="#"]')
-  .forEach(link => {
+  const header = document.querySelector("header");
 
-    link.addEventListener(
-      "click",
-      event => {
+  const handleHeaderScroll = () => {
+    if (!header) return;
 
-        const targetId =
-          link.getAttribute("href");
+    if (window.scrollY > 40) {
+      header.classList.add("scrolled");
+    } else {
+      header.classList.remove("scrolled");
+    }
+  };
 
-        if (
-          !targetId ||
-          targetId === "#"
-        ) {
-          return;
-        }
+  window.addEventListener("scroll", handleHeaderScroll);
+  handleHeaderScroll();
 
-        const target =
-          document.querySelector(targetId);
 
-        if (!target) {
-          return;
-        }
+  /* =========================================================
+     3. SMOOTH SCROLL
+     ========================================================= */
 
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", event => {
+      const targetId = link.getAttribute("href");
+
+      if (!targetId || targetId === "#") return;
+
+      const target = document.querySelector(targetId);
+
+      if (target) {
         event.preventDefault();
 
-        const headerHeight =
-          document.querySelector(
-            ".header"
-          ).offsetHeight;
+        const headerHeight = header
+          ? header.offsetHeight
+          : 0;
 
-        const position =
+        const targetPosition =
           target.getBoundingClientRect().top +
           window.scrollY -
           headerHeight;
 
         window.scrollTo({
-          top: position,
+          top: targetPosition,
           behavior: "smooth"
         });
+      }
+    });
+  });
 
+
+  /* =========================================================
+     4. ACTIVE NAV LINK
+     ========================================================= */
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(
+    '.nav-links a[href^="#"]'
+  );
+
+  const updateActiveNav = () => {
+    let currentSection = "";
+
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 180;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+
+      const href = link.getAttribute("href");
+
+      if (href === `#${currentSection}`) {
+        link.classList.add("active");
+      }
+    });
+  };
+
+  window.addEventListener("scroll", updateActiveNav);
+  updateActiveNav();
+
+
+  /* =========================================================
+     5. SCROLL REVEAL
+     ========================================================= */
+
+  const revealElements = document.querySelectorAll(
+    ".reveal, .reveal-up, .reveal-left, .reveal-right, .fade-up"
+  );
+
+  if ("IntersectionObserver" in window) {
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -40px 0px"
       }
     );
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+  } else {
+
+    revealElements.forEach(element => {
+      element.classList.add("show");
+    });
+
+  }
+
+
+  /* =========================================================
+     6. PROJECT FILTER
+     ========================================================= */
+
+  const filterButtons = document.querySelectorAll(
+    ".filter-btn, .project-filter button"
+  );
+
+  const projectCards = document.querySelectorAll(
+    ".project-card, .project-item"
+  );
+
+  if (filterButtons.length && projectCards.length) {
+
+    filterButtons.forEach(button => {
+
+      button.addEventListener("click", () => {
+
+        filterButtons.forEach(btn => {
+          btn.classList.remove("active");
+        });
+
+        button.classList.add("active");
+
+        const filter =
+          button.dataset.filter ||
+          button.getAttribute("data-category") ||
+          "all";
+
+        projectCards.forEach(card => {
+
+          const category =
+            card.dataset.category || "all";
+
+          if (
+            filter === "all" ||
+            category === filter
+          ) {
+
+            card.style.display = "";
+
+            requestAnimationFrame(() => {
+              card.classList.remove("hidden");
+              card.classList.add("show-card");
+            });
+
+          } else {
+
+            card.classList.remove("show-card");
+            card.classList.add("hidden");
+
+            setTimeout(() => {
+              if (card.classList.contains("hidden")) {
+                card.style.display = "none";
+              }
+            }, 250);
+
+          }
+
+        });
+
+      });
+
+    });
+
+  }
+
+
+  /* =========================================================
+     7. PROJECT CARD TILT
+     ========================================================= */
+
+  const tiltCards = document.querySelectorAll(
+    ".project-card.tilt, .tilt-card"
+  );
+
+  if (window.matchMedia("(pointer: fine)").matches) {
+
+    tiltCards.forEach(card => {
+
+      card.addEventListener("mousemove", event => {
+
+        const rect = card.getBoundingClientRect();
+
+        const x =
+          event.clientX - rect.left;
+
+        const y =
+          event.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX =
+          ((y - centerY) / centerY) * -4;
+
+        const rotateY =
+          ((x - centerX) / centerX) * 4;
+
+        card.style.transform =
+          `perspective(900px)
+           rotateX(${rotateX}deg)
+           rotateY(${rotateY}deg)
+           translateY(-5px)`;
+
+      });
+
+      card.addEventListener("mouseleave", () => {
+
+        card.style.transform =
+          "perspective(900px) rotateX(0) rotateY(0) translateY(0)";
+
+      });
+
+    });
+
+  }
+
+
+  /* =========================================================
+     8. BUTTON RIPPLE EFFECT
+     ========================================================= */
+
+  const buttons = document.querySelectorAll(
+    ".btn, .button, .cta-btn"
+  );
+
+  buttons.forEach(button => {
+
+    button.addEventListener("click", event => {
+
+      const rect =
+        button.getBoundingClientRect();
+
+      const ripple =
+        document.createElement("span");
+
+      const size =
+        Math.max(rect.width, rect.height);
+
+      ripple.style.width = `${size}px`;
+      ripple.style.height = `${size}px`;
+
+      ripple.style.left =
+        `${event.clientX - rect.left - size / 2}px`;
+
+      ripple.style.top =
+        `${event.clientY - rect.top - size / 2}px`;
+
+      ripple.classList.add("ripple");
+
+      button.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+
+    });
 
   });
 
 
-/* =========================================
-   CONTACT EMAIL FALLBACK
-========================================= */
+  /* =========================================================
+     9. CUSTOM CURSOR
+     ========================================================= */
 
-const contactEmail =
-  document.querySelector(".contact-email");
+  const cursor = document.querySelector(".custom-cursor");
+  const cursorDot = document.querySelector(".cursor-dot");
 
-if (contactEmail) {
+  if (
+    cursor &&
+    cursorDot &&
+    window.matchMedia("(pointer: fine)").matches
+  ) {
 
-  contactEmail.addEventListener(
-    "click",
-    () => {
+    document.addEventListener("mousemove", event => {
 
-      contactEmail.classList.add(
-        "clicked"
-      );
+      cursor.style.transform =
+        `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
 
-    }
+      cursorDot.style.transform =
+        `translate3d(${event.clientX}px, ${event.clientY}px, 0)`;
+
+    });
+
+    const hoverElements = document.querySelectorAll(
+      "a, button, .project-card, .service-card"
+    );
+
+    hoverElements.forEach(element => {
+
+      element.addEventListener("mouseenter", () => {
+        cursor.classList.add("cursor-hover");
+      });
+
+      element.addEventListener("mouseleave", () => {
+        cursor.classList.remove("cursor-hover");
+      });
+
+    });
+
+  }
+
+
+  /* =========================================================
+     10. COUNTER ANIMATION
+     ========================================================= */
+
+  const counters = document.querySelectorAll(
+    "[data-count]"
   );
 
-}
+  if ("IntersectionObserver" in window && counters.length) {
 
+    const counterObserver =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (!entry.isIntersecting) return;
+
+            const counter = entry.target;
+
+            const target =
+              parseInt(counter.dataset.count, 10);
+
+            if (isNaN(target)) return;
+
+            let current = 0;
+
+            const duration = 1400;
+            const increment =
+              target / (duration / 16);
+
+            const updateCounter = () => {
+
+              current += increment;
+
+              if (current < target) {
+
+                counter.textContent =
+                  Math.floor(current);
+
+                requestAnimationFrame(updateCounter);
+
+              } else {
+
+                counter.textContent = target;
+
+              }
+
+            };
+
+            updateCounter();
+
+            counterObserver.unobserve(counter);
+
+          });
+
+        },
+        {
+          threshold: 0.7
+        }
+      );
+
+    counters.forEach(counter => {
+      counterObserver.observe(counter);
+    });
+
+  }
+
+
+  /* =========================================================
+     11. CURRENT YEAR
+     ========================================================= */
+
+  const yearElements =
+    document.querySelectorAll("[data-year]");
+
+  yearElements.forEach(element => {
+    element.textContent =
+      new Date().getFullYear();
+  });
+
+
+  /* =========================================================
+     12. BACK TO TOP
+     ========================================================= */
+
+  const backTop =
+    document.querySelector(".back-to-top");
+
+  if (backTop) {
+
+    window.addEventListener("scroll", () => {
+
+      if (window.scrollY > 600) {
+        backTop.classList.add("show");
+      } else {
+        backTop.classList.remove("show");
+      }
+
+    });
+
+    backTop.addEventListener("click", () => {
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+  }
+
+
+  /* =========================================================
+     13. CONTACT FORM
+     ========================================================= */
+
+  const contactForm =
+    document.querySelector("#contact-form");
+
+  if (contactForm) {
+
+    contactForm.addEventListener("submit", event => {
+
+      event.preventDefault();
+
+      const name =
+        contactForm.querySelector('[name="name"]')?.value.trim();
+
+      const email =
+        contactForm.querySelector('[name="email"]')?.value.trim();
+
+      const message =
+        contactForm.querySelector('[name="message"]')?.value.trim();
+
+      if (!name || !email || !message) {
+        showToast("Please fill all required fields.");
+        return;
+      }
+
+      showToast(
+        "Thanks! Your message is ready to send."
+      );
+
+      contactForm.reset();
+
+    });
+
+  }
+
+
+  /* =========================================================
+     14. TOAST MESSAGE
+     ========================================================= */
+
+  function showToast(message) {
+
+    let toast =
+      document.querySelector(".toast-message");
+
+    if (!toast) {
+
+      toast =
+        document.createElement("div");
+
+      toast.className =
+        "toast-message";
+
+      document.body.appendChild(toast);
+
+    }
+
+    toast.textContent = message;
+
+    toast.classList.add("show");
+
+    clearTimeout(toast.hideTimer);
+
+    toast.hideTimer =
+      setTimeout(() => {
+        toast.classList.remove("show");
+      }, 3000);
+
+  }
+
+
+  /* =========================================================
+     15. IMAGE LAZY LOAD
+     ========================================================= */
+
+  const images =
+    document.querySelectorAll("img");
+
+  images.forEach(image => {
+
+    if (!image.hasAttribute("loading")) {
+      image.setAttribute("loading", "lazy");
+    }
+
+  });
+
+
+  /* =========================================================
+     16. ESC KEY
+     ========================================================= */
+
+  document.addEventListener("keydown", event => {
+
+    if (event.key === "Escape") {
+
+      if (nav) {
+        nav.classList.remove("active");
+      }
+
+      if (menuBtn) {
+        menuBtn.classList.remove("active");
+        menuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+      }
+
+    }
+
+  });
+
+
+  /* =========================================================
+     17. PAGE LOADED
+     ========================================================= */
+
+  document.body.classList.add("js-loaded");
+
+});
