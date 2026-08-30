@@ -1,7 +1,6 @@
 /* =========================================================
    SAHIL KOKODE — PORTFOLIO V2
    FINAL MATCHED SCRIPT
-   HTML + CSS MATCHED VERSION
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -21,16 +20,22 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".project-filter");
 
   const projectCards =
-    document.querySelectorAll(".project-list-v2 .project-card");
+    document.querySelectorAll(
+      ".project-list-v2 .project-card"
+    );
 
   const sections =
     document.querySelectorAll("main section[id]");
 
   const navLinks =
-    document.querySelectorAll(".nav a[href^='#']");
+    document.querySelectorAll(
+      ".nav a[href^='#']"
+    );
 
   const reduceMotion =
-    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
 
 
   /* =========================================================
@@ -63,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "false"
     );
 
+    menuBtn.setAttribute(
+      "aria-label",
+      "Open menu"
+    );
+
 
     menuBtn.addEventListener("click", () => {
 
@@ -81,7 +91,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
       menuBtn.setAttribute(
         "aria-label",
-        isOpen ? "Close menu" : "Open menu"
+        isOpen
+          ? "Close menu"
+          : "Open menu"
       );
 
       body.classList.toggle(
@@ -99,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
       link.addEventListener("click", () => {
 
         nav.classList.remove("active");
+
         menuBtn.classList.remove("active");
 
         menuBtn.setAttribute(
@@ -111,7 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
           "Open menu"
         );
 
-        body.classList.remove("menu-open");
+        body.classList.remove(
+          "menu-open"
+        );
 
       });
 
@@ -122,39 +137,51 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      3. ESCAPE KEY
-  ========================================================= */
+     ========================================================= */
 
-  document.addEventListener("keydown", event => {
+  document.addEventListener(
+    "keydown",
+    event => {
 
-    if (event.key !== "Escape") return;
+      if (event.key !== "Escape") {
+        return;
+      }
 
-    if (!nav || !menuBtn) return;
+      if (!nav || !menuBtn) {
+        return;
+      }
 
-    nav.classList.remove("active");
-    menuBtn.classList.remove("active");
+      nav.classList.remove("active");
 
-    menuBtn.setAttribute(
-      "aria-expanded",
-      "false"
-    );
+      menuBtn.classList.remove("active");
 
-    menuBtn.setAttribute(
-      "aria-label",
-      "Open menu"
-    );
+      menuBtn.setAttribute(
+        "aria-expanded",
+        "false"
+      );
 
-    body.classList.remove("menu-open");
+      menuBtn.setAttribute(
+        "aria-label",
+        "Open menu"
+      );
 
-  });
+      body.classList.remove(
+        "menu-open"
+      );
+
+    }
+  );
 
 
   /* =========================================================
      4. HEADER SCROLL EFFECT
-  ========================================================= */
+     ========================================================= */
 
   function updateHeader() {
 
-    if (!header) return;
+    if (!header) {
+      return;
+    }
 
     header.classList.toggle(
       "scrolled",
@@ -174,56 +201,61 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      5. SMOOTH SCROLL
-  ========================================================= */
+     ========================================================= */
 
-  document.querySelectorAll(
-    'a[href^="#"]'
-  ).forEach(link => {
+  document
+    .querySelectorAll('a[href^="#"]')
+    .forEach(link => {
 
-    link.addEventListener("click", event => {
+      link.addEventListener(
+        "click",
+        event => {
 
-      const targetId =
-        link.getAttribute("href");
+          const targetId =
+            link.getAttribute("href");
 
-      if (
-        !targetId ||
-        targetId === "#"
-      ) {
-        return;
-      }
+          if (
+            !targetId ||
+            targetId === "#"
+          ) {
+            return;
+          }
 
-      const target =
-        document.querySelector(targetId);
+          const target =
+            document.querySelector(targetId);
 
-      if (!target) return;
+          if (!target) {
+            return;
+          }
 
-      event.preventDefault();
+          event.preventDefault();
 
-      const headerHeight =
-        header
-          ? header.offsetHeight
-          : 0;
+          const headerHeight =
+            header
+              ? header.offsetHeight
+              : 0;
 
-      const position =
-        target.getBoundingClientRect().top +
-        window.scrollY -
-        headerHeight;
+          const position =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            headerHeight;
 
-      window.scrollTo({
-        top: position,
-        behavior: reduceMotion
-          ? "auto"
-          : "smooth"
-      });
+          window.scrollTo({
+            top: position,
+            behavior: reduceMotion
+              ? "auto"
+              : "smooth"
+          });
+
+        }
+      );
 
     });
-
-  });
 
 
   /* =========================================================
      6. ACTIVE NAV LINK
-  ========================================================= */
+     ========================================================= */
 
   function updateActiveNav() {
 
@@ -241,8 +273,10 @@ document.addEventListener("DOMContentLoaded", () => {
         window.scrollY >= top &&
         window.scrollY < bottom
       ) {
+
         currentSection =
           section.id;
+
       }
 
     });
@@ -273,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      7. PROJECT FILTER SYSTEM
-  ========================================================= */
+     ========================================================= */
 
   if (
     filterButtons.length &&
@@ -293,10 +327,16 @@ document.addEventListener("DOMContentLoaded", () => {
           /* Active filter button */
 
           filterButtons.forEach(btn => {
-            btn.classList.remove("active");
+
+            btn.classList.remove(
+              "active"
+            );
+
           });
 
-          button.classList.add("active");
+          button.classList.add(
+            "active"
+          );
 
 
           /* Filter project cards */
@@ -322,9 +362,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 "false"
               );
 
-              /*
-               * Restart CSS filter-in animation
-               */
+
+              /* Restart filter animation */
 
               if (!reduceMotion) {
 
@@ -365,7 +404,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      8. PROJECT CARD MOUSE TILT
-  ========================================================= */
+     ========================================================= */
 
   const finePointer =
     window.matchMedia(
@@ -443,19 +482,25 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      9. HERO VISUAL PARALLAX
-  ========================================================= */
+     ========================================================= */
 
   const hero =
     document.querySelector(".hero");
 
   const heroVisual =
-    document.querySelector(".hero-visual");
+    document.querySelector(
+      ".hero-visual"
+    );
 
   const orbitOne =
-    document.querySelector(".orbit-one");
+    document.querySelector(
+      ".orbit-one"
+    );
 
   const orbitTwo =
-    document.querySelector(".orbit-two");
+    document.querySelector(
+      ".orbit-two"
+    );
 
 
   if (
@@ -526,14 +571,26 @@ document.addEventListener("DOMContentLoaded", () => {
         heroVisual.style.transform =
           "translateY(-50%)";
 
+
         if (orbitOne) {
-          orbitOne.style.marginLeft = "";
-          orbitOne.style.marginTop = "";
+
+          orbitOne.style.marginLeft =
+            "";
+
+          orbitOne.style.marginTop =
+            "";
+
         }
 
+
         if (orbitTwo) {
-          orbitTwo.style.marginLeft = "";
-          orbitTwo.style.marginTop = "";
+
+          orbitTwo.style.marginLeft =
+            "";
+
+          orbitTwo.style.marginTop =
+            "";
+
         }
 
       }
@@ -544,7 +601,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      10. SERVICE CARD INTERACTION
-  ========================================================= */
+     ========================================================= */
 
   const serviceCards =
     document.querySelectorAll(
@@ -562,18 +619,23 @@ document.addEventListener("DOMContentLoaded", () => {
       card.addEventListener(
         "mouseenter",
         () => {
+
           card.classList.add(
             "service-hover"
           );
+
         }
       );
+
 
       card.addEventListener(
         "mouseleave",
         () => {
+
           card.classList.remove(
             "service-hover"
           );
+
         }
       );
 
@@ -584,7 +646,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      11. PROCESS ITEM INTERACTION
-  ========================================================= */
+     ========================================================= */
 
   const processItems =
     document.querySelectorAll(
@@ -597,18 +659,23 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener(
       "mouseenter",
       () => {
+
         item.classList.add(
           "process-active"
         );
+
       }
     );
+
 
     item.addEventListener(
       "mouseleave",
       () => {
+
         item.classList.remove(
           "process-active"
         );
+
       }
     );
 
@@ -617,7 +684,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      12. CAPABILITY HOVER
-  ========================================================= */
+     ========================================================= */
 
   const capabilities =
     document.querySelectorAll(
@@ -630,18 +697,23 @@ document.addEventListener("DOMContentLoaded", () => {
     item.addEventListener(
       "mouseenter",
       () => {
+
         item.classList.add(
           "capability-active"
         );
+
       }
     );
+
 
     item.addEventListener(
       "mouseleave",
       () => {
+
         item.classList.remove(
           "capability-active"
         );
+
       }
     );
 
@@ -650,7 +722,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      13. CTA MAGNETIC EFFECT
-  ========================================================= */
+     ========================================================= */
 
   const magneticButtons =
     document.querySelectorAll(
@@ -708,7 +780,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      14. FOOTER BACK TO TOP
-  ========================================================= */
+     ========================================================= */
 
   const footerTop =
     document.querySelector(
@@ -739,7 +811,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      15. RESIZE CLEANUP
-  ========================================================= */
+     ========================================================= */
 
   let resizeTimer;
 
@@ -786,15 +858,19 @@ document.addEventListener("DOMContentLoaded", () => {
           /* Reset project transforms */
 
           projectCards.forEach(card => {
+
             card.style.transform = "";
+
           });
 
 
           /* Reset hero */
 
           if (heroVisual) {
+
             heroVisual.style.transform =
               "translateY(-50%)";
+
           }
 
         }, 150);
@@ -806,12 +882,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      16. TOUCH DEVICE SAFETY
-  ========================================================= */
+     ========================================================= */
 
   if (!finePointer) {
 
     projectCards.forEach(card => {
+
       card.style.transform = "";
+
     });
 
   }
@@ -819,7 +897,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* =========================================================
      17. FINAL STATE
-  ========================================================= */
+     ========================================================= */
 
   body.classList.add(
     "js-enabled"
@@ -829,4 +907,3 @@ document.addEventListener("DOMContentLoaded", () => {
   updateActiveNav();
 
 });
-
