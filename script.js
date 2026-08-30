@@ -1,31 +1,73 @@
 /* =========================================================
-   SAHIL KOKODE — PORTFOLIO V2
-   FINAL MATCHED SCRIPT
+   TAMOGNA — PREMIUM PORTFOLIO
+   FINAL V1 SCRIPT
    ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
+
   "use strict";
+
 
   /* =========================================================
      ELEMENTS
   ========================================================= */
 
-  const body = document.body;
-  const header = document.querySelector(".header");
-  const nav = document.querySelector("#nav");
-  const menuBtn = document.querySelector("#menuBtn");
-  const loader = document.querySelector("#loader");
+  const body =
+    document.body;
+
+  const header =
+    document.querySelector(".header");
+
+  const nav =
+    document.querySelector("#nav");
+
+  const menuBtn =
+    document.querySelector("#menuBtn");
+
+  const loader =
+    document.querySelector("#loader");
+
+  const hero =
+    document.querySelector(".hero");
+
+  const heroVisual =
+    document.querySelector(".hero-visual");
+
+  const orbitOne =
+    document.querySelector(".orbit-one");
+
+  const orbitTwo =
+    document.querySelector(".orbit-two");
 
   const filterButtons =
-    document.querySelectorAll(".project-filter");
+    document.querySelectorAll(
+      ".project-filter"
+    );
 
   const projectCards =
     document.querySelectorAll(
       ".project-list-v2 .project-card"
     );
 
+  const serviceCards =
+    document.querySelectorAll(
+      ".service-card"
+    );
+
+  const processItems =
+    document.querySelectorAll(
+      ".process-item"
+    );
+
+  const capabilityItems =
+    document.querySelectorAll(
+      ".capability-list span"
+    );
+
   const sections =
-    document.querySelectorAll("main section[id]");
+    document.querySelectorAll(
+      "main section[id]"
+    );
 
   const navLinks =
     document.querySelectorAll(
@@ -37,31 +79,58 @@ document.addEventListener("DOMContentLoaded", () => {
       "(prefers-reduced-motion: reduce)"
     ).matches;
 
+  const finePointer =
+    window.matchMedia(
+      "(hover: hover) and (pointer: fine)"
+    ).matches;
+
 
   /* =========================================================
      1. LOADER
-     ========================================================= */
+  ========================================================= */
 
-  window.addEventListener("load", () => {
+  window.addEventListener(
+    "load",
+    () => {
 
-    setTimeout(() => {
+      setTimeout(
+        () => {
 
-      if (loader) {
-        loader.classList.add("hidden");
-      }
+          if (loader) {
+            loader.classList.add(
+              "hidden"
+            );
+          }
 
-      body.classList.add("page-loaded");
+          body.classList.add(
+            "page-loaded"
+          );
 
-    }, reduceMotion ? 0 : 700);
+        },
+        reduceMotion ? 0 : 700
+      );
 
-  });
+    }
+  );
 
 
   /* =========================================================
-     2. MOBILE NAVIGATION
-     ========================================================= */
+     2. MOBILE NAV
+  ========================================================= */
 
-  if (menuBtn && nav) {
+  function closeMenu() {
+
+    if (!nav || !menuBtn) {
+      return;
+    }
+
+    nav.classList.remove(
+      "active"
+    );
+
+    menuBtn.classList.remove(
+      "active"
+    );
 
     menuBtn.setAttribute(
       "aria-expanded",
@@ -73,109 +142,93 @@ document.addEventListener("DOMContentLoaded", () => {
       "Open menu"
     );
 
+    body.classList.remove(
+      "menu-open"
+    );
 
-    menuBtn.addEventListener("click", () => {
-
-      const isOpen =
-        nav.classList.toggle("active");
-
-      menuBtn.classList.toggle(
-        "active",
-        isOpen
-      );
-
-      menuBtn.setAttribute(
-        "aria-expanded",
-        String(isOpen)
-      );
-
-      menuBtn.setAttribute(
-        "aria-label",
-        isOpen
-          ? "Close menu"
-          : "Open menu"
-      );
-
-      body.classList.toggle(
-        "menu-open",
-        isOpen
-      );
-
-    });
+  }
 
 
-    /* Close menu when navigation link is clicked */
+  if (menuBtn && nav) {
 
-    nav.querySelectorAll("a").forEach(link => {
+    menuBtn.setAttribute(
+      "aria-expanded",
+      "false"
+    );
 
-      link.addEventListener("click", () => {
 
-        nav.classList.remove("active");
+    menuBtn.addEventListener(
+      "click",
+      () => {
 
-        menuBtn.classList.remove("active");
+        const isOpen =
+          nav.classList.toggle(
+            "active"
+          );
+
+        menuBtn.classList.toggle(
+          "active",
+          isOpen
+        );
 
         menuBtn.setAttribute(
           "aria-expanded",
-          "false"
+          String(isOpen)
         );
 
         menuBtn.setAttribute(
           "aria-label",
-          "Open menu"
+          isOpen
+            ? "Close menu"
+            : "Open menu"
         );
 
-        body.classList.remove(
-          "menu-open"
+        body.classList.toggle(
+          "menu-open",
+          isOpen
+        );
+
+      }
+    );
+
+
+    nav.querySelectorAll("a")
+      .forEach(link => {
+
+        link.addEventListener(
+          "click",
+          closeMenu
         );
 
       });
-
-    });
 
   }
 
 
   /* =========================================================
-     3. ESCAPE KEY
-     ========================================================= */
+     3. ESCAPE
+  ========================================================= */
 
   document.addEventListener(
     "keydown",
     event => {
 
-      if (event.key !== "Escape") {
-        return;
+      if (
+        event.key ===
+        "Escape"
+      ) {
+
+        closeMenu();
+
       }
-
-      if (!nav || !menuBtn) {
-        return;
-      }
-
-      nav.classList.remove("active");
-
-      menuBtn.classList.remove("active");
-
-      menuBtn.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      menuBtn.setAttribute(
-        "aria-label",
-        "Open menu"
-      );
-
-      body.classList.remove(
-        "menu-open"
-      );
 
     }
   );
 
 
   /* =========================================================
-     4. HEADER SCROLL EFFECT
-     ========================================================= */
+     4. HEADER SCROLL
+  ========================================================= */
 
   function updateHeader() {
 
@@ -190,21 +243,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
   }
 
+
   window.addEventListener(
     "scroll",
     updateHeader,
-    { passive: true }
+    {
+      passive: true
+    }
   );
+
 
   updateHeader();
 
 
   /* =========================================================
      5. SMOOTH SCROLL
-     ========================================================= */
+  ========================================================= */
 
   document
-    .querySelectorAll('a[href^="#"]')
+    .querySelectorAll(
+      'a[href^="#"]'
+    )
     .forEach(link => {
 
       link.addEventListener(
@@ -212,39 +271,56 @@ document.addEventListener("DOMContentLoaded", () => {
         event => {
 
           const targetId =
-            link.getAttribute("href");
+            link.getAttribute(
+              "href"
+            );
 
           if (
             !targetId ||
             targetId === "#"
           ) {
+
             return;
+
           }
 
+
           const target =
-            document.querySelector(targetId);
+            document.querySelector(
+              targetId
+            );
 
           if (!target) {
             return;
           }
 
+
           event.preventDefault();
+
 
           const headerHeight =
             header
               ? header.offsetHeight
               : 0;
 
+
           const position =
-            target.getBoundingClientRect().top +
+            target.getBoundingClientRect()
+              .top +
             window.scrollY -
             headerHeight;
 
+
           window.scrollTo({
-            top: position,
-            behavior: reduceMotion
-              ? "auto"
-              : "smooth"
+
+            top:
+              position,
+
+            behavior:
+              reduceMotion
+                ? "auto"
+                : "smooth"
+
           });
 
         }
@@ -254,254 +330,274 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================================
-     6. ACTIVE NAV LINK
-     ========================================================= */
+     6. ACTIVE NAV
+  ========================================================= */
 
   function updateActiveNav() {
 
-    let currentSection = "";
+    let currentSection =
+      "";
 
-    sections.forEach(section => {
 
-      const top =
-        section.offsetTop - 180;
+    sections.forEach(
+      section => {
 
-      const bottom =
-        top + section.offsetHeight;
+        const top =
+          section.offsetTop -
+          180;
 
-      if (
-        window.scrollY >= top &&
-        window.scrollY < bottom
-      ) {
+        const bottom =
+          top +
+          section.offsetHeight;
 
-        currentSection =
-          section.id;
+
+        if (
+          window.scrollY >= top &&
+          window.scrollY < bottom
+        ) {
+
+          currentSection =
+            section.id;
+
+        }
 
       }
+    );
 
-    });
+
+    navLinks.forEach(
+      link => {
+
+        const href =
+          link.getAttribute(
+            "href"
+          );
 
 
-    navLinks.forEach(link => {
+        link.classList.toggle(
+          "active",
 
-      const href =
-        link.getAttribute("href");
+          href ===
+          `#${currentSection}`
+        );
 
-      link.classList.toggle(
-        "active",
-        href === `#${currentSection}`
-      );
-
-    });
+      }
+    );
 
   }
+
 
   window.addEventListener(
     "scroll",
     updateActiveNav,
-    { passive: true }
+    {
+      passive: true
+    }
   );
+
 
   updateActiveNav();
 
 
   /* =========================================================
-     7. PROJECT FILTER SYSTEM
-     ========================================================= */
+     7. PROJECT FILTER
+  ========================================================= */
 
   if (
     filterButtons.length &&
     projectCards.length
   ) {
 
-    filterButtons.forEach(button => {
+    filterButtons.forEach(
+      button => {
 
-      button.addEventListener(
-        "click",
-        () => {
+        button.addEventListener(
+          "click",
+          () => {
 
-          const filter =
-            button.dataset.filter;
-
-
-          /* Active filter button */
-
-          filterButtons.forEach(btn => {
-
-            btn.classList.remove(
-              "active"
-            );
-
-          });
-
-          button.classList.add(
-            "active"
-          );
+            const filter =
+              button.dataset.filter;
 
 
-          /* Filter project cards */
+            /* Active button */
 
-          projectCards.forEach(card => {
+            filterButtons.forEach(
+              btn => {
 
-            const category =
-              card.dataset.category;
-
-            const show =
-              filter === "all" ||
-              category === filter;
-
-
-            if (show) {
-
-              card.classList.remove(
-                "is-hidden"
-              );
-
-              card.setAttribute(
-                "aria-hidden",
-                "false"
-              );
-
-
-              /* Restart filter animation */
-
-              if (!reduceMotion) {
-
-                card.classList.remove(
-                  "filter-in"
-                );
-
-                void card.offsetWidth;
-
-                card.classList.add(
-                  "filter-in"
+                btn.classList.remove(
+                  "active"
                 );
 
               }
+            );
 
-            } else {
 
-              card.classList.add(
-                "is-hidden"
-              );
+            button.classList.add(
+              "active"
+            );
 
-              card.setAttribute(
-                "aria-hidden",
-                "true"
-              );
 
-            }
+            /* Cards */
 
-          });
+            projectCards.forEach(
+              card => {
 
-        }
-      );
+                const category =
+                  card.dataset.category;
 
-    });
+
+                const show =
+                  filter === "all" ||
+                  category === filter;
+
+
+                if (show) {
+
+                  card.classList.remove(
+                    "is-hidden"
+                  );
+
+                  card.setAttribute(
+                    "aria-hidden",
+                    "false"
+                  );
+
+
+                  if (
+                    !reduceMotion
+                  ) {
+
+                    card.classList.remove(
+                      "filter-in"
+                    );
+
+
+                    void card.offsetWidth;
+
+
+                    card.classList.add(
+                      "filter-in"
+                    );
+
+                  }
+
+                }
+
+                else {
+
+                  card.classList.add(
+                    "is-hidden"
+                  );
+
+                  card.setAttribute(
+                    "aria-hidden",
+                    "true"
+                  );
+
+                }
+
+              }
+            );
+
+          }
+        );
+
+      }
+    );
 
   }
 
 
   /* =========================================================
-     8. PROJECT CARD MOUSE TILT
-     ========================================================= */
-
-  const finePointer =
-    window.matchMedia(
-      "(hover: hover) and (pointer: fine)"
-    ).matches;
-
+     8. PROJECT TILT
+  ========================================================= */
 
   if (
     finePointer &&
     !reduceMotion
   ) {
 
-    projectCards.forEach(card => {
+    projectCards.forEach(
+      card => {
 
-      card.addEventListener(
-        "mousemove",
-        event => {
+        card.addEventListener(
+          "mousemove",
+          event => {
 
-          if (
-            card.classList.contains(
-              "is-hidden"
-            )
-          ) {
-            return;
+            if (
+              card.classList.contains(
+                "is-hidden"
+              )
+            ) {
+
+              return;
+
+            }
+
+
+            const rect =
+              card.getBoundingClientRect();
+
+
+            const x =
+              event.clientX -
+              rect.left;
+
+
+            const y =
+              event.clientY -
+              rect.top;
+
+
+            const centerX =
+              rect.width / 2;
+
+
+            const centerY =
+              rect.height / 2;
+
+
+            const rotateX =
+              ((y - centerY) /
+                centerY) *
+              -1.2;
+
+
+            const rotateY =
+              ((x - centerX) /
+                centerX) *
+              1.2;
+
+
+            card.style.transform =
+              `perspective(1200px)
+               rotateX(${rotateX}deg)
+               rotateY(${rotateY}deg)
+               translateY(-4px)`;
+
           }
-
-          const rect =
-            card.getBoundingClientRect();
-
-          const x =
-            event.clientX -
-            rect.left;
-
-          const y =
-            event.clientY -
-            rect.top;
-
-          const centerX =
-            rect.width / 2;
-
-          const centerY =
-            rect.height / 2;
-
-          const rotateX =
-            ((y - centerY) /
-              centerY) * -1.4;
-
-          const rotateY =
-            ((x - centerX) /
-              centerX) * 1.4;
-
-          card.style.transform =
-            `perspective(1200px)
-             rotateX(${rotateX}deg)
-             rotateY(${rotateY}deg)
-             translateY(-4px)`;
-
-        }
-      );
+        );
 
 
-      card.addEventListener(
-        "mouseleave",
-        () => {
+        card.addEventListener(
+          "mouseleave",
+          () => {
 
-          card.style.transform = "";
+            card.style.transform =
+              "";
 
-        }
-      );
+          }
+        );
 
-    });
+      }
+    );
 
   }
 
 
   /* =========================================================
-     9. HERO VISUAL PARALLAX
-     ========================================================= */
-
-  const hero =
-    document.querySelector(".hero");
-
-  const heroVisual =
-    document.querySelector(
-      ".hero-visual"
-    );
-
-  const orbitOne =
-    document.querySelector(
-      ".orbit-one"
-    );
-
-  const orbitTwo =
-    document.querySelector(
-      ".orbit-two"
-    );
-
+     9. HERO PARALLAX
+  ========================================================= */
 
   if (
     hero &&
@@ -517,17 +613,23 @@ document.addEventListener("DOMContentLoaded", () => {
         const rect =
           hero.getBoundingClientRect();
 
+
         const x =
-          (event.clientX -
-            rect.left) /
+          (
+            event.clientX -
+            rect.left
+          ) /
           rect.width -
-          0.5;
+          .5;
+
 
         const y =
-          (event.clientY -
-            rect.top) /
+          (
+            event.clientY -
+            rect.top
+          ) /
           rect.height -
-          0.5;
+          .5;
 
 
         heroVisual.style.transform =
@@ -600,129 +702,117 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================================
-     10. SERVICE CARD INTERACTION
-     ========================================================= */
-
-  const serviceCards =
-    document.querySelectorAll(
-      ".service-card"
-    );
-
+     10. SERVICE INTERACTION
+  ========================================================= */
 
   if (
     finePointer &&
     !reduceMotion
   ) {
 
-    serviceCards.forEach(card => {
+    serviceCards.forEach(
+      card => {
 
-      card.addEventListener(
-        "mouseenter",
-        () => {
+        card.addEventListener(
+          "mouseenter",
+          () => {
 
-          card.classList.add(
-            "service-hover"
-          );
+            card.classList.add(
+              "service-hover"
+            );
 
-        }
-      );
+          }
+        );
 
 
-      card.addEventListener(
-        "mouseleave",
-        () => {
+        card.addEventListener(
+          "mouseleave",
+          () => {
 
-          card.classList.remove(
-            "service-hover"
-          );
+            card.classList.remove(
+              "service-hover"
+            );
 
-        }
-      );
+          }
+        );
 
-    });
+      }
+    );
 
   }
 
 
   /* =========================================================
-     11. PROCESS ITEM INTERACTION
-     ========================================================= */
+     11. PROCESS INTERACTION
+  ========================================================= */
 
-  const processItems =
-    document.querySelectorAll(
-      ".process-item"
-    );
+  processItems.forEach(
+    item => {
 
+      item.addEventListener(
+        "mouseenter",
+        () => {
 
-  processItems.forEach(item => {
+          item.classList.add(
+            "process-active"
+          );
 
-    item.addEventListener(
-      "mouseenter",
-      () => {
-
-        item.classList.add(
-          "process-active"
-        );
-
-      }
-    );
+        }
+      );
 
 
-    item.addEventListener(
-      "mouseleave",
-      () => {
+      item.addEventListener(
+        "mouseleave",
+        () => {
 
-        item.classList.remove(
-          "process-active"
-        );
+          item.classList.remove(
+            "process-active"
+          );
 
-      }
-    );
+        }
+      );
 
-  });
+    }
+  );
 
 
   /* =========================================================
-     12. CAPABILITY HOVER
-     ========================================================= */
+     12. CAPABILITIES
+  ========================================================= */
 
-  const capabilities =
-    document.querySelectorAll(
-      ".capability-list span"
-    );
+  capabilityItems.forEach(
+    item => {
 
+      item.addEventListener(
+        "mouseenter",
+        () => {
 
-  capabilities.forEach(item => {
+          item.classList.add(
+            "capability-active"
+          );
 
-    item.addEventListener(
-      "mouseenter",
-      () => {
-
-        item.classList.add(
-          "capability-active"
-        );
-
-      }
-    );
+        }
+      );
 
 
-    item.addEventListener(
-      "mouseleave",
-      () => {
+      item.addEventListener(
+        "mouseleave",
+        () => {
 
-        item.classList.remove(
-          "capability-active"
-        );
+          item.classList.remove(
+            "capability-active"
+          );
 
-      }
-    );
+        }
+      );
 
-  });
+    }
+  );
 
 
   /* =========================================================
-     13. CTA MAGNETIC EFFECT
-     ========================================================= */
+     13. MAGNETIC BUTTONS
+  ========================================================= */
 
   const magneticButtons =
     document.querySelectorAll(
@@ -735,52 +825,58 @@ document.addEventListener("DOMContentLoaded", () => {
     !reduceMotion
   ) {
 
-    magneticButtons.forEach(button => {
+    magneticButtons.forEach(
+      button => {
 
-      button.addEventListener(
-        "mousemove",
-        event => {
+        button.addEventListener(
+          "mousemove",
+          event => {
 
-          const rect =
-            button.getBoundingClientRect();
-
-          const x =
-            event.clientX -
-            rect.left -
-            rect.width / 2;
-
-          const y =
-            event.clientY -
-            rect.top -
-            rect.height / 2;
-
-          button.style.transform =
-            `translate(
-              ${x * 0.07}px,
-              ${y * 0.07}px
-            )`;
-
-        }
-      );
+            const rect =
+              button.getBoundingClientRect();
 
 
-      button.addEventListener(
-        "mouseleave",
-        () => {
+            const x =
+              event.clientX -
+              rect.left -
+              rect.width / 2;
 
-          button.style.transform = "";
 
-        }
-      );
+            const y =
+              event.clientY -
+              rect.top -
+              rect.height / 2;
 
-    });
+
+            button.style.transform =
+              `translate(
+                ${x * .06}px,
+                ${y * .06}px
+              )`;
+
+          }
+        );
+
+
+        button.addEventListener(
+          "mouseleave",
+          () => {
+
+            button.style.transform =
+              "";
+
+          }
+        );
+
+      }
+    );
 
   }
 
 
   /* =========================================================
-     14. FOOTER BACK TO TOP
-     ========================================================= */
+     14. BACK TO TOP
+  ========================================================= */
 
   const footerTop =
     document.querySelector(
@@ -796,11 +892,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
         event.preventDefault();
 
+
         window.scrollTo({
+
           top: 0,
-          behavior: reduceMotion
-            ? "auto"
-            : "smooth"
+
+          behavior:
+            reduceMotion
+              ? "auto"
+              : "smooth"
+
         });
 
       }
@@ -810,98 +911,88 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   /* =========================================================
-     15. RESIZE CLEANUP
-     ========================================================= */
+     15. RESIZE
+  ========================================================= */
 
   let resizeTimer;
+
 
   window.addEventListener(
     "resize",
     () => {
 
-      clearTimeout(resizeTimer);
+      clearTimeout(
+        resizeTimer
+      );
+
 
       resizeTimer =
-        setTimeout(() => {
+        setTimeout(
+          () => {
 
-          if (
-            window.innerWidth > 700 &&
-            nav &&
-            menuBtn
-          ) {
+            if (
+              window.innerWidth > 700
+            ) {
 
-            nav.classList.remove(
-              "active"
+              closeMenu();
+
+            }
+
+
+            projectCards.forEach(
+              card => {
+
+                card.style.transform =
+                  "";
+
+              }
             );
 
-            menuBtn.classList.remove(
-              "active"
-            );
 
-            menuBtn.setAttribute(
-              "aria-expanded",
-              "false"
-            );
+            if (heroVisual) {
 
-            menuBtn.setAttribute(
-              "aria-label",
-              "Open menu"
-            );
+              heroVisual.style.transform =
+                "translateY(-50%)";
 
-            body.classList.remove(
-              "menu-open"
-            );
+            }
 
-          }
-
-
-          /* Reset project transforms */
-
-          projectCards.forEach(card => {
-
-            card.style.transform = "";
-
-          });
-
-
-          /* Reset hero */
-
-          if (heroVisual) {
-
-            heroVisual.style.transform =
-              "translateY(-50%)";
-
-          }
-
-        }, 150);
+          },
+          150
+        );
 
     },
-    { passive: true }
+    {
+      passive: true
+    }
   );
 
 
   /* =========================================================
-     16. TOUCH DEVICE SAFETY
-     ========================================================= */
+     16. TOUCH SAFETY
+  ========================================================= */
 
   if (!finePointer) {
 
-    projectCards.forEach(card => {
+    projectCards.forEach(
+      card => {
 
-      card.style.transform = "";
+        card.style.transform =
+          "";
 
-    });
+      }
+    );
 
   }
 
 
   /* =========================================================
      17. FINAL STATE
-     ========================================================= */
+  ========================================================= */
 
   body.classList.add(
     "js-enabled"
   );
+
 
   updateHeader();
   updateActiveNav();
