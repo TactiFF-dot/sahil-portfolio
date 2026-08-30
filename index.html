@@ -1,55 +1,93 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Sahil Kokode — Web Developer</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
-  <meta name="description" content="Sahil Kokode — modern websites and digital experiences built for ambitious brands.">
+  <title>TAMOGNA — Digital Experiences for Ambitious Brands</title>
+
+  <meta
+    name="description"
+    content="TAMOGNA is a digital studio creating premium websites and digital experiences for ambitious brands."
+  >
+
+  <meta name="theme-color" content="#080808">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
 
-  <!-- LOADER -->
+  <!-- =========================================
+       LOADER
+  ========================================== -->
 
   <div class="loader" id="loader">
     <div class="loader-inner">
-      <span>SK</span>
-      <div class="loader-line"><i></i></div>
+      <span>TAMOGNA</span>
+      <div class="loader-line">
+        <i></i>
+      </div>
     </div>
   </div>
 
 
-  <!-- HEADER -->
+  <!-- =========================================
+       HEADER
+  ========================================== -->
 
   <header class="header">
 
-    <a href="#top" class="logo">
-      <span class="logo-mark">SK</span>
-      <span class="logo-text">Sahil Kokode</span>
+    <a href="#top" class="logo" aria-label="TAMOGNA home">
+
+      <span class="logo-mark">T</span>
+
+      <span class="logo-text">
+        TAMOGNA
+      </span>
+
     </a>
 
+
     <nav class="nav" id="nav">
+
       <a href="#work">Work</a>
       <a href="#services">Services</a>
       <a href="#about">About</a>
+      <a href="#process">Process</a>
       <a href="#contact">Contact</a>
+
     </nav>
 
-    <a href="#contact" class="header-cta">
-      Let's Talk <span>↗</span>
+
+    <a
+      href="#contact"
+      class="header-cta"
+    >
+      Start a project
+      <span>↗</span>
     </a>
 
-    <button class="menu-btn" id="menuBtn" aria-label="Open menu">
+
+    <button
+      class="menu-btn"
+      id="menuBtn"
+      type="button"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
       <span></span>
       <span></span>
     </button>
@@ -57,48 +95,67 @@
   </header>
 
 
-  <main id="top">
+  <main>
 
-    <!-- =========================
+
+    <!-- =========================================
          HERO
-    ========================== -->
+    ========================================== -->
 
-    <section class="hero">
+    <section class="hero" id="home">
 
       <div class="hero-grid"></div>
       <div class="hero-noise"></div>
+
 
       <div class="hero-content">
 
         <div class="eyebrow reveal">
           <span class="status-dot"></span>
-          Available for select projects
+          Independent digital studio
         </div>
 
-        <h1 class="hero-title">
 
-          <span class="line reveal">I BUILD</span>
+        <h1 class="hero-title reveal delay-1">
 
-          <span class="line reveal delay-1">
-            <em>WEBSITES</em>
+          <span class="line">
+            DIGITAL
           </span>
 
-          <span class="line reveal delay-2">
-            THAT <span class="outline">STAND OUT.</span>
+          <span class="line">
+            EXPERIENCES
+          </span>
+
+          <span class="line outline">
+            FOR
+          </span>
+
+          <span class="line">
+            <em>AMBITIOUS</em>
+          </span>
+
+          <span class="line">
+            BRANDS.
           </span>
 
         </h1>
 
-        <div class="hero-bottom reveal delay-3">
+
+        <div class="hero-bottom reveal delay-2">
 
           <p class="hero-description">
-            Modern websites designed to make brands look
-            credible, memorable and impossible to ignore.
+            TAMOGNA designs and builds distinctive digital
+            experiences for brands that want to look different,
+            communicate clearly and move forward.
           </p>
 
-          <a href="#work" class="hero-button">
-            <span>Explore my work</span>
-            <span class="button-arrow">↓</span>
+
+          <a
+            href="#work"
+            class="hero-button"
+          >
+            Explore selected work
+            <span class="button-arrow">↘</span>
           </a>
 
         </div>
@@ -112,327 +169,887 @@
         <div class="visual-orbit orbit-two"></div>
 
         <div class="visual-core">
-          <span>SK</span>
+          <span>T</span>
         </div>
 
         <div class="visual-tag tag-top">
-          DESIGN
+          TAMOGNA / 01
         </div>
 
         <div class="visual-tag tag-bottom">
-          DEVELOPMENT
+          DIGITAL STUDIO
         </div>
 
       </div>
 
 
       <div class="hero-scroll">
-        <span>SCROLL TO EXPLORE</span>
-        <div class="scroll-line"></div>
+        <span class="scroll-line"></span>
+        Scroll to explore
       </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          WORK
-    ========================== -->
+    ========================================== -->
 
     <section class="work-section" id="work">
 
-      <div class="work-top section-width">
+      <div class="section-width">
 
-        <div class="section-label">
-          <span>01</span>
-          Selected Work
-        </div>
+        <div class="work-top">
 
-        <div class="work-intro">
+          <div class="work-intro">
 
-          <p class="mono-text">Digital experiences / 2026</p>
-
-          <h2>
-            BUILT TO BE
-            <em>REMEMBERED.</em>
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="project-filter-bar section-width" aria-label="Project filters">
-        <button class="project-filter active" data-filter="all">ALL</button>
-        <button class="project-filter" data-filter="business">BUSINESS</button>
-        <button class="project-filter" data-filter="luxury">LUXURY</button>
-        <button class="project-filter" data-filter="creative">CREATIVE</button>
-        <button class="project-filter" data-filter="commerce">E-COMMERCE</button>
-      </div>
-
-      <div class="project-list section-width project-list-v2">
-
-        <!-- IRONVAULT -->
-        <article class="project-card project-featured project-card-v2" data-category="business">
-          <div class="project-meta"><span>01 / 08</span><span>Fitness / Business</span></div>
-          <div class="project-preview ironvault-preview">
-            <div class="preview-grid"></div>
-            <div class="preview-copy">
-              <span class="preview-small">IRONVAULT</span>
-              <strong>TRAIN<br>HARDER.</strong>
-              <span class="preview-line"></span>
-              <small>PERFORMANCE<br>FITNESS CLUB</small>
+            <div class="mono-text">
+              Selected work / 01
             </div>
-            <div class="preview-circle"><span>IV</span></div>
-            <a class="project-overlay-link" href="https://tactiff-dot.github.io/IRONVAULT-FITNESS-demo/" target="_blank" rel="noopener">LIVE DEMO ↗</a>
+
           </div>
-          <div class="project-info">
-            <div><h3>IRONVAULT FITNESS</h3><p>A bold fitness experience built around strength, discipline and performance.</p></div>
-            <a href="https://tactiff-dot.github.io/IRONVAULT-FITNESS-demo/" target="_blank" rel="noopener" class="project-link">View project <span>↗</span></a>
+
+
+          <div>
+
+            <h2>
+              BUILT TO
+              <em>STAND OUT.</em>
+            </h2>
+
           </div>
-        </article>
 
-        <!-- NOIR -->
-        <article class="project-card project-card-v2" data-category="creative">
-          <div class="project-meta"><span>02 / 08</span><span>Cinema / Creative</span></div>
-          <div class="project-preview noir-preview">
-            <div class="noir-lines"></div><div class="noir-title"><span>THE</span><strong>NOIR</strong><span>CINEMA</span></div><div class="noir-badge">EST.<br>2026</div>
-            <a class="project-overlay-link" href="https://tactiff-dot.github.io/NOIR-Cinema/" target="_blank" rel="noopener">LIVE DEMO ↗</a>
-          </div>
-          <div class="project-info"><div><h3>NOIR CINEMA</h3><p>An immersive cinematic website designed around atmosphere and storytelling.</p></div><a href="https://tactiff-dot.github.io/NOIR-Cinema/" target="_blank" rel="noopener" class="project-link">View project <span>↗</span></a></div>
-        </article>
-
-        <!-- HOTEL -->
-        <article class="project-card project-card-v2" data-category="luxury">
-          <div class="project-meta"><span>03 / 08</span><span>Hospitality / Luxury</span></div>
-          <div class="project-preview hotel-preview">
-            <div class="hotel-center"><span>LUXURY EXPERIENCE</span><strong>HOTEL</strong></div><div class="hotel-ring"></div>
-            <span class="project-overlay-label">V2 SHOWCASE</span>
-          </div>
-          <div class="project-info"><div><h3>LUXURY HOTEL</h3><p>A refined hospitality concept focused on premium presentation, rooms and guest experience.</p></div><span class="project-status">V2 COMPLETE</span></div>
-        </article>
-
-        <!-- REAL ESTATE -->
-        <article class="project-card project-card-v2" data-category="business">
-          <div class="project-meta"><span>04 / 08</span><span>Property / Business</span></div>
-          <div class="project-preview estate-preview">
-            <div class="estate-copy"><span>PRIVATE</span><strong>PROPERTY<br>COLLECTION</strong></div><div class="estate-block"></div>
-            <a class="project-overlay-link" href="https://tactiff-dot.github.io/REAL-ESTATE-demo/" target="_blank" rel="noopener">LIVE DEMO ↗</a>
-          </div>
-          <div class="project-info"><div><h3>REAL ESTATE</h3><p>A sophisticated property showcase designed for premium listings and modern agencies.</p></div><a href="https://tactiff-dot.github.io/REAL-ESTATE-demo/" target="_blank" rel="noopener" class="project-link">View project <span>↗</span></a></div>
-        </article>
-
-        <!-- VELOCE -->
-        <article class="project-card project-card-v2" data-category="luxury">
-          <div class="project-meta"><span>05 / 08</span><span>Automotive / Luxury</span></div>
-          <div class="project-preview veloce-preview">
-            <div class="veloce-grid"></div><div class="veloce-copy"><span>VÉLOCE</span><strong>DRIVE<br>THE<br>EXTRAORDINARY.</strong></div><div class="veloce-orbit"></div>
-            <a class="project-overlay-link" href="https://tactiff-dot.github.io/CAR-RENTAL-demo/" target="_blank" rel="noopener">LIVE DEMO ↗</a>
-          </div>
-          <div class="project-info"><div><h3>VÉLOCE</h3><p>A premium car rental experience built around luxury vehicles, fleet discovery and reservation intent.</p></div><a href="https://tactiff-dot.github.io/CAR-RENTAL-demo/" target="_blank" rel="noopener" class="project-link">View project <span>↗</span></a></div>
-        </article>
-
-        <!-- BEAUTY -->
-        <article class="project-card project-card-v2" data-category="luxury">
-          <div class="project-meta"><span>06 / 08</span><span>Beauty / Luxury</span></div>
-          <div class="project-preview beauty-preview">
-            <div class="beauty-frame"></div><div class="beauty-copy"><span>BEAUTY</span><strong>YOUR<br>RITUAL.</strong></div>
-            <a class="project-overlay-link" href="https://tactiff-dot.github.io/BEAUTY-SALON-demo/" target="_blank" rel="noopener">LIVE DEMO ↗</a>
-          </div>
-          <div class="project-info"><div><h3>BEAUTY SALON</h3><p>An elegant salon experience designed around services, visual appeal and appointment discovery.</p></div><a href="https://tactiff-dot.github.io/BEAUTY-SALON-demo/" target="_blank" rel="noopener" class="project-link">View project <span>↗</span></a></div>
-        </article>
-
-        <!-- PHOTOGRAPHY -->
-        <article class="project-card project-card-v2" data-category="creative">
-          <div class="project-meta"><span>07 / 08</span><span>Photography / Creative</span></div>
-          <div class="project-preview photography-preview">
-            <div class="photo-frame photo-frame-one"></div><div class="photo-frame photo-frame-two"></div><div class="photo-copy"><span>VISUAL STORIES</span><strong>CAPTURE<br>THE MOMENT.</strong></div>
-            <span class="project-overlay-label">CREATIVE SHOWCASE</span>
-          </div>
-          <div class="project-info"><div><h3>PHOTOGRAPHY</h3><p>A visual-first portfolio created to put photography, storytelling and composition at the center.</p></div><span class="project-status">SHOWCASE</span></div>
-        </article>
-
-        <!-- FASHION -->
-        <article class="project-card project-card-v2" data-category="commerce">
-          <div class="project-meta"><span>08 / 08</span><span>Fashion / E-Commerce</span></div>
-          <div class="project-preview fashion-preview">
-            <div class="fashion-grid"></div><div class="fashion-copy"><span>NEW COLLECTION</span><strong>FORM<br>MEETS<br>FASHION.</strong></div>
-            <span class="project-overlay-label">E-COMMERCE CONCEPT</span>
-          </div>
-          <div class="project-info"><div><h3>FASHION STORE</h3><p>A premium storefront concept focused on product discovery, editorial visuals and shopping flow.</p></div><span class="project-status">SHOWCASE</span></div>
-        </article>
-
-      </div>
+        </div>
 
 
-      <div class="work-footer section-width">
+        <!-- PROJECT FILTERS -->
 
-        <p>
-          More experiments, concepts and client-ready
-          experiences are on the way.
-        </p>
+        <div class="project-filter-bar">
 
-        <a href="#contact" class="text-arrow">
-          Start a project <span>↗</span>
-        </a>
+          <button
+            class="project-filter active"
+            data-filter="all"
+            type="button"
+          >
+            All
+          </button>
+
+          <button
+            class="project-filter"
+            data-filter="business"
+            type="button"
+          >
+            Business
+          </button>
+
+          <button
+            class="project-filter"
+            data-filter="luxury"
+            type="button"
+          >
+            Luxury
+          </button>
+
+          <button
+            class="project-filter"
+            data-filter="creative"
+            type="button"
+          >
+            Creative
+          </button>
+
+          <button
+            class="project-filter"
+            data-filter="ecommerce"
+            type="button"
+          >
+            E-commerce
+          </button>
+
+        </div>
+
+
+        <div class="project-list project-list-v2">
+
+
+          <!-- =====================================
+               01 IRONVAULT
+          ====================================== -->
+
+          <article
+            class="project-card project-featured"
+            data-category="business"
+          >
+
+            <div class="project-meta">
+              <span>01 / Fitness</span>
+              <span>Web Design + Development</span>
+            </div>
+
+
+            <div class="project-preview ironvault-preview">
+
+              <div class="preview-grid"></div>
+
+              <div class="preview-copy">
+
+                <span class="preview-small">
+                  Performance / Discipline
+                </span>
+
+                <strong>
+                  IRON<br>VAULT
+                </strong>
+
+                <i class="preview-line"></i>
+
+                <small>
+                  PREMIUM FITNESS EXPERIENCE
+                </small>
+
+              </div>
+
+
+              <div class="preview-circle">
+                <span>IV</span>
+              </div>
+
+
+              <a
+                href="https://tactiff-dot.github.io/IRONVAULT-FITNESS-demo/"
+                target="_blank"
+                rel="noopener"
+                class="project-overlay-link"
+              >
+                View live ↗
+              </a>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  IRONVAULT FITNESS
+                </h3>
+
+                <p>
+                  A high-performance fitness website built
+                  around strength, discipline and premium
+                  membership experiences.
+                </p>
+
+              </div>
+
+              <a
+                href="https://tactiff-dot.github.io/IRONVAULT-FITNESS-demo/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                View project
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               02 NOIR
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="creative"
+          >
+
+            <div class="project-meta">
+              <span>02 / Cinema</span>
+              <span>Creative Direction</span>
+            </div>
+
+
+            <div class="project-preview noir-preview">
+
+              <div class="noir-lines"></div>
+
+              <div class="noir-title">
+
+                <span>
+                  A CINEMATIC EXPERIENCE
+                </span>
+
+                <strong>
+                  NOIR
+                </strong>
+
+              </div>
+
+
+              <div class="noir-badge">
+                FILM<br>
+                CULTURE<br>
+                2026
+              </div>
+
+
+              <a
+                href="https://tactiff-dot.github.io/NOIR-Cinema/"
+                target="_blank"
+                rel="noopener"
+                class="project-overlay-link"
+              >
+                View live ↗
+              </a>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  NOIR CINEMA
+                </h3>
+
+                <p>
+                  An immersive cinematic interface designed
+                  around atmosphere, typography and film culture.
+                </p>
+
+              </div>
+
+              <a
+                href="https://tactiff-dot.github.io/NOIR-Cinema/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                View project
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               03 HOTEL
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="luxury"
+          >
+
+            <div class="project-meta">
+              <span>03 / Hospitality</span>
+              <span>Luxury Experience</span>
+            </div>
+
+
+            <div class="project-preview hotel-preview">
+
+              <div class="hotel-ring"></div>
+
+              <div class="hotel-center">
+
+                <span>
+                  PRIVATE HOSPITALITY
+                </span>
+
+                <strong>
+                  ÉLAN
+                </strong>
+
+              </div>
+
+
+              <div class="project-overlay-label">
+                COMING SOON
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  LUXURY HOTEL
+                </h3>
+
+                <p>
+                  An editorial hospitality concept focused on
+                  refined visual storytelling and premium booking journeys.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                Showcase
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               04 REAL ESTATE
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="business"
+          >
+
+            <div class="project-meta">
+              <span>04 / Property</span>
+              <span>Modern Real Estate</span>
+            </div>
+
+
+            <div class="project-preview estate-preview">
+
+              <div class="estate-copy">
+
+                <span>
+                  ARCHITECTURE / PROPERTY
+                </span>
+
+                <strong>
+                  FORM<br>
+                  HOUSE
+                </strong>
+
+              </div>
+
+
+              <div class="estate-block"></div>
+
+
+              <div class="project-overlay-label">
+                CONCEPT
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  REAL ESTATE
+                </h3>
+
+                <p>
+                  A modern property interface created to make
+                  premium spaces feel as valuable online as offline.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                Showcase
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               05 VELOCE
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="business"
+          >
+
+            <div class="project-meta">
+              <span>05 / Automotive</span>
+              <span>Rental Experience</span>
+            </div>
+
+
+            <div class="project-preview veloce-preview">
+
+              <div class="veloce-grid"></div>
+
+              <div class="veloce-copy">
+
+                <span>
+                  DRIVE DIFFERENT
+                </span>
+
+                <strong>
+                  VÉLOCE
+                </strong>
+
+              </div>
+
+
+              <div class="veloce-orbit"></div>
+
+
+              <a
+                href="https://tactiff-dot.github.io/CAR-RENTAL-demo/"
+                target="_blank"
+                rel="noopener"
+                class="project-overlay-link"
+              >
+                View live ↗
+              </a>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  VÉLOCE
+                </h3>
+
+                <p>
+                  A bold automotive rental experience combining
+                  speed, premium vehicles and modern digital interaction.
+                </p>
+
+              </div>
+
+              <a
+                href="https://tactiff-dot.github.io/CAR-RENTAL-demo/"
+                target="_blank"
+                rel="noopener"
+                class="project-link"
+              >
+                View project
+                <span>↗</span>
+              </a>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               06 BEAUTY
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="luxury"
+          >
+
+            <div class="project-meta">
+              <span>06 / Beauty</span>
+              <span>Brand Experience</span>
+            </div>
+
+
+            <div class="project-preview beauty-preview">
+
+              <div class="beauty-frame"></div>
+
+              <div class="beauty-copy">
+
+                <span>
+                  BEAUTY / FORM / DETAIL
+                </span>
+
+                <strong>
+                  AURA
+                </strong>
+
+              </div>
+
+
+              <div class="project-overlay-label">
+                CONCEPT
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  BEAUTY SALON
+                </h3>
+
+                <p>
+                  An elegant digital identity designed around
+                  confidence, beauty and understated luxury.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                Showcase
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               07 PHOTOGRAPHY
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="creative"
+          >
+
+            <div class="project-meta">
+              <span>07 / Photography</span>
+              <span>Creative Portfolio</span>
+            </div>
+
+
+            <div class="project-preview photography-preview">
+
+              <div class="photo-frame photo-frame-one"></div>
+              <div class="photo-frame photo-frame-two"></div>
+
+              <div class="photo-copy">
+
+                <span>
+                  VISUAL STORIES
+                </span>
+
+                <strong>
+                  FRAME
+                </strong>
+
+              </div>
+
+
+              <div class="project-overlay-label">
+                CONCEPT
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  PHOTOGRAPHY
+                </h3>
+
+                <p>
+                  A visual-first portfolio concept where imagery,
+                  composition and movement become the interface.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                Showcase
+              </span>
+
+            </div>
+
+          </article>
+
+
+          <!-- =====================================
+               08 FASHION
+          ====================================== -->
+
+          <article
+            class="project-card"
+            data-category="ecommerce"
+          >
+
+            <div class="project-meta">
+              <span>08 / Fashion</span>
+              <span>E-commerce Experience</span>
+            </div>
+
+
+            <div class="project-preview fashion-preview">
+
+              <div class="fashion-grid"></div>
+
+              <div class="fashion-copy">
+
+                <span>
+                  NEW SEASON / 01
+                </span>
+
+                <strong>
+                  ATELIER
+                </strong>
+
+              </div>
+
+
+              <div class="project-overlay-label">
+                CONCEPT
+              </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+              <div>
+
+                <h3>
+                  FASHION STORE
+                </h3>
+
+                <p>
+                  A minimal fashion commerce concept designed
+                  around product focus and editorial presentation.
+                </p>
+
+              </div>
+
+              <span class="project-status">
+                Showcase
+              </span>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+
+        <div class="work-footer">
+
+          <p>
+            A growing collection of digital concepts,
+            experiments and client-ready experiences.
+          </p>
+
+          <a href="#contact" class="text-arrow">
+            Have a project?
+            <span>↗</span>
+          </a>
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          SERVICES
-    ========================== -->
+    ========================================== -->
 
     <section class="services-section" id="services">
 
-      <div class="services-header section-width">
+      <div class="section-width">
 
-        <div class="section-label">
-          <span>02</span>
-          Services
+        <div class="services-header">
+
+          <div>
+            <div class="section-label">
+              <span>02</span>
+              Services
+            </div>
+          </div>
+
+
+          <div class="services-heading">
+
+            <div class="mono-text">
+              What TAMOGNA does
+            </div>
+
+            <h2>
+              DIGITAL
+              <em>CRAFT.</em>
+            </h2>
+
+          </div>
+
         </div>
 
-        <div class="services-heading">
 
-          <p class="mono-text">
-            What I can build for you
-          </p>
+        <div class="services-layout">
 
-          <h2>
-            YOUR IDEA.
-            <em>BUILT RIGHT.</em>
-          </h2>
+
+          <article class="service-card featured-service">
+
+            <span class="service-number">
+              01
+            </span>
+
+            <div class="service-icon">
+              ↗
+            </div>
+
+
+            <div class="service-content">
+
+              <div class="service-type">
+                PRIMARY SERVICE
+              </div>
+
+              <h3>
+                Web Design &
+                Development
+              </h3>
+
+              <p class="service-description">
+                Premium websites built from strategy,
+                visual direction and clean front-end development.
+              </p>
+
+            </div>
+
+
+            <div class="service-tags">
+
+              <span>HTML</span>
+              <span>CSS</span>
+              <span>JavaScript</span>
+              <span>Responsive</span>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              02
+            </span>
+
+            <div class="service-icon">
+              ↗
+            </div>
+
+
+            <div class="service-content">
+
+              <div class="service-type">
+                VISUAL SYSTEM
+              </div>
+
+              <h3>
+                Brand &
+                Digital Identity
+              </h3>
+
+              <p class="service-description">
+                Digital identities that give ambitious brands
+                a distinctive visual language across every touchpoint.
+              </p>
+
+            </div>
+
+
+            <div class="service-tags">
+
+              <span>Art Direction</span>
+              <span>UI</span>
+              <span>Typography</span>
+
+            </div>
+
+          </article>
+
+
+          <article class="service-card">
+
+            <span class="service-number">
+              03
+            </span>
+
+            <div class="service-icon">
+              ↗
+            </div>
+
+
+            <div class="service-content">
+
+              <div class="service-type">
+                EXPERIENCE
+              </div>
+
+              <h3>
+                Interactive
+                Experiences
+              </h3>
+
+              <p class="service-description">
+                Motion, interactions and thoughtful details
+                that make digital products feel alive.
+              </p>
+
+            </div>
+
+
+            <div class="service-tags">
+
+              <span>Motion</span>
+              <span>Interaction</span>
+              <span>UX</span>
+
+            </div>
+
+          </article>
 
         </div>
 
-      </div>
 
+        <div class="capabilities">
 
-      <div class="services-layout section-width">
+          <div class="capabilities-title">
 
-        <article class="service-card">
+            <span class="mono-text">
+              Capabilities
+            </span>
 
-          <div class="service-number">01</div>
-
-          <div class="service-icon">↗</div>
-
-          <div class="service-content">
-
-            <p class="service-type">LANDING PAGES</p>
-
-            <h3>
-              Websites that make
-              a strong first
-              impression.
-            </h3>
-
-            <p class="service-description">
-              High-impact landing pages designed around
-              your brand, audience and goals.
+            <p>
+              A focused toolkit for building modern,
+              responsive and memorable digital experiences.
             </p>
 
           </div>
 
-          <div class="service-tags">
-            <span>Responsive</span>
-            <span>Modern UI</span>
-            <span>CTA Focused</span>
-          </div>
 
-        </article>
+          <div class="capability-list">
 
-
-        <article class="service-card featured-service">
-
-          <div class="service-number">02</div>
-
-          <div class="service-icon">✦</div>
-
-          <div class="service-content">
-
-            <p class="service-type">BUSINESS WEBSITES</p>
-
-            <h3>
-              Turn your business
-              into a brand
-              online.
-            </h3>
-
-            <p class="service-description">
-              Professional websites that communicate trust,
-              showcase your services and guide customers.
-            </p>
+            <span>Web Design</span>
+            <span>Frontend Development</span>
+            <span>UI / UX</span>
+            <span>Responsive Design</span>
+            <span>Creative Direction</span>
+            <span>Landing Pages</span>
+            <span>Portfolio Websites</span>
+            <span>Business Websites</span>
+            <span>Animations</span>
+            <span>Micro Interactions</span>
 
           </div>
 
-          <div class="service-tags">
-            <span>Branding</span>
-            <span>UX Design</span>
-            <span>Development</span>
-          </div>
-
-        </article>
-
-
-        <article class="service-card">
-
-          <div class="service-number">03</div>
-
-          <div class="service-icon">+</div>
-
-          <div class="service-content">
-
-            <p class="service-type">CUSTOM EXPERIENCES</p>
-
-            <h3>
-              Something different?
-              Let's build it
-              from scratch.
-            </h3>
-
-            <p class="service-description">
-              Unique interactive experiences, custom
-              interfaces and creative concepts.
-            </p>
-
-          </div>
-
-          <div class="service-tags">
-            <span>Custom UI</span>
-            <span>Interactions</span>
-            <span>Creative</span>
-          </div>
-
-        </article>
-
-      </div>
-
-
-      <div class="capabilities section-width">
-
-        <div class="capabilities-title">
-
-          <span class="mono-text">
-            Core capabilities
-          </span>
-
-          <p>
-            Tools and techniques I use to turn concepts
-            into polished web experiences.
-          </p>
-
-        </div>
-
-        <div class="capability-list">
-          <span>HTML</span>
-          <span>CSS</span>
-          <span>JAVASCRIPT</span>
-          <span>RESPONSIVE DESIGN</span>
-          <span>UI / UX</span>
-          <span>ANIMATIONS</span>
-          <span>INTERACTIONS</span>
-          <span>PERFORMANCE</span>
         </div>
 
       </div>
@@ -440,45 +1057,73 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          ABOUT
-    ========================== -->
+    ========================================== -->
 
     <section class="about-section" id="about">
 
-      <div class="about-grid section-width">
+      <div class="section-width">
 
-        <div class="section-label">
-          <span>03</span>
-          About
-        </div>
+        <div class="about-grid">
 
-        <div class="about-main">
+          <div>
+            <div class="section-label">
+              <span>03</span>
+              About
+            </div>
+          </div>
 
-          <p class="mono-text">
-            A little about the person behind the pixels
-          </p>
 
-          <h2>
-            I DON'T JUST
-            <span>MAKE WEBSITES.</span>
-            I BUILD
-            <em>EXPERIENCES.</em>
-          </h2>
+          <div class="about-main">
 
-          <div class="about-copy">
+            <div class="mono-text">
+              Behind TAMOGNA
+            </div>
 
-            <p>
-              I'm Sahil — a web developer focused on creating
-              modern, bold and memorable websites.
-            </p>
 
-            <p>
-              My approach combines clean development,
-              strong visual direction and thoughtful
-              interactions to create websites that feel
-              intentional instead of ordinary.
-            </p>
+            <h2>
+
+              <span>
+                SMALL STUDIO.
+              </span>
+
+              BIG
+              <em>AMBITION.</em>
+
+            </h2>
+
+
+            <div class="about-copy">
+
+              <p>
+                TAMOGNA is an independent digital studio focused
+                on creating sharp, modern and memorable web experiences.
+              </p>
+
+              <p>
+                Founded by Sahil Kokode, the studio combines
+                design thinking with front-end development to turn
+                ideas into polished digital experiences.
+              </p>
+
+            </div>
+
+
+            <div class="about-statement">
+
+              <span class="statement-mark">
+                “
+              </span>
+
+              <p>
+                Good websites don't just
+                <em>look good.</em>
+                They make people remember
+                the brand behind them.
+              </p>
+
+            </div>
 
           </div>
 
@@ -486,124 +1131,165 @@
 
       </div>
 
-
-      <div class="about-statement section-width">
-
-        <span class="statement-mark">"</span>
-
-        <p>
-          GOOD DESIGN GETS ATTENTION.
-          <br>
-          GREAT EXPERIENCES
-          <em>KEEP IT.</em>
-        </p>
-
-      </div>
-
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          PROCESS
-    ========================== -->
+    ========================================== -->
 
-    <section class="process-section">
+    <section class="process-section" id="process">
 
-      <div class="process-header section-width">
+      <div class="section-width">
 
-        <div class="section-label">
-          <span>04</span>
-          Process
-        </div>
-
-        <div>
-
-          <p class="mono-text">
-            From first idea to final launch
-          </p>
-
-          <h2>
-            SIMPLE
-            <em>PROCESS.</em>
-            SERIOUS
-            <span>RESULT.</span>
-          </h2>
-
-        </div>
-
-      </div>
-
-
-      <div class="process-list section-width">
-
-        <div class="process-item">
-
-          <span class="process-index">01</span>
+        <div class="process-header">
 
           <div>
-            <span class="process-type">DISCOVER</span>
-            <h3>Understand the idea.</h3>
-            <p>
-              Goals, audience, brand direction and
-              what the website needs to achieve.
-            </p>
+            <div class="section-label">
+              <span>04</span>
+              Process
+            </div>
           </div>
 
-          <span class="process-arrow">↗</span>
+
+          <div>
+
+            <div class="mono-text">
+              How we work
+            </div>
+
+            <h2>
+              FROM IDEA
+              <span>TO DIGITAL.</span>
+            </h2>
+
+          </div>
 
         </div>
 
 
-        <div class="process-item">
+        <div class="process-list">
 
-          <span class="process-index">02</span>
 
-          <div>
-            <span class="process-type">DESIGN</span>
-            <h3>Shape the experience.</h3>
-            <p>
-              Layout, typography, visual hierarchy,
-              interactions and overall direction.
-            </p>
+          <div class="process-item">
+
+            <span class="process-index">
+              01
+            </span>
+
+            <div>
+
+              <span class="process-type">
+                DISCOVER
+              </span>
+
+              <h3>
+                Understand the vision
+              </h3>
+
+              <p>
+                We start by understanding the brand,
+                audience, goals and opportunity.
+              </p>
+
+            </div>
+
+            <span class="process-arrow">
+              ↗
+            </span>
+
           </div>
 
-          <span class="process-arrow">↗</span>
 
-        </div>
+          <div class="process-item">
 
+            <span class="process-index">
+              02
+            </span>
 
-        <div class="process-item">
+            <div>
 
-          <span class="process-index">03</span>
+              <span class="process-type">
+                DIRECTION
+              </span>
 
-          <div>
-            <span class="process-type">BUILD</span>
-            <h3>Turn design into reality.</h3>
-            <p>
-              Clean HTML, CSS and JavaScript with
-              responsive behaviour across devices.
-            </p>
+              <h3>
+                Shape the experience
+              </h3>
+
+              <p>
+                Visual direction, layout, typography and
+                interaction are brought together into one system.
+              </p>
+
+            </div>
+
+            <span class="process-arrow">
+              ↗
+            </span>
+
           </div>
 
-          <span class="process-arrow">↗</span>
 
-        </div>
+          <div class="process-item">
 
+            <span class="process-index">
+              03
+            </span>
 
-        <div class="process-item">
+            <div>
 
-          <span class="process-index">04</span>
+              <span class="process-type">
+                BUILD
+              </span>
 
-          <div>
-            <span class="process-type">REFINE</span>
-            <h3>Polish every detail.</h3>
-            <p>
-              Mobile testing, interactions, performance
-              and final visual refinement.
-            </p>
+              <h3>
+                Turn design into code
+              </h3>
+
+              <p>
+                The experience is developed with clean,
+                responsive and performance-conscious front-end code.
+              </p>
+
+            </div>
+
+            <span class="process-arrow">
+              ↗
+            </span>
+
           </div>
 
-          <span class="process-arrow">↗</span>
+
+          <div class="process-item">
+
+            <span class="process-index">
+              04
+            </span>
+
+            <div>
+
+              <span class="process-type">
+                REFINE
+              </span>
+
+              <h3>
+                Polish every detail
+              </h3>
+
+              <p>
+                Interactions, spacing, responsiveness and
+                final details are refined before launch.
+              </p>
+
+            </div>
+
+            <span class="process-arrow">
+              ↗
+            </span>
+
+          </div>
+
 
         </div>
 
@@ -612,57 +1298,94 @@
     </section>
 
 
-    <!-- =========================
-         WHY ME
-    ========================== -->
+    <!-- =========================================
+         WHY TAMOGNA
+    ========================================== -->
 
     <section class="why-section">
 
-      <div class="why-inner section-width">
+      <div class="section-width">
 
-        <div class="section-label">
-          <span>05</span>
-          Why Work With Me
-        </div>
+        <div class="why-inner">
 
-        <div class="why-content">
+          <div>
+            <div class="section-label">
+              <span>05</span>
+              Difference
+            </div>
+          </div>
 
-          <p class="mono-text">
-            What matters to me
-          </p>
 
-          <h2>
-            NO COOKIE-CUTTER
-            <em>WEBSITES.</em>
-          </h2>
+          <div class="why-content">
 
-          <div class="why-grid">
-
-            <div class="why-card">
-              <span>01</span>
-              <h3>Distinctive</h3>
-              <p>
-                Your website should look like your brand,
-                not everybody else's.
-              </p>
+            <div class="mono-text">
+              Why work with TAMOGNA
             </div>
 
-            <div class="why-card">
-              <span>02</span>
-              <h3>Responsive</h3>
-              <p>
-                The experience should feel polished on
-                phones, tablets and desktops.
-              </p>
-            </div>
 
-            <div class="why-card">
-              <span>03</span>
-              <h3>Purposeful</h3>
-              <p>
-                Every section has a reason to exist and
-                every interaction should help the user.
-              </p>
+            <h2>
+              NOT JUST
+              <em>ANOTHER WEBSITE.</em>
+            </h2>
+
+
+            <div class="why-grid">
+
+
+              <article class="why-card">
+
+                <span>
+                  01 / DETAIL
+                </span>
+
+                <h3>
+                  Designed with intent
+                </h3>
+
+                <p>
+                  Every visual decision exists for a reason,
+                  from typography to spacing and interaction.
+                </p>
+
+              </article>
+
+
+              <article class="why-card">
+
+                <span>
+                  02 / IDENTITY
+                </span>
+
+                <h3>
+                  Built around the brand
+                </h3>
+
+                <p>
+                  No generic templates. The experience is
+                  shaped around the personality of the business.
+                </p>
+
+              </article>
+
+
+              <article class="why-card">
+
+                <span>
+                  03 / EXPERIENCE
+                </span>
+
+                <h3>
+                  Made to be remembered
+                </h3>
+
+                <p>
+                  Strong visual hierarchy and subtle motion
+                  help turn visitors into memorable impressions.
+                </p>
+
+              </article>
+
+
             </div>
 
           </div>
@@ -674,27 +1397,34 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          FINAL CTA
-    ========================== -->
+    ========================================== -->
 
     <section class="final-cta">
 
       <div class="cta-grid"></div>
 
-      <div class="final-cta-inner section-width">
+      <div class="section-width final-cta-inner">
 
-        <p class="mono-text">
-          Have something in mind?
-        </p>
+        <div class="mono-text">
+          Have something ambitious in mind?
+        </div>
+
 
         <h2>
+
           LET'S BUILD
           <span>SOMETHING</span>
-          <em>UNFORGETTABLE.</em>
+          <em>MEMORABLE.</em>
+
         </h2>
 
-        <a href="#contact" class="big-cta">
+
+        <a
+          href="#contact"
+          class="big-cta"
+        >
           Start a project
           <span>↗</span>
         </a>
@@ -704,43 +1434,57 @@
     </section>
 
 
-    <!-- =========================
+    <!-- =========================================
          CONTACT
-    ========================== -->
+    ========================================== -->
 
     <section class="contact-section" id="contact">
 
-      <div class="contact-grid section-width">
+      <div class="section-width">
 
-        <div class="section-label">
-          <span>06</span>
-          Contact
-        </div>
+        <div class="contact-grid">
 
-        <div class="contact-main">
+          <div>
+            <div class="section-label">
+              <span>06</span>
+              Contact
+            </div>
+          </div>
 
-          <p class="mono-text">
-            Let's start a conversation
-          </p>
 
-          <h2>
-            GOT A PROJECT?
-            <em>LET'S TALK.</em>
-          </h2>
+          <div class="contact-main">
 
-          <p class="contact-text">
-            Tell me what you're building, what you need,
-            or even just the idea in your head.
-            We'll take it from there.
-          </p>
+            <div class="mono-text">
+              Let's make something great
+            </div>
 
-          <div class="contact-actions">
 
-            <a href="mailto:hello@sahilkokode.dev"
-               class="contact-email">
-              hello@sahilkokode.dev
-              <span>↗</span>
-            </a>
+            <h2>
+              HAVE A
+              <em>PROJECT?</em>
+            </h2>
+
+
+            <p class="contact-text">
+              Tell me what you're building, what you're trying
+              to achieve and where you want to take it.
+              Let's create something worth remembering.
+            </p>
+
+
+            <div class="contact-actions">
+
+              <!-- Replace email if required -->
+
+              <a
+                href="mailto:hello@tamogna.com"
+                class="contact-email"
+              >
+                hello@tamogna.com
+                <span>↗</span>
+              </a>
+
+            </div>
 
           </div>
 
@@ -753,15 +1497,23 @@
   </main>
 
 
-  <!-- FOOTER -->
+  <!-- =========================================
+       FOOTER
+  ========================================== -->
 
   <footer class="footer">
 
-    <span>© 2026 Sahil Kokode</span>
+    <span>
+      © 2026 TAMOGNA
+    </span>
 
-    <span>Designed & Built with intention</span>
+    <span>
+      DIGITAL EXPERIENCES FOR AMBITIOUS BRANDS
+    </span>
 
-    <a href="#top">Back to top ↑</a>
+    <a href="#top">
+      Back to top ↑
+    </a>
 
   </footer>
 
@@ -770,4 +1522,3 @@
 
 </body>
 </html>
-
